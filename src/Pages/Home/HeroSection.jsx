@@ -9,7 +9,17 @@ export default function  HeroSection(){
                         <br />
                         Developer
                     </h1>
+                    <p className = "hero_section_desc">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                        <br/>
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                    </p>
+
                 </div>
+                <button className = "button_primary">Contact Me</button>
+            </div>
+            <div className = "img">
+                <img src = "./img/robot.png" alt = "Image"/>
             </div>
         </section>
     );
