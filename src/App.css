@@ -553,8 +553,12 @@ button:hover {
     border-radius: 0.5vw;
     background: linear-gradient(120deg, rgba(106, 17, 203, 0.8), rgba(37, 117, 252, 0.8));
     box-shadow: 0 0.2vh 0.4vh rgba(0,0,0,0.1);
-}
 
+}
+.LinkedIn:hover, .Phone:hover, .Email:hover {
+    transform: scale(1.1);
+    transition: transform 0.4s ease;
+}
 .LinkedinContent, .PhoneContent, .EmailinContent {
     display: flex;
     align-items: center;
