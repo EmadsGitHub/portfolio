@@ -1,29 +1,94 @@
-/* General Reset */
+
+
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, sans-serif;
-    box-sizing: border-box;
+    /* Remove the existing gradient */
+    background: #0a0f25; /* Dark blue base */
+    position: relative;
 }
 
+/* Create the star effect */
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+body::before {
+    background-image: 
+        radial-gradient(4px 4px at 20px 30px, #fff, rgba(0,0,0,0)),
+        radial-gradient(4px 4px at 40px 70px, #fff, rgba(0,0,0,0)),
+        radial-gradient(4px 4px at 50px 160px, #fff, rgba(0,0,0,0)),
+        radial-gradient(4px 4px at 90px 40px, #fff, rgba(0,0,0,0)),
+        radial-gradient(4px 4px at 130px 80px, #fff, rgba(0,0,0,0)),
+        radial-gradient(4px 4px at 160px 120px, #fff, rgba(0,0,0,0));
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    animation: twinkle 4s linear infinite;
+}
+
+body::after {
+    background-image: 
+        radial-gradient(4px 4px at 15px 15px, #fff, rgba(0,0,0,0)),
+        radial-gradient(4px 4px at 45px 65px, #fff, rgba(0,0,0,0)),
+        radial-gradient(4px 4px at 60px 170px, #fff, rgba(0,0,0,0)),
+        radial-gradient(4px 4px at 95px 45px, #fff, rgba(0,0,0,0)),
+        radial-gradient(4px 4px at 140px 85px, #fff, rgba(0,0,0,0)),
+        radial-gradient(4px 4px at 170px 130px, #fff, rgba(0,0,0,0));
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    animation: twinkle 4s linear infinite;
+    animation-delay: 2s;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.8; }
+    50% { opacity: 0.3; }
+    100% { opacity: 0.8; }
+}
+
+.icons {
+    padding-left: 1vw;
+}
 /* Hero Section Styling */
 .heroSec {
-    display: flex;
-    align-items: center;
-    padding: 3rem;
-    background: linear-gradient(120deg, #6a11cb, #2575fc);
+
+
     color: #fff;
-    height: 150vh;
+    height: 250vh;
+}
+
+.parallax-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
 .hero_section_content_box {
-    flex: 1;
-    margin-bottom: 40%;
-    padding: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Allow text and button to wrap naturally */
+    text-align: center; /* Center-align text inside */
+    gap: 2vh; /* Space between the text and the button */
 }
 
 .hero_section_content {
-    margin-bottom: 2vh;
+    margin-top: 70vh;
+    opacity: 1;
+    transform: translateY(60vh);
+    transition: transform 3s ease-out;
+}
+
+.hero_section_content.visible {
+    margin-top: 70vh;
+    transform: translateY(-60vh);
+
 }
 
 .section_title {
@@ -44,21 +109,75 @@ body {
 }
 
 .hero_section_desc {
-    font-size: 2vh;
+    font-size: 3vh;
     line-height: 2.5vh;
     margin-bottom: 2%;
 }
 
-.img img{
+.button_primary {
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 1800px) {
+    .moon-container {
+      display: none; /* Hide images when the screen width is 768px or smaller */
+      height: 0vh;
+    }
+    .heroSec{
+        height: 75vh;
+    }
+
+  }
+
+.moon-container {
+
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+.robotimg img{
     position:absolute;
-    top: 10%; /* Distance from the top of the container */
-    left: 60%; /* Distance from the left of the container */
-    width: 40%; 
+    top: 7.5%; /* Distance from the top of the container */
+    left: 50%; /* Distance from the left of the container */
+    width: 10%; 
     height: auto;
 }
 
+.img img {
+    position: absolute;
+    top: 8%;
+    left: 0%;
+    width: 100%;
+    height: auto;
+
+}
+
+
+
+.upsizemoon img {
+    position: absolute;
+    top: 18.25%;
+    left: 0%;
+    width: 100%;
+    height: auto;
+}
+
+.upsidedownimg img {
+    position: absolute;
+    top: 22%;
+    left: 0%;
+    width: 100%;
+    height: auto;
+
+}
+
 button {
-    background-color: cadetblue;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: darkcyan;
     width: 20vw;
     height: 5vh;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -66,12 +185,483 @@ button {
     color: wheat;
 }
 
-.navbar{
-    background: linear-gradient(120deg, #6a11cb, #2575fc);
+button:hover {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #005f91;
+    width: 20vw;
+    height: 5vh;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 2.5vh;
+    color: wheat;
+    
+}
 
+.navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: linear-gradient(120deg, rgba(106, 17, 203, 0.8), rgba(37, 117, 252, 0.8));
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    padding: 0 2vw
 }
 
 .navbaractive{
-    background: linear-gradient(120deg, #6a11cb, #2575fc);
+    background: linear-gradient(120deg, rgba(106, 17, 203, 0.8), rgba(37, 117, 252, 0.8));
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    padding: 0 2vw
+}
 
+.navbar--items {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.navbar--items ul {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: darkcyan;
+    padding: 1vh;
+    border: 1px solid #ffd700;
+
+}
+
+.navbar--items li {
+    display: flex;
+    padding-inline: 2vw;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 2vh;
+    color: bisque;
+    
+}
+
+.navbar--items li:hover {
+
+    color: blue;
+    
+}
+
+.hardware_design_icon,
+.robot_icon,
+.camera_icon,
+.mechanical_design_icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;            /* Take full width of parent */
+    height: 100%;
+    
+}
+
+.skillsContentContainer {
+    display: flex;
+    justify-content: space-evenly; /* Distribute items evenly */
+    gap: 1vw; /* Space between each item */
+    padding: 3vw;
+    
+    
+}
+
+.skillsContentContainer:hover .full_skills{
+    filter: grayscale(100%) brightness(0.7);
+}
+
+.skillsContentContainer:hover .full_skills:hover {
+    filter: grayscale(0%) brightness(1);
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.camera_icon img, .mechanical_design_icon img{
+   margin-top: 4vh
+
+}
+
+.hardware_design_icon img{width: 10vw;
+    height: 20vh; /* Ensure image fills the container */}
+
+.robot_icon img{width: 10vw;
+    height: 20vh;}
+
+.camera_icon img{width: 8vw;
+    height: 16vh;}
+
+.mechanical_design_icon img{width: 8vw;
+    height: 16vh;}
+
+.grandSize {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.full_skills {
+    padding: 1vw;
+    border: 3px solid #ffd700;
+    box-shadow: 8px 8px 8px rgba(231, 229, 93, 0.3);
+    background: linear-gradient(120deg, rgba(106, 17, 203, 0.8), rgba(37, 117, 252, 0.8));
+}
+
+.skills_title{
+    display: flex;
+    justify-content: center;
+    color: beige;
+    
+}
+
+.skillsTitleContainer {
+    padding: 2vw;
+}
+
+.skills_icons{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2vw;
+    font-size: 5vh;
+    color: floralwhite;
+}
+
+.icon:hover {
+    transform: scale(1.2);
+    transition: transform 0.5s ease;
+}
+
+.skillsHeading {
+    display:flex;
+    justify-content: center;
+    color: #ffd700;
+    font-size: 5vh;
+}
+
+.skills_desc {
+    color: beige;
+    text-align: center;
+}
+
+.aboutMeContainer{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    margin-left: 15vw;
+
+    column-gap: 0vw;
+    align-items: center;
+}
+
+.aboutme_Pic img{
+    width:20vw;
+    height:55vh;
+    border: 2px solid #ffd700;
+    box-shadow: 16px 16px 16px rgba(231, 229, 93, 0.3);
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.aboutme_Pic img:hover{
+    transform: rotateY(-15deg);
+}
+
+
+@keyframes shadowShift {
+    from {
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+    to {
+      box-shadow: 15px 5px 20px rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  .aboutme_Pic:hover img {
+    animation: shadowShift 1s forwards;
+  }
+
+
+.aboutme_text{
+    margin-right: 15vw;
+    margin-bottom: 10vh;
+    font-size: 2.5vh;
+}
+
+.aboutme_title{
+    color: #ffd700;
+    font-size: 5vh;
+}
+
+.aboutme_desc{
+    color: beige;
+}
+
+.projects_preview {
+    height: 150vh;
+    padding-top: 10vh;
+}
+
+.projects_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 4vw;
+    margin-left: 3vw;
+    padding-top: 8vh;
+    padding-inline: 8vw;
+    
+}
+
+/* Modified project containers */
+.plant_watering_robot, .automated_lights, .delta_hacks {
+    border: 2px solid #ffd700;
+    box-shadow: 16px 16px 16px rgba(231, 229, 93, 0.3);
+    text-align: center;
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers content horizontally */
+    background: linear-gradient(120deg, rgba(106, 17, 203, 0.8), rgba(37, 117, 252, 0.8));
+    border-radius: 10px; /* Optional: adds rounded corners */
+    overflow: hidden; /* Contains the zoom effect */
+}
+
+.photo_container {
+    width: 100%;
+    height: 30vh;
+
+
+}
+
+.plant_watering_robot img, .automated_lights img, .delta_hacks img {
+    width: 100%;
+    height: 30vh;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.5s ease; /* Moved transition here so it's always smooth */
+}
+
+.plant_watering_robot img:hover, 
+.automated_lights img:hover, 
+.delta_hacks img:hover {
+    transform: scale(1.1);
+}
+
+/* Text container modifications */
+.text_container {
+    width: 100%; /* Takes full width of parent */
+    padding: 2vh;
+    display: flex;
+    flex-direction: column;
+    gap: 1vh; /* Adds space between text elements */
+    
+}
+
+.header_title {
+    color: #ffd700;
+    font-size: 4vh;
+    text-align: center;
+}
+
+.project_desc {
+    color: beige;
+    font-size: 2vh;
+    padding: 1vh;
+}
+
+.project_title {
+    color: #ffd700;
+    font-size: 2.5vh;
+}
+
+.projects_icons{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2vw;
+    font-size: 5vh;
+    color: floralwhite;
+}
+
+.icon:hover {
+    transform: scale(1.2);
+    transition: transform 0.5s ease;
+}
+
+.github_button {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1vh;
+}
+
+.github {
+    display: flex;
+    justify-content: center;
+    font-size: 2.5vh;
+    color: cyan;
+    padding: 1vh;
+    
+}
+
+.github a {
+    color: white;
+    text-decoration: none;
+    
+}
+/* Overall section styling */
+.contact-page {
+    padding: 4vh 2vw;
+    max-width: 100vw;
+    margin: 0 auto;
+    background-color: #1a1a2e;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 3vh;
+    font-size: 5vh;
+    color: #ffd700; /* Highlighted gold color */
+}
+
+/* Two-column layout container */
+.contact-content {
+    display: flex;
+    gap: 4vw;
+    justify-content: space-between;
+
+    
+}
+
+/* Quick contacts column */
+.quick-contacts {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    border-radius: 2vh;
+    padding: 4vh 3vw;
+    border: 2px solid #ffd700;
+    box-shadow: 16px 16px 16px rgba(231, 229, 93, 0.3);
+    
+}
+
+/* Individual contact box styling */
+.LinkedIn, .Phone, .Email {
+    
+    padding: 2vh 1.5vw;
+    border-radius: 0.5vw;
+    background: linear-gradient(120deg, rgba(106, 17, 203, 0.8), rgba(37, 117, 252, 0.8));
+    box-shadow: 0 0.2vh 0.4vh rgba(0,0,0,0.1);
+}
+
+.LinkedinContent, .PhoneContent, .EmailinContent {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    margin-top: 0.5vh;
+}
+
+.PhoneHeader, .LinkedinHeader, .EmailHeader{
+    color: #ffd700;
+    font-size: 2.5vh;
+}
+
+.LinkedinContent, .PhoneContent, .EmailinContent  {
+    font-size: 2vh;
+    color: white;
+}
+
+.LinkedinContent svg, .PhoneContent svg, .EmailinContent svg {
+    font-size: 3vh;
+    color: white;
+}
+
+.LinkedinContent a:visited {
+    font-size: 2vh;
+    color: lightblue;
+}
+.LinkedinContent a:hover {
+    font-size: 2vh;
+    color: darkblue;
+}
+
+
+/* Email form column */
+.emailForm {
+    flex: 1.5;
+    padding: 2vh 2vw;
+    background: linear-gradient(120deg, rgba(106, 17, 203, 0.8), rgba(37, 117, 252, 0.8));
+    border-radius: 0.5vw;
+    border: 2px solid #ffd700;
+    box-shadow: 16px 16px 16px rgba(231, 229, 93, 0.3);
+}
+
+.formTitle {
+    margin-bottom: 1.5vh;
+    color: #ffd700;
+    font-size: 2.5vh;
+}
+
+.textboxes {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+}
+
+.textboxes textarea {
+    width: 100%;
+    padding: 1vh 0.8vw;
+    border: 0.1vh solid #ddd;
+    border-radius: 0.4vw;
+    resize: vertical;
+    font-size: 1.6vh;
+}
+
+/* Message textarea specific styling */
+.textboxes textarea:last-child {
+    min-height: 15vh;
+}
+
+.sendForm {
+    margin-top: 1.5vh;
+}
+
+.sendForm button {
+    padding: 1vh 2vw;
+    background-color: #0077b5;
+    color: white;
+    border: none;
+    border-radius: 0.4vw;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1.6vh;
+}
+
+.sendForm button:hover {
+    background-color: #005f91;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .contact-content {
+        flex-direction: column;
+    }
+    
+    .quick-contacts, .emailForm {
+        width: 90vw;
+    }
+    
+    /* Adjust padding and margins for mobile */
+    .contact-page {
+        padding: 2vh 4vw;
+    }
+    
+    .LinkedIn, .Phone, .Email {
+        padding: 3vh 4vw;
+    }
+    
+    .emailForm {
+        padding: 3vh 4vw;
+    }
 }
