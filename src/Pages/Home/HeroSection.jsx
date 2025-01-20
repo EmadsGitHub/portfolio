@@ -64,21 +64,13 @@ export default function  HeroSection(){
 
 
                         <div className="moon-container">
-                            <div className="robotimg">
-                                <img src="./img/robotonthemoon.png" alt="Robot on the moon"/>
-                            </div>
+
                             
                             <div className="img">
-                                <img src="./img/crater.png" alt="Moon crater"/>
+                                <img src="./img/robotandthemoon.png" alt="Moon crater"/>
                             </div>
                             
-                            <div className="upsizemoon">
-                                <img src="./img/craterupsidedown.png" alt="Upsize moon"/>
-                            </div>
-                            
-                            <div className="upsidedownimg">
-                                <img src="./img/craterupsidedown.png" alt="Upside down crater"/>
-                            </div>
+             
                         </div>
                         
 
