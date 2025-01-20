@@ -34,7 +34,8 @@ export default function Contact(){
                 })
                 .then(
                 () => {
-                    console.log('SUCCESS!');
+                    alert('Thanks!');
+                    form.current.reset();
                 },
                 (error) => {
                     console.log('FAILED...', error.text);
