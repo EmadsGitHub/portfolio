@@ -9,7 +9,7 @@ export default function Contact(){
         const validateForm = () => {
             
             const formData = new FormData(form.current);
-            let isValid = false;
+            let isValid = true;
 
             formData.forEach((value, key) =>{
                 if (!value.trim()){
