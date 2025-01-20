@@ -814,13 +814,13 @@ button:hover {
 
     .hardware_design_icon img,
     .robot_icon img {
-        width: 45vw;
+        width: 55vw;
         height: 30vh;
     }
 
     .camera_icon img,
     .mechanical_design_icon img {
-        width: 30vw;
+        width: 35vw;
         height: 20vh;
     }
 }
