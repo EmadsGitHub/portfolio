@@ -1015,7 +1015,7 @@ button:hover {
 }
 
 /* Modified project containers */
-.plant_watering_robot, .automated_lights, .delta_hacks {
+.utra, .automated_lights, .delta_hacks {
     border: 2px solid #ffd700;
     box-shadow: 16px 16px 16px rgba(231, 229, 93, 0.3);
     text-align: center;
@@ -1035,14 +1035,14 @@ button:hover {
 
 }
 
-.plant_watering_robot img, .automated_lights img, .delta_hacks img {
+.utra img, .automated_lights img, .delta_hacks img {
     width: 100%;
     height: 30vh;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
     transition: transform 0.5s ease; /* Moved transition here so it's always smooth */
 }
 
-.plant_watering_robot img:hover, 
+.utra img:hover, 
 .automated_lights img:hover, 
 .delta_hacks img:hover {
     transform: scale(1.1);
@@ -1128,7 +1128,7 @@ button:hover {
 
     }
 
-    .plant_watering_robot, .automated_lights, .delta_hacks {
+    .utra, .automated_lights, .delta_hacks {
         width: 40vw;
     }
 
@@ -1139,7 +1139,7 @@ button:hover {
         width: 40vw; /* Keep same width as others */
     }
 
-    .plant_watering_robot img, .automated_lights img, .delta_hacks img {
+    .utra img, .automated_lights img, .delta_hacks img {
         height: 30vh;
     }
 }
@@ -1156,7 +1156,7 @@ button:hover {
         gap: 4vw;
     }
 
-    .plant_watering_robot, .automated_lights, .delta_hacks {
+    .utra, .automated_lights, .delta_hacks {
         width: 40vw;
     }
 
@@ -1167,7 +1167,7 @@ button:hover {
         width: 40vw; /* Keep same width as others */
     }
 
-    .plant_watering_robot img, .automated_lights img, .delta_hacks img {
+    .utra img, .automated_lights img, .delta_hacks img {
         height: 30vh;
     }
 }
@@ -1185,11 +1185,11 @@ button:hover {
         gap: 4vw;
     }
 
-    .plant_watering_robot, .automated_lights, .delta_hacks {
+    .utra, .automated_lights, .delta_hacks {
         width: 80vw;
     }
 
-    .plant_watering_robot img, .automated_lights img, .delta_hacks img {
+    .utra img, .automated_lights img, .delta_hacks img {
         height: 35vh;
     }
 }
@@ -1210,11 +1210,11 @@ button:hover {
         padding-top: 4vh;
     }
 
-    .plant_watering_robot, .automated_lights, .delta_hacks {
+    .utra, .automated_lights, .delta_hacks {
         width: 80vw;
     }
 
-    .plant_watering_robot img, .automated_lights img, .delta_hacks img {
+    .utra img, .automated_lights img, .delta_hacks img {
         height: 35vh;
     }
 }
