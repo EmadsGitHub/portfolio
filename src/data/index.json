@@ -37,12 +37,12 @@
     "portfolio" : [
         {
             "id": "1",
-            "src": "/img/lego_robot.png",
-            "title": "Plant Watering Robot",
-            "desc": "When people go on long vacations, they need someone to care for their plants. This is where the Plant Watering Robot comes in. This is my 1A term course project.<br><br> Technologies used: C++, RobotC, SolidWorks",
-            "class": "plant_watering_robot",
-            "href": "https://github.com/EmadsGitHub/plant-watering-robot",
-            "icons": ["SiCplusplus"]
+            "src": "/img/UTRAhacks.png",
+            "title": "Posture Pal",
+            "desc": "Bad form in the gym is the worst. Posture Pal is here to help.<br><br> Technologies used: C++, ESP32, JSON, JS, React Native, CSS, HTML, MongoDB",
+            "class": "utra",
+            "href": "https://devpost.com/software/posturepal",
+            "icons": ["SiCplusplus", "SiArduino", "IoLogoJavascript", "FaReact", "FaHtml5", "FaCss3Alt"]
 
         },
         {
