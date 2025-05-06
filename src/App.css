@@ -119,7 +119,6 @@ body::after {
 
 
 .moon-container {
-
     width: 100%;
     height: 100vh;
     overflow: hidden;
@@ -656,6 +655,13 @@ button:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
+}
+
+.skills{
+
+    margin-top: 50vh;
+    height: 100vh;
     
 }
 
