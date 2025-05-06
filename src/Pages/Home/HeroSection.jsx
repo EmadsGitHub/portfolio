@@ -51,7 +51,7 @@ export default function  HeroSection(){
                                 Developer
                             </h1>
                             <p className = "hero_section_desc">
-                                Who's technical expertise is out of this world!
+                                Whose technical expertise is out of this world!
                             </p>
                             <div className = "button_primary">
                             <Link  activeClass = "navbar_active_content" spy = {true} smooth = {true} offset = {-70} duration = {2000} to = "contactPage" className = "navbar_content"><button>Contact Me</button></Link>

@@ -658,13 +658,6 @@ button:hover {
     
 }
 
-.skills{
-
-    margin-top: 50vh;
-    height: 100vh;
-    
-}
-
 .full_skills {
     padding: 1vw;
     border: 3px solid #ffd700;
@@ -691,9 +684,6 @@ button:hover {
     padding: 2vw;
     font-size: 5vh;
     color: floralwhite;
-}
-.icon{
-    padding: 0.2vw;
 }
 
 .icon:hover {
@@ -733,7 +723,7 @@ button:hover {
     .camera_icon img,
     .mechanical_design_icon img {
         width: 12vw;
-        height: 16vh;
+        he-ight: 16vh;
     }
 }
 
@@ -840,8 +830,7 @@ button:hover {
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr 2fr;
-    margin-left: 15vw;
-    margin-top: 50vh;
+    margin-left: 15vw;;
     column-gap: 0vw;
     align-items: center;
 }
@@ -1013,7 +1002,6 @@ button:hover {
 .projects_preview {
     height: 150vh;
     padding-top: 10vh;
-    margin-top: 50vh;
 }
 
 .projects_container {
@@ -1090,10 +1078,9 @@ button:hover {
 .projects_icons{
     display: flex;
     justify-content: space-evenly;
-    padding: 2vw;
+    padding:22vw;
     font-size: 5vh;
     color: floralwhite;
-    flex-wrap: wrap;
 }
 
 .icon:hover {
@@ -1240,7 +1227,6 @@ button:hover {
     max-width: 100vw;
     margin: 0 auto;
     background-color: #1a1a2e;
-    margin-top: 50vh;
 }
 
 .contact-header {
