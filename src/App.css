@@ -1,5 +1,3 @@
-
-
 body {
     /* Remove the existing gradient */
     background: #0a0f25; /* Dark blue base */
@@ -135,8 +133,9 @@ body::after {
 }
 
 
-@media screen and (max-width: 1800px) {
-
+/* Media query for devices with width between 1025px and 1200px */
+@media (min-width: 1025px) and (max-width: 1200px) {
+    /* Hero section */
     .img img {
         top: 2.5%;
     }
@@ -152,36 +151,129 @@ body::after {
         margin-top: 80vh;
         transform: translateY(-60vh);
     }
+    
     .heroSec {
         height: 250vh;
     }
-}
 
-@media screen and (max-width: 1600px) {
+    /* Text scaling */
+    .hero_section_content_box {
+        gap: 1vh;
+    }
 
-    .img img {
-        top: 3.5%;
+    .section_title {
+        font-size: 3vh;
+    }
+
+    .hero_section_title {
+        font-size: 6vh;
+        line-height: 6vh;
+    }
+
+    .hero_section_desc {
+        font-size: 2vh;
+        line-height: 1.8vh;
     }
     
-    .hero_section_content {
-        margin-top: 60vh;
-        opacity: 1;
-        transform: translateY(40vh);
-        transition: transform 3s ease-out;
+    /* Button styling */
+    button {
+        width: 18vw;
+        height: 7vh;
+        font-size: 2.3vh;
+    }
+
+    /* Navbar styling */
+    .navbar--items ul {
+        padding: 0.8vh;
+    }
+
+    .navbar--items li {
+        padding-right: 1.5vw;
+        font-size: 1.8vh;
     }
     
-    .hero_section_content.visible {
-        margin-top: 60vh;
-        transform: translateY(-40vh);
-    
+    .navbar--items {
+        width: 100%;
+        padding-right: 3vw;
     }
-    .heroSec {
+
+    /* Skills section */
+    .skillsContentContainer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2vw;
+    }
+
+    .skills_icons {
+        font-size: 4vh;
+    }
+
+    .hardware_design_icon img,
+    .robot_icon img {
+        width: 15vw;
+        height: 20vh;
+    }
+
+    .camera_icon img,
+    .mechanical_design_icon img {
+        width: 12vw;
+        height: 16vh;
+    }
+
+    /* About me section */
+    .aboutMeContainer {
+        margin-left: 10vw;
+    }
+    
+    .aboutme_Pic img {
+        width: 30vw;
+        height: 50vh;
+    }
+
+    .aboutme_text {
+        font-size: 2.3vh;
+        padding-left: 5vw;
+    }
+
+    .aboutme_title {
+        font-size: 4.5vh;
+    }
+
+    /* Projects section */
+    .projects_preview {
         height: 250vh;
     }
+    
+    .projects_container {
+        margin-left: 0vw;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 4vw;
+    }
+
+    .utra, .automated_lights, .delta_hacks {
+        width: 40vw;
+    }
+
+    .delta_hacks:nth-child(3) {
+        grid-column: 1 / span 2;
+        justify-self: center;
+        width: 40vw;
+    }
+
+    .utra img, .automated_lights img, .delta_hacks img {
+        height: 30vh;
+    }
+    
+    /* Contact section */
+    .contact-page {
+        margin-top: 22vh;
+    }
 }
 
-@media screen and (max-width: 1400px) {
-
+/* Media query for devices with width between 769px and 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Hero section */
     .img img {
         top: 3.25%;
     }
@@ -196,63 +288,156 @@ body::after {
     .hero_section_content.visible {
         margin-top: 40vh;
         transform: translateY(-30vh);
-    
     }
+    
     .heroSec {
         height: 200vh;
     }
-}
 
-@media screen and (max-width: 1200px) {
+    /* Text scaling */
+    .hero_section_content_box {
+        gap: 1.5vh;
+    }
 
-    .img img {
-        top: 2.75%;
-        
+    .section_title {
+        font-size: 2.5vh;
+    }
+
+    .hero_section_title {
+        font-size: 5vh;
+        line-height: 5vh;
+    }
+
+    .hero_section_desc {
+        font-size: 1.8vh;
+        line-height: 1.6vh;
     }
     
-    .hero_section_content {
-        margin-top: 30vh;
-        opacity: 1;
-        transform: translateY(20vh);
-        transition: transform 3s ease-out;
+    /* Button styling */
+    button {
+        width: 20vw;
+        height: 8vh;
+        font-size: 2.2vh;
     }
-    
-    .hero_section_content.visible {
-        margin-top: 30vh;
-        transform: translateY(-20vh);
-    
-    }
-    .heroSec {
-        height: 175vh;
-    }
-}
 
-@media screen and (max-width: 1000px) {
+    /* Navbar styling */
+    .navbar--items ul {
+        padding: 0.6vh;
+    }
 
-    .img img {
-        top: 3%;
+    .navbar--items li {
+        padding-inline: 1vw;
+        font-size: 1.6vh;
     }
     
-    .hero_section_content {
+    .navbar--items {
+        width: 100%;
+        padding-right: 3vw;
+    }
+
+    /* Skills section */
+    .skillsContentContainer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3vw;
+    }
+
+    .skills_icons {
+        font-size: 3.5vh;
+    }
+
+    .hardware_design_icon img,
+    .robot_icon img {
+        width: 18vw;
+        height: 18vh;
+    }
+
+    .camera_icon img,
+    .mechanical_design_icon img {
+        width: 12vw;
+        height: 12vh;
+    }
+
+    /* About me section */
+    .aboutMeContainer {
+        grid-template-columns: 1fr;
+        margin-left: 0;
         margin-top: 20vh;
-        opacity: 1;
-        transform: translateY(10vh);
-        transition: transform 3s ease-out;
+        text-align: center;
     }
     
-    .hero_section_content.visible {
+    .aboutme_Pic img {
+        width: 35vw;
+        height: 50vh;
+    }
+
+    .aboutme_text {
+        margin-right: 0;
+        margin-bottom: 5vh;
+        font-size: 2vh;
+        padding-inline: 5vw;
+    }
+
+    .aboutme_title {
+        font-size: 4vh;
+    }
+
+    /* Projects section */
+    .projects_preview {
+        height: 250vh;
+    }
+    
+    .projects_container {
+        margin-left: 0vw;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 4vw;
+    }
+
+    .utra, .automated_lights, .delta_hacks {
+        width: 40vw;
+    }
+
+    .delta_hacks:nth-child(3) {
+        grid-column: 1 / span 2;
+        justify-self: center;
+        width: 40vw;
+    }
+
+    .utra img, .automated_lights img, .delta_hacks img {
+        height: 30vh;
+    }
+    
+    /* Contact section */
+    .contact-page {
         margin-top: 20vh;
-        transform: translateY(-10vh);
-    
     }
-    .heroSec {
-        height: 150vh;
+    
+    .contact-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .quick-contacts, .emailForm {
+        width: 90%;
+    }
+
+    .contact-page {
+        padding: 2vh 4vw;
+    }
+
+    .LinkedIn, .Phone, .Email {
+        padding: 3vh 4vw;
+    }
+
+    .emailForm {
+        padding: 3vh 4vw;
     }
 }
 
-/* For mobile devices */
-@media screen and (max-width: 768px) {
-
+/* Media query for devices with width between 481px and 768px */
+@media (min-width: 481px) and (max-width: 768px) {
+    /* Hero section */
     .img img {
         top: 2.5%;
     }
@@ -267,55 +452,157 @@ body::after {
     .hero_section_content.visible {
         margin-top: 20vh;
         transform: translateY(-10vh);
-    
     }
+    
     .heroSec {
         height: 125vh;
     }
+
+    /* Text scaling */
+    .hero_section_content_box {
+        gap: 2vh;
+    }
+
+    .section_title {
+        font-size: 2vh;
+    }
+
+    .hero_section_title {
+        font-size: 4.5vh;
+        line-height: 4.5vh;
+    }
+
+    .hero_section_desc {
+        font-size: 1.6vh;
+        line-height: 1.4vh;
+    }
+    
+    /* Button styling */
+    button {
+        width: 35vw;
+        height: 5vh;
+        font-size: 2vh;
+    }
+
+    /* Navbar styling */
+    .navbar--items ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        justify-items: center;
+        align-items: center;
+        padding: 0.5vh;
+    }
+
+    .navbar--items li {
+        padding-inline: 0;
+        padding-block: 1vh;
+        font-size: 1.5vh;
+    }
+    
+    .navbar {
+        height: 12%;
+    }
+    
+    .navbar--items {
+        width: 100%;
+        padding-right: 3vw;
+        height: 5%;
+    }
+
+    /* Skills section */
+    .skillsContentContainer {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 5vw;
+    }
+
+    .skills_icons {
+        font-size: 3vh;
+    }
+
+    .hardware_design_icon img,
+    .robot_icon img {
+        width: 24vw;
+        height: 24vh;
+    }
+
+    .camera_icon img,
+    .mechanical_design_icon img {
+        width: 20vw;
+        height: 20vh;
+    }
+
+    /* About me section */
+    .aboutMeContainer {
+        grid-template-columns: 1fr;
+        margin-left: 0;
+        text-align: center;
+    }
+    
+    .aboutme_Pic img {
+        width: 45vw;
+        height: 45vh;
+    }
+
+    .aboutme_text {
+        margin-right: 0;
+        margin-bottom: 5vh;
+        font-size: 1.8vh;
+    }
+
+    .aboutme_title {
+        font-size: 3vh;
+    }
+
+    /* Projects section */
+    .projects_preview {
+        height: 300vh;
+    }
+    
+    .projects_container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4vw;
+    }
+
+    .utra, .automated_lights, .delta_hacks {
+        width: 80vw;
+    }
+
+    .utra img, .automated_lights img, .delta_hacks img {
+        height: 35vh;
+    }
+    
+    /* Contact section */
+    .contact-page {
+        margin-top: 18vh;
+        padding: 2vh 4vw;
+    }
+    
+    .contact-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .quick-contacts, .emailForm {
+        width: 90%;
+    }
+
+    .LinkedIn, .Phone, .Email {
+        padding: 3vh 4vw;
+    }
+
+    .emailForm {
+        padding: 3vh 4vw;
+    }
 }
 
-@media screen and (max-width: 650px) {
-
-    .img img {
-        top: 2.25%;
-    }
-    
-    .hero_section_content {
-        margin-top: 20vh;
-        opacity: 1;
-        transform: translateY(10vh);
-        transition: transform 3s ease-out;
-    }
-    
-    .hero_section_content.visible {
-        margin-top: 20vh;
-        transform: translateY(-10vh);
-    
-    }
-}
-
-@media screen and (max-width: 600px) {
-
-    .img img {
-        top: 3%;
-    }
-    
-    .hero_section_content {
-        margin-top: 25vh;
-        opacity: 1;
-        transform: translateY(10vh);
-        transition: transform 3s ease-out;
-    }
-    
-    .hero_section_content.visible {
-        margin-top: 25vh;
-        transform: translateY(-10vh);
-    
-    }
-}
-
-@media screen and (max-width: 480px) {
-
+/* Media query for devices with width less than 480px */
+@media (max-width: 480px) {
+    /* Hero section */
     .img img {
         top: 2.75%;
     }
@@ -330,94 +617,156 @@ body::after {
     .hero_section_content.visible {
         margin-top: 20vh;
         transform: translateY(-7vh);
-    
     }
+    
     .heroSec {
         height: 100vh;
     }
-}
 
-/* Media query for devices with width between 1025px and 1200px */
-@media (min-width: 1025px) and (max-width: 1200px) {
+    /* Text scaling */
     .hero_section_content_box {
-        gap: 1vh; /* Adjust gap for smaller screens */
+        gap: 2.5vh;
     }
 
     .section_title {
-        font-size: 3vh; /* Reduced font size */
+        font-size: 1.8vh;
     }
 
     .hero_section_title {
-        font-size: 6vh; /* Reduced font size */
-        line-height: 6vh;
-    }
-
-    .hero_section_desc {
-        font-size: 2vh; /* Reduced font size */
-        line-height: 1.8vh;
-    }
-}
-
-/* Media query for devices with width between 769px and 1024px */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .hero_section_content_box {
-        gap: 1.5vh; /* Adjust gap for smaller screens */
-    }
-
-    .section_title {
-        font-size: 2.5vh; /* Reduced font size */
-    }
-
-    .hero_section_title {
-        font-size: 5vh; /* Reduced font size */
-        line-height: 5vh;
-    }
-
-    .hero_section_desc {
-        font-size: 1.8vh; /* Reduced font size */
-        line-height: 1.6vh;
-    }
-}
-
-/* Media query for devices with width between 481px and 768px */
-@media (min-width: 481px) and (max-width: 768px) {
-    .hero_section_content_box {
-        gap: 2vh; /* Adjust gap for smaller screens */
-    }
-
-    .section_title {
-        font-size: 2vh; /* Reduced font size */
-    }
-
-    .hero_section_title {
-        font-size: 4.5vh; /* Reduced font size */
-        line-height: 4.5vh;
-    }
-
-    .hero_section_desc {
-        font-size: 1.6vh; /* Reduced font size */
-        line-height: 1.4vh;
-    }
-}
-
-/* Media query for devices with width less than 480px */
-@media (max-width: 480px) {
-    .hero_section_content_box {
-        gap: 2.5vh; /* Adjust gap for smaller screens */
-    }
-
-    .section_title {
-        font-size: 1.8vh; /* Reduced font size */
-    }
-
-    .hero_section_title {
-        font-size: 3.5vh; /* Reduced font size */
+        font-size: 3.5vh;
         line-height: 3.5vh;
     }
 
     .hero_section_desc {
-        font-size: 1.5vh; /* Reduced font size */
+        font-size: 1.5vh;
         line-height: 1.2vh;
+    }
+    
+    /* Button styling */
+    button {
+        width: 35vw;
+        height: 5vh;
+        font-size: 1.8vh;
+    }
+
+    /* Navbar styling */
+    .navbar--items ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        justify-items: center;
+        align-items: center;
+        padding: 0.5vh;
+    }
+
+    .navbar--items li {
+        padding-block: 0.5vh;
+        font-size: 1.5vh;
+    }
+    
+    .navbar {
+        height: 13%;
+    }
+    
+    .navbar--items {
+        width: 100%;
+        padding-right: 3vw;
+        height: 5%;
+    }
+
+    /* Skills section */
+    .skillsContentContainer {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 5vw;
+    }
+
+    .skills_icons {
+        font-size: 2.5vh;
+    }
+
+    .hardware_design_icon img,
+    .robot_icon img {
+        width: 55vw;
+        height: 30vh;
+    }
+
+    .camera_icon img,
+    .mechanical_design_icon img {
+        width: 35vw;
+        height: 20vh;
+    }
+
+    /* About me section */
+    .aboutMeContainer {
+        grid-template-columns: 1fr;
+        margin-left: 0;
+        margin-top: 10vh;
+        text-align: center;
+    }
+    
+    .aboutme_Pic img {
+        width: 60vw;
+        height: 40vh;
+    }
+
+    .aboutme_text {
+        margin-right: 0;
+        margin-bottom: 5vh;
+        font-size: 1.5vh;
+    }
+
+    .aboutme_title {
+        font-size: 3vh;
+    }
+
+    /* Projects section */
+    .projects_preview {
+        height: 300vh;
+    }
+    
+    .projects_container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4vw;
+    }
+    
+    .text_container {
+        padding-top: 4vh;
+    }
+
+    .utra, .automated_lights, .delta_hacks {
+        width: 80vw;
+    }
+
+    .utra img, .automated_lights img, .delta_hacks img {
+        height: 35vh;
+    }
+    
+    /* Contact section */
+    .contact-page {
+        margin-top: 15vh;
+        padding: 2vh 4vw;
+    }
+    
+    .contact-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .quick-contacts, .emailForm {
+        width: 90%;
+        box-shadow: 8px 8px 8px rgba(231, 229, 93, 0.3);
+    }
+
+    .LinkedIn, .Phone, .Email {
+        padding: 3vh 4vw;
+    }
+
+    .emailForm {
+        padding: 3vh 4vw;
     }
 }
 
@@ -723,7 +1072,7 @@ button:hover {
     .camera_icon img,
     .mechanical_design_icon img {
         width: 12vw;
-        he-ight: 16vh;
+        height: 16vh;
     }
 }
 
@@ -1000,7 +1349,7 @@ button:hover {
 }
 
 .projects_preview {
-    height: 150vh;
+    height: auto;
     padding-top: 10vh;
 }
 
@@ -1011,7 +1360,7 @@ button:hover {
     margin-left: 3vw;
     padding-top: 8vh;
     padding-inline: 8vw;
-    
+    height: auto;
 }
 
 /* Modified project containers */
@@ -1075,17 +1424,18 @@ button:hover {
     font-size: 2.5vh;
 }
 
-.projects_icons{
+.projects_icons {
     display: flex;
     justify-content: space-evenly;
-    padding:22vw;
-    font-size: 5vh;
+    padding: 1vh 2vw; /* Reduced vertical padding */
+    font-size: 4vh; /* Slightly smaller icons */
     color: floralwhite;
+    flex-wrap: wrap;
+    max-height: 10vh; /* Limit icons section height */
 }
 
-.icon:hover {
-    transform: scale(1.2);
-    transition: transform 0.5s ease;
+.icon {
+    padding: 0.2vw;
 }
 
 .github_button {
@@ -1141,6 +1491,11 @@ button:hover {
 
     .utra img, .automated_lights img, .delta_hacks img {
         height: 30vh;
+    }
+
+    .mechanical_design_icon img {
+        width: 12vw;
+        height: 16vh;
     }
 }
 
@@ -1227,6 +1582,7 @@ button:hover {
     max-width: 100vw;
     margin: 0 auto;
     background-color: #1a1a2e;
+    margin-top: 20vh; /* Base margin for spacing from previous section */
 }
 
 .contact-header {
@@ -1427,3 +1783,4 @@ button:hover {
         padding: 3vh 4vw;
     }
 }
+
