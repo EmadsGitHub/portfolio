@@ -12,18 +12,8 @@ import { FaCss3Alt } from "react-icons/fa";
 import { FaReact } from "react-icons/fa";
 import { FaNodeJs } from "react-icons/fa";
 import { SiAutocad } from "react-icons/si";
-import { SiTinkercad } from "react-icons/si";   
-import { SiFlask } from "react-icons/si";
-import { SiExpress } from "react-icons/si";
-import { SiSqlite } from "react-icons/si";
-import { SiGit } from "react-icons/si";
-import { SiPostman } from "react-icons/si";
-import { SiFigma } from "react-icons/si";
-import { SiRaspberrypi } from "react-icons/si";
+import { SiTinkercad } from "react-icons/si";
 import { SiOpencv } from "react-icons/si";
-import { IoLogoNpm } from "react-icons/io5";
-import { IoLogoGithub } from "react-icons/io5";
-import { SiTypescript } from "react-icons/si";
 
 
 const iconMapping = {
@@ -39,13 +29,7 @@ const iconMapping = {
     FaCss3Alt: FaCss3Alt,
     FaNodeJs: FaNodeJs,
     SiTinkercad: SiTinkercad,
-    SiOpencv:SiOpencv,
-    SiRaspberrypi: SiRaspberrypi,
-    SiFlask: SiFlask,
-    SiExpress: SiExpress,
-    SiSqlite: SiSqlite,
-    SiGit: SiGit,
-    SiPostman: SiPostman,
+    SiOpencv:SiOpencv
 
 };
 export default function ProjectsPreview(){
