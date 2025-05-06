@@ -1,0 +1,67 @@
+{
+    "skills": [
+        {
+            "id": "1",
+            "src": "/img/resistor.png",
+            "title": "Hardware Design",
+            "desc": "Experience in PCB design and using Altium Designer for University of Waterloo's Formula Electric Design Team. Projects include designing a Blinking LED 555 timer PCB.",
+            "class": "hardware_design_icon",
+            "icons": ["SiAltiumdesigner"]
+
+        },
+        {
+            "id": "2",
+            "src": "/img/roboticon.png",
+            "title": "Embedded Software Development",
+            "desc": "Experience in programming microcontrollers using <br>C++ and Python. Expertise in developing smaller <br>and larger scale projects with the Arduino and STM32. Experience includes developing firmware for the University of Waterloo's Formula Electric Design Team.",
+            "class": "robot_icon",
+            "icons": ["SiArduino", "FaPython", "SiC", "SiCplusplus", "SiRaspberrypi"]
+        },
+        {
+            "id": "3",
+            "src": "/img/internet.png",
+            "title": "Full Stack Development and AI",
+            "desc": "Proficient in developing clean front-end and <br>backend custom web applications using HTML, CSS, JS, React, and Node.js. Also have expertise in computer vision and machine learning using Python and OpenCV.",
+            "class": "camera_icon",
+            "icons": ["SiOpencv", "FaReact", "IoLogoJavascript", "FaHtml5", "FaCss3Alt", "FaNodeJs", "SiFlask", "SiExpress", "SiSqlite", "SiGit", "SiPostman", "SiFigma", "IoLogoNpm", "IoLogoGithub", "SiTypescript"]
+        },
+        {
+            "id": "4",
+            "src": "/img/hammerandwrench.png",
+            "title": "Mechanical Design",
+            "desc": "Experience in designing with CAD tools such as AutoCAD and SolidWorks. Expertise in engineering sketches and design processes using industry standards.",
+            "class": "mechanical_design_icon",
+            "icons": ["SiAutocad", "SiTinkercad"]
+        }
+    ],
+    "portfolio" : [
+        {
+            "id": "1",
+            "src": "/img/UTRAhacks.png",
+            "title": "Posture Pal",
+            "desc": "Bad form in the gym is the worst. Posture Pal is here to help.<br><br> Technologies used: C++, ESP32, JSON, JS, React Native, CSS, HTML, MongoDB",
+            "class": "utra",
+            "href": "https://devpost.com/software/posturepal",
+            "icons": ["SiCplusplus", "SiArduino", "IoLogoJavascript", "FaReact", "FaHtml5", "FaCss3Alt"]
+
+        },
+        {
+            "id": "2",
+            "src": "/img/trackmythreads.png",
+            "title": "TrackMyThreads",
+            "desc": "Ever had a hard time keeping track of what clothes need to be washed each week? TrackMyThread solves that.<br><br> Technologies used: Python, Flask, SQLite, React Native, Expo, Figma, NodeJS, TypeScript, ESP32, C++, OpenCV, Roboflow",
+            "class": "automated_lights",
+            "href": "https://github.com/EmadsGitHub/opencvlightswitch",
+            "icons": ["SiArduino", "SiCplusplus", "FaPython", "SiOpencv", "SiFlask", "SiExpress", "SiSqlite", "SiGit", "SiPostman", "SiFigma", "IoLogoNpm", "IoLogoGithub", "SiTypescript", "FaReact", "FaHtml5", "FaCss3Alt", "FaNodeJs"]
+        },
+        {
+            "id": "3",
+            "src": "/img/MindSync.png",
+            "title": "MindSync",
+            "desc": "Mental health is arguably the single most important aspect of a person's life. However, some people struggle with therapy due to various issues. MindSync is a product that uses EEG technology to help therapists understand a patient's emotions. <br><br> Technologies used: Python, Cohere API, EEG, JavaScript, React, NodeJS, HTML, CSS.",
+            "class": "delta_hacks",
+            "href": "https://devpost.com/software/mindsync-qny03a?ref_content=user-portfolio&ref_feature=in_progress",
+            "icons": ["FaPython", "FaReact", "IoLogojavascript", "FaHtml5", "FaCss3Alt", "FaNodeJs"]
+        }
+    ]
+}
