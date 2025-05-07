@@ -381,6 +381,7 @@ button:hover {
 .navbar--items {
     width: 100%;
     max-width: 1200px;
+    padding-right: 4vw;
 }
 
 .navbar--items ul {
