@@ -42,7 +42,7 @@
             "desc": "Bad form in the gym is the worst. Posture Pal is here to help.<br><br> Technologies used: C++, ESP32, JSON, JS, React Native, CSS, HTML, MongoDB",
             "class": "utra",
             "href": "https://devpost.com/software/posturepal",
-            "icons": ["SiCplusplus", "SiArduino", "IoLogoJavascript", "FaReact", "FaHtml5", "FaCss3Alt"]
+            "icons": ["SiCplusplus", "SiArduino", "IoLogoJavascript", "FaReact", "FaHtml5", "FaCss3Alt", "IoLogoGithub", "SiGit"]
 
         },
         {
@@ -61,7 +61,7 @@
             "desc": "Mental health is arguably the single most important aspect of a person's life. However, some people struggle with therapy due to various issues. MindSync is a product that uses EEG technology to help therapists understand a patient's emotions. <br><br> Technologies used: Python, Cohere API, EEG, JavaScript, React, NodeJS, HTML, CSS.",
             "class": "delta_hacks",
             "href": "https://devpost.com/software/mindsync-qny03a?ref_content=user-portfolio&ref_feature=in_progress",
-            "icons": ["FaPython", "FaReact", "IoLogojavascript", "FaHtml5", "FaCss3Alt", "FaNodeJs"]
+            "icons": ["FaPython", "FaReact", "IoLogoJavascript", "FaHtml5", "FaCss3Alt", "FaNodeJs", "IoLogoGithub", "SiGit"]
         }
     ]
 }

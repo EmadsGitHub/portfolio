@@ -774,7 +774,7 @@ button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background-color: darkcyan;
+    background-color: #3D90D7;
     width: 20vw;
     height: 6.5vh;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -847,7 +847,7 @@ button:hover {
 .navbar--items ul {
     display: flex;
     justify-content: space-evenly;
-    background-color: darkcyan;
+    background-color: #3D90D7;
     padding: 1vh;
     border: 1px solid #ffd700;
 
@@ -1448,8 +1448,9 @@ button:hover {
     display: flex;
     justify-content: center;
     font-size: 2.5vh;
-    color: cyan;
+    color: #3D90D7;
     padding: 1vh;
+    padding-top: 4vh;
     
 }
 
@@ -1649,6 +1650,11 @@ button:hover {
     color: white;
 }
 
+.LinkedinContent a{
+    text-decoration: none;
+    color: white;
+}
+
 .LinkedinContent a:visited {
     font-size: 2vh;
     color: lightblue;
@@ -1701,7 +1707,7 @@ button:hover {
 
 .sendForm button {
     padding: 1vh 2vw;
-    background-color: #0077b5;
+    background-color: #3D90D7;
     color: white;
     border: none;
     border-radius: 0.4vw;
