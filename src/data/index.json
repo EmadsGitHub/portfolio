@@ -62,6 +62,15 @@
             "class": "delta_hacks",
             "href": "https://devpost.com/software/mindsync-qny03a?ref_content=user-portfolio&ref_feature=in_progress",
             "icons": ["FaPython", "FaReact", "IoLogoJavascript", "FaHtml5", "FaCss3Alt", "FaNodeJs", "IoLogoGithub", "SiGit"]
+        }, 
+        {
+            "id": "4",
+            "src": "/img/verifailogo.png",
+            "title": "VerifAI",
+            "desc": "With the rise of powerful ideo creation model like Google V0, we are dangerously close to an online misinformation epidemic. Stay informed with VerifAI and protect your sanity. <br><br> Technologies used: Google Gemini API, NewsAPI, Python, React, Figma, NodeJS, Express, TypeScript, HTML, CSS",
+            "class": "verif_ai",
+            "href": "https://devpost.com/software/verifai-prsv3e",
+            "icons": ["FaPython", "RiGeminiFill", "FaReact", "IoLogoJavascript", "FaHtml5", "FaCss3Alt", "FaNodeJs", "IoLogoGithub", "SiGit"]
         }
     ]
 }

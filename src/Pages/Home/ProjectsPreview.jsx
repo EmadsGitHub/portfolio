@@ -24,6 +24,7 @@ import { SiOpencv } from "react-icons/si";
 import { IoLogoNpm } from "react-icons/io5";
 import { IoLogoGithub } from "react-icons/io5";
 import { SiTypescript } from "react-icons/si";
+import { RiGeminiFill } from "react-icons/ri";
 
 
 const iconMapping = {
@@ -50,6 +51,7 @@ const iconMapping = {
     SiSqlite:SiSqlite,
     SiGit:SiGit,
     SiPostman:SiPostman,
+    RiGeminiFill: RiGeminiFill
 
 };
 export default function ProjectsPreview(){

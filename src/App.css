@@ -895,20 +895,20 @@ button:hover {
 
 .projects_container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 4vw;
-    margin-left: 3vw;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2vw;
+    margin-left: 2vw;
     padding-top: 8vh;
-    padding-inline: 8vw;
+    padding-inline: 4vw;
     height: auto;
 }
 
 /* Modified project containers */
-.utra, .automated_lights, .delta_hacks {
+.utra, .automated_lights, .delta_hacks, .verif_ai {
     border: 2px solid #ffd700;
     box-shadow: 16px 16px 16px rgba(231, 229, 93, 0.3);
     text-align: center;
-    width: 20vw;
+    width: 18vw;
     display: flex;
     flex-direction: column;
     align-items: center; /* Centers content horizontally */
@@ -924,7 +924,7 @@ button:hover {
 
 }
 
-.utra img, .automated_lights img, .delta_hacks img {
+.utra img, .automated_lights img, .delta_hacks img, .verif_ai img {
     width: 100%;
     height: 30vh;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
@@ -933,7 +933,8 @@ button:hover {
 
 .utra img:hover, 
 .automated_lights img:hover, 
-.delta_hacks img:hover {
+.delta_hacks img:hover,
+.verif_ai img:hover {
     transform: scale(1.1);
 }
 
@@ -955,8 +956,8 @@ button:hover {
 
 .project_desc {
     color: beige;
-    font-size: 2vh;
-    padding: 1vh;
+    font-size: 1.8vh;
+    padding: 0.8vh;
 }
 
 .project_title {
@@ -967,8 +968,8 @@ button:hover {
 .projects_icons {
     display: flex;
     justify-content: space-evenly;
-    padding: 1vh 2vw; /* Reduced vertical padding */
-    font-size: 4vh; /* Slightly smaller icons */
+    padding: 1vh 1vw; /* Reduced horizontal padding */
+    font-size: 3.5vh; /* Slightly smaller icons */
     color: floralwhite;
     flex-wrap: wrap;
     max-height: 10vh; /* Limit icons section height */
@@ -1014,12 +1015,12 @@ button:hover {
     .projects_container {
         margin-left: 0vw;
         grid-template-columns: 1fr 1fr; /* 2 columns */
-        grid-template-rows: auto auto auto; /* 3 rows explicitly */
+        grid-template-rows: auto auto; /* 2 rows explicitly */
         gap: 4vw;
 
     }
 
-    .utra, .automated_lights, .delta_hacks {
+    .utra, .automated_lights, .delta_hacks, .verif_ai {
         width: 40vw;
     }
 
@@ -1048,22 +1049,15 @@ button:hover {
     .projects_container {
         margin-left: 0vw;
         grid-template-columns: 1fr 1fr; /* 2 columns */
-        grid-template-rows: auto auto auto; /* 3 rows explicitly */
+        grid-template-rows: auto auto; /* 2 rows explicitly */
         gap: 4vw;
     }
 
-    .utra, .automated_lights, .delta_hacks {
+    .utra, .automated_lights, .delta_hacks, .verif_ai {
         width: 40vw;
     }
 
-    /* Modified positioning for the third item */
-    .delta_hacks:nth-child(3) {
-        grid-column: 1 / span 2; /* Span across both columns */
-        justify-self: center; /* Center in the grid space */
-        width: 40vw; /* Keep same width as others */
-    }
-
-    .utra img, .automated_lights img, .delta_hacks img {
+    .utra img, .automated_lights img, .delta_hacks img, .verif_ai img {
         height: 30vh;
     }
 }
@@ -1081,11 +1075,11 @@ button:hover {
         gap: 4vw;
     }
 
-    .utra, .automated_lights, .delta_hacks {
+    .utra, .automated_lights, .delta_hacks, .verif_ai {
         width: 80vw;
     }
 
-    .utra img, .automated_lights img, .delta_hacks img {
+    .utra img, .automated_lights img, .delta_hacks img, .verif_ai img {
         height: 35vh;
     }
 }
@@ -1106,11 +1100,11 @@ button:hover {
         padding-top: 4vh;
     }
 
-    .utra, .automated_lights, .delta_hacks {
+    .utra, .automated_lights, .delta_hacks, .verif_ai {
         width: 80vw;
     }
 
-    .utra img, .automated_lights img, .delta_hacks img {
+    .utra img, .automated_lights img, .delta_hacks img, .verif_ai img {
         height: 35vh;
     }
 }
