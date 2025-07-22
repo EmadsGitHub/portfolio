@@ -71,6 +71,15 @@
             "class": "verif_ai",
             "href": "https://devpost.com/software/verifai-prsv3e",
             "icons": ["FaPython", "RiGeminiFill", "FaReact", "IoLogoJavascript", "FaHtml5", "FaCss3Alt", "FaNodeJs", "IoLogoGithub", "SiGit"]
+        },
+        {
+            "id": "5",
+            "src": "/img/hackthe6ixrobot.png",
+            "title": "SAGE-Rover",
+            "desc": "SAGE-Rover is a rover that uses AI to identify injured civilians and provide them aid after a natural disaster. <br><br> Technologies used: Python, React, Figma, NodeJS, Express, TypeScript, HTML, CSS",
+            "class": "sage_robot",
+            "href": "https://devpost.com/software/sage-search-and-general-emergency-bot?ref_content=my-projects-tab&ref_feature=my_projects",
+            "icons": ["FaPython", "SiCplusplus", "SiC", "SiRaspberrypi", "RiGeminiFill", "FaReact", "IoLogoJavascript", "FaHtml5", "FaCss3Alt", "FaFlask", "IoLogoGithub", "SiGit"]
         }
     ]
 }

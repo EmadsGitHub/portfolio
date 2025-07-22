@@ -51,7 +51,8 @@ const iconMapping = {
     SiSqlite:SiSqlite,
     SiGit:SiGit,
     SiPostman:SiPostman,
-    RiGeminiFill: RiGeminiFill
+    RiGeminiFill: RiGeminiFill,
+
 
 };
 export default function ProjectsPreview(){
