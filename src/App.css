@@ -1155,8 +1155,7 @@ button:hover {
         /* Use padding instead of margin for more reliable spacing */
         padding-bottom: 50vh;
         position: relative; /* For positioning context */
-        /* Temporary background for debugging */
-        background-color: rgba(0, 119, 181, 0.3);
+
     }
     .projects_container {
         display: flex;
@@ -1168,8 +1167,7 @@ button:hover {
         margin: 0 auto;
         /* Use padding instead of margin for more reliable spacing */
         padding-bottom: 50vh;
-        /* Temporary background for debugging */
-        background-color: rgba(0, 119, 181, 0.5);
+
     }
     .text_container {
         padding-top: 4vh;
