@@ -1035,9 +1035,9 @@ button:hover {
 
 }
 
-@media (min-width: 1025px) and (max-width: 1200px) {
+@media (min-width: 1025px) and (max-width: 1300px) {
     .projects_preview {
-        height: 250vh;
+        min-height: 250vh;
     }
     .projects_container {
         width: 90%;
@@ -1080,11 +1080,14 @@ button:hover {
 /* Media query for devices with width between 769px and 1024px */
 @media (min-width: 769px) and (max-width: 1024px) {
     .projects_preview {
-        height: 250vh;
+        min-height: 280vh;
+        padding-bottom: 30vh;
+        position: relative;
     }
     .projects_container {
         width: 90%;
         margin: 0 auto;
+        padding-bottom: 30vh; /* Use padding instead of margin */
         grid-template-columns: 1fr 1fr; /* 2 columns */
         grid-template-rows: auto auto auto; /* 3 rows explicitly */
         gap: 4vw;
@@ -1118,16 +1121,19 @@ button:hover {
 /* Media query for devices with width between 481px and 768px */
 @media (min-width: 481px) and (max-width: 768px) {
     .projects_preview {
-        height: 300vh;
+        min-height: 350vh;
+        padding-bottom: 0vh;
+        position: relative; /* For positioning context */
     }
     .projects_container {
         display: flex;
         flex-direction: column;
         align-items: center; /* Center the column horizontally */
         justify-content: center; /* Center the column vertically */
-        gap: 4vw;
+        gap: 5vw;
         width: 90%;
         margin: 0 auto;
+        padding-bottom: 40vh; /* Use padding instead of margin */
     }
 
     .utra, .automated_lights, .delta_hacks, .verif_ai, .sage_robot {
@@ -1144,16 +1150,26 @@ button:hover {
 /* Media query for devices with width less than 480px */
 @media (max-width: 480px) {
      .projects_preview {
-        height: 300vh;
+        /* Remove fixed height to allow content to determine height */
+        min-height: 380vh;
+        /* Use padding instead of margin for more reliable spacing */
+        padding-bottom: 50vh;
+        position: relative; /* For positioning context */
+        /* Temporary background for debugging */
+        background-color: rgba(0, 119, 181, 0.3);
     }
     .projects_container {
         display: flex;
         flex-direction: column;
         align-items: center; /* Center the column horizontally */
         justify-content: center; /* Center the column vertically */
-        gap: 4vw;
+        gap: 6vw;
         width: 90%;
         margin: 0 auto;
+        /* Use padding instead of margin for more reliable spacing */
+        padding-bottom: 50vh;
+        /* Temporary background for debugging */
+        background-color: rgba(0, 119, 181, 0.5);
     }
     .text_container {
         padding-top: 4vh;
@@ -1179,6 +1195,10 @@ button:hover {
     margin: 0 auto;
     background-color: #1a1a2e;
     margin-top: 20vh; /* Base margin for spacing from previous section */
+    position: relative; /* For z-index to work */
+    
+    /* Add a visual separator */
+    border-top: 3px solid #ffd700;
 }
 
 .contact-header {
@@ -1326,6 +1346,9 @@ button:hover {
 
     .contact-page {
         padding: 2vh 4vw;
+        margin-top: 0; /* Remove margin since we're using padding on projects */
+        position: relative;
+        z-index: 2;
     }
 
     .LinkedIn, .Phone, .Email {
@@ -1350,6 +1373,9 @@ button:hover {
 
     .contact-page {
         padding: 2vh 4vw;
+        margin-top: 0; /* Remove margin since we're using padding on projects */
+        position: relative; /* Ensure it's in a new stacking context */
+        z-index: 2; /* Place above projects section */
     }
 
     .LinkedIn, .Phone, .Email {
@@ -1374,6 +1400,9 @@ button:hover {
 
     .contact-page {
         padding: 2vh 4vw;
+        margin-top: 0; /* Remove margin since we're using padding on projects */
+        position: relative; /* Ensure it's in a new stacking context */
+        z-index: 2; /* Place above projects section */
     }
 
     .LinkedIn, .Phone, .Email {
