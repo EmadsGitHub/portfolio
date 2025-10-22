@@ -10,6 +10,22 @@ import { Helmet } from 'react-helmet';
 
 
 function App() {
+  const [screenSize, setScreenSize] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight
+  });
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenSize({
+        width: window.innerWidth,
+        height: window.innerHeight
+      });
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <div className="App">
@@ -41,8 +57,13 @@ function App() {
             alignItems: 'center'
           }}
         >
-
-
+          <div>{screenSize.width} x {screenSize.height}</div>
+          <div>
+            {screenSize.width <= 480 ? 'Mobile' : 
+             screenSize.width <= 768 ? 'Tablet' : 
+             screenSize.width <= 1024 ? 'Desktop S' : 
+             screenSize.width <= 1200 ? 'Desktop M' : 'Desktop L'}
+          </div>
         </div>
       
       <Router>

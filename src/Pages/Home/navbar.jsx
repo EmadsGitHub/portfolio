@@ -5,42 +5,71 @@ function Navbar(){
     
     return (
     <nav className = "navbar">
-        <div>
-            <img src = "./img/logo.png" alt="ER" width = "125" height = "75"/>
+        {/* Website Logo/Icon */}
+        <div className="navbar_logo">
+            <img src = "./img/logo.png" alt="ER" className="navbar_logo_img"/>
         </div>
-        <a className = "nav_toggle" >
-            <span className="nav_hamburger_line"></span>
-            <span className="nav_hamburger_line"></span>
-            <span className="nav_hamburger_line"></span>
-        </a>
-        <div className = "navbar--items">
-            <ul>{/*Spy: Monitors where you are based on scrolling. Smooth: Smoothly scrolls to area instead of jumping there. Offset: Difference of viewpot between 2 targets.
-                Duration: How long the scroll is.*/} 
-                <li> 
-                    <Link activeClass = "navbar_active_content" spy = {true} smooth = {true} offset = {-70} duration = {3000} to = "heroSection" className = "navbar_content">
-                        Home
-                    </Link>
-                    
-                </li>
-                <li> 
-                    <Link activeClass = "navbar_active_content" spy = {true} smooth = {true} offset = {-70} duration = {1000} to = "myProjects" className = "navbar_content">
-                        Projects
-                    </Link>
-                    
-                </li>
-                <li> 
-                    <Link activeClass = "navbar_active_content" spy = {true} smooth = {true} offset = {-70} duration = {1000} to = "aboutMe" className = "navbar_content">
-                        About Me
-                    </Link>
-                    
-                </li>
-                <li> 
-                    <Link activeClass = "navbar_active_content" spy = {true} smooth = {true} offset = {-70} duration = {1000} to = "contactPage" className = "navbar_content">
-                        Contact
-                    </Link>
-                    
-                </li>
-            </ul>
+        
+        {/* Navigation Buttons */}
+        <div className = "navbar_buttons">
+            <Link 
+                activeClass = "navbar_button_active" 
+                spy = {true} 
+                smooth = {true} 
+                offset = {-70} 
+                duration = {3000} 
+                to = "heroSection" 
+                className = "navbar_button"
+            >
+                Home
+            </Link>
+            
+            <Link 
+                activeClass = "navbar_button_active" 
+                spy = {true} 
+                smooth = {true} 
+                offset = {-70} 
+                duration = {1000} 
+                to = "myProjects" 
+                className = "navbar_button"
+            >
+                Projects
+            </Link>
+            
+            <Link 
+                activeClass = "navbar_button_active" 
+                spy = {true} 
+                smooth = {true} 
+                offset = {-70} 
+                duration = {1000} 
+                to = "aboutMe" 
+                className = "navbar_button"
+            >
+                About Me
+            </Link>
+
+            <Link 
+                activeClass = "navbar_button_active" 
+                spy = {true} 
+                smooth = {true} 
+                offset = {-70} 
+                duration = {1000} 
+                to = "experience" 
+                className = "navbar_button"
+            >
+                Experience
+            </Link>
+            <Link 
+                activeClass = "navbar_button_active" 
+                spy = {true} 
+                smooth = {true} 
+                offset = {-70} 
+                duration = {1000} 
+                to = "contactPage" 
+                className = "navbar_button"
+            >
+                Contact
+            </Link>
         </div>
     </nav>
     );

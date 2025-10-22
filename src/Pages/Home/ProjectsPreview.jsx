@@ -73,7 +73,7 @@ export default function ProjectsPreview(){
                 <div className = "github_button">
 
                     <button id="gitHub" onClick={openGitHub}>Check out my GitHub!<IconPage /></button>
-                    <button id="gitHub" onClick={openCADWork}>Check out my CAD work!<IconPage /></button>
+                    
                     
                 </div>    
             </div>

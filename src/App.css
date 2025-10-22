@@ -1,7 +1,15 @@
+/* Import modern fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
 body {
     /* Remove the existing gradient */
     background: #0a0f25; /* Dark blue base */
     position: relative;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+html {
+    overflow-x: hidden; /* Hide horizontal scrollbar on html element too */
 }
 
 /* Create the star effect */
@@ -57,6 +65,8 @@ body::after {
 .heroSec {
     color: #fff;
     height: 250vh;
+    overflow-x: hidden; /* Ensure hero section doesn't cause horizontal scroll */
+    position: relative;
 }
 
 .parallax-container {
@@ -108,11 +118,243 @@ body::after {
     font-size: 3vh;
     line-height: 2.5vh;
     margin-bottom: 2%;
+    font-family: 'Inter', 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 400;
 }
 
 .button_primary {
     display: flex;
     justify-content: center;
+}
+
+/* Social Rocket Containers */
+.left_rockets_container, .right_rockets_container {
+    position: absolute;
+    top: 20vh;
+    display: flex;
+    flex-direction: column;
+    gap: 4vh;
+    z-index: 1000;
+}
+
+.left_rockets_container {
+    left: 2vw;
+    /* Initial position off-screen for animation */
+    transform: translate(-150vw, 100vh);
+    opacity: 0;
+}
+
+.right_rockets_container {
+    right: 2vw;
+    /* Initial position off-screen for animation */
+    transform: translate(150vw, 100vh);
+    opacity: 0;
+}
+
+/* Animation classes for when rockets should fly in */
+.left_rockets_container.rockets_visible {
+    animation: flyInFromBottomLeft 3s ease-out 0.2s forwards;
+}
+
+.right_rockets_container.rockets_visible {
+    animation: flyInFromBottomRight 3s ease-out 0.2s forwards;
+}
+
+/* Keyframes for diagonal flying animations */
+@keyframes flyInFromBottomLeft {
+    0% {
+        transform: translate(-150vw, 100vh);
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.3;
+    }
+    60% {
+        transform: translate(-20vw, 10vh);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes flyInFromBottomRight {
+    0% {
+        transform: translate(150vw, 100vh);
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.3;
+    }
+    60% {
+        transform: translate(20vw, 10vh);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+/* Social Rocket Links */
+.social_rocket_link {
+    display: block;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social_rocket_link:hover {
+    transform: scale(1.1);
+}
+
+/* Hover effects for diagonal positioned rockets */
+.rockets_visible .linkedin_link:hover, .rockets_visible .twitter_link:hover {
+    transform: translateX(3vw) scale(1.1);
+}
+
+.rockets_visible .email_link:hover, .rockets_visible .twitter_link:hover {
+    transform: translateX(-3vw) scale(1.1);
+}
+
+/* Social Rocket Images */
+.social_rocket {
+    width: 12vw;
+    height: auto;
+    max-height: 35vh;
+    object-fit: contain;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3));
+}
+
+/* Diagonal Formation - Position LinkedIn and Email rockets more inward */
+.rockets_visible .linkedin_link {
+    transform: translateX(3vw);
+}
+
+.rockets_visible .email_link {
+    transform: translateX(-3vw);
+}
+
+.social_rocket:hover {
+    filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.6));
+}
+
+/* Hide original social icons sidebar */
+.social_icons_sidebar {
+    display: none;
+}
+
+.social_icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4vw;
+    height: 4vw;
+    background: linear-gradient(120deg, rgba(106, 17, 203, 0.8), rgba(37, 117, 252, 0.8));
+    border: 2px solid #ffd700;
+    border-radius: 50%;
+    color: #ffffff;
+    font-size: 2vh;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.social_icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+    color: #ffd700;
+}
+
+/* Contact Text Section */
+.contact_text_section {
+    display: flex;
+    justify-content: center;
+    margin-top: 3vh;
+}
+
+.contact_link {
+    text-decoration: none;
+}
+
+.contact_me_text {
+    font-size: 3vh;
+    font-weight: 600;
+    color: #ffd700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+    font-family: 'Inter', 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    padding: 2vh 3vw;
+    border: 2px solid #ffd700;
+    border-radius: 25px;
+    background: rgba(255, 215, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.contact_me_text:hover {
+    color: #ffffff;
+    text-shadow: 
+        0 0 15px rgba(255, 215, 0, 0.8),
+        0 0 25px rgba(255, 215, 0, 0.6);
+    transform: scale(1.05);
+}
+
+/* Galaxy-themed title styles matching the provided image */
+.galaxy_message_top, .galaxy_message_bottom {
+    font-size: 2.5vh;
+    font-weight: 400;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    margin: 1vh 0;
+    text-align: center;
+    opacity: 0.9;
+    font-family: 'Inter', 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.galaxy_title {
+    font-size: 6vh;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin: 2vh 0;
+    text-align: center;
+    
+    /* Outlined text effect like in the image */
+    color: transparent;
+    -webkit-text-stroke: 2px #ffffff;
+    
+    /* Add a subtle glow effect */
+    text-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.5),
+        0 0 20px rgba(255, 255, 255, 0.3),
+        0 0 30px rgba(255, 255, 255, 0.1);
+    
+    /* Fallback for browsers that don't support text-stroke */
+    background: linear-gradient(45deg, #ffffff, #cccccc);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.hero_name_title {
+    font-size: 8vh;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 3vh 0 2vh 0;
+    text-align: center;
+    color: cyan;
+    font-family: 'Inter', 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    
+    /* Add a subtle glow effect */
+    text-shadow: 
+        0 0 15px rgba(3D90D7, 0.6),
+        0 0 25px rgba(3D90D7, 0.4),
+        0 0 35px rgba(3D90D7, 0.2);
 }
 
 
@@ -135,25 +377,31 @@ body::after {
 
 /* Media query for devices with width between 1025px and 1200px */
 @media (min-width: 1025px) and (max-width: 1200px) {
-    /* Hero section */
-    .img img {
-        top: 2.5%;
+    /* Hide moon/robot image and rocket ships for simpler design */
+    .moon-container {
+        display: none;
+    }
+    
+    .left_rockets_container,
+    .right_rockets_container {
+        display: none;
+    }
+    
+    /* Adjust hero section for simplified layout */
+    .heroSec {
+        height: 100vh;
     }
     
     .hero_section_content {
-        margin-top: 80vh;
+        margin-top: 30vh;
         opacity: 1;
-        transform: translateY(60vh);
-        transition: transform 3s ease-out;
+        transform: translateY(0);
+        transition: none;
     }
     
     .hero_section_content.visible {
-        margin-top: 80vh;
-        transform: translateY(-60vh);
-    }
-    
-    .heroSec {
-        height: 250vh;
+        margin-top: 30vh;
+        transform: translateY(0);
     }
 
     /* Text scaling */
@@ -175,29 +423,88 @@ body::after {
         line-height: 1.8vh;
     }
     
+    /* Galaxy title responsive styles for 1025px-1200px */
+    .galaxy_message_top, .galaxy_message_bottom {
+        font-size: 2vh;
+        letter-spacing: 0.25em;
+    }
+    
+    .galaxy_title {
+        font-size: 5vh;
+        letter-spacing: 0.15em;
+    }
+    
+    .hero_name_title {
+        font-size: 6.5vh;
+    }
+    
+    /* Social icons responsive for 1025px-1200px */
+    .social_icon {
+        width: 5vw;
+        height: 5vw;
+        font-size: 2.2vh;
+    }
+    
+    .contact_me_text {
+        font-size: 2.8vh;
+    }
+    
+    /* Social rockets responsive for 1025px-1200px */
+    .social_rocket {
+        width: 14vw;
+        max-height: 32vh;
+    }
+    
+    /* Diagonal formation for 1025px-1200px */
+    .rockets_visible .linkedin_link {
+        transform: translateX(2.5vw);
+    }
+    
+    .rockets_visible .email_link {
+        transform: translateX(-2.5vw);
+    }
+    
+    .rockets_visible .linkedin_link:hover {
+        transform: translateX(2.5vw) scale(1.1);
+    }
+    
+    .rockets_visible .email_link:hover {
+        transform: translateX(-2.5vw) scale(1.1);
+    }
+    
+    .left_rockets_container, .right_rockets_container {
+        gap: 3.5vh;
+    }
+    
 }
 
 /* Media query for devices with width between 769px and 1024px */
 @media (min-width: 769px) and (max-width: 1024px) {
-    /* Hero section */
-    .img img {
-        top: 3.25%;
+    /* Hide moon/robot image and rocket ships for simpler design */
+    .moon-container {
+        display: none;
+    }
+    
+    .left_rockets_container,
+    .right_rockets_container {
+        display: none;
+    }
+    
+    /* Adjust hero section for simplified layout */
+    .heroSec {
+        height: 100vh;
     }
     
     .hero_section_content {
-        margin-top: 40vh;
+        margin-top: 25vh;
         opacity: 1;
-        transform: translateY(30vh);
-        transition: transform 3s ease-out;
+        transform: translateY(0);
+        transition: none;
     }
     
     .hero_section_content.visible {
-        margin-top: 40vh;
-        transform: translateY(-30vh);
-    }
-    
-    .heroSec {
-        height: 200vh;
+        margin-top: 25vh;
+        transform: translateY(0);
     }
 
     /* Text scaling */
@@ -219,29 +526,88 @@ body::after {
         line-height: 1.6vh;
     }
     
+    /* Galaxy title responsive styles for 769px-1024px */
+    .galaxy_message_top, .galaxy_message_bottom {
+        font-size: 1.8vh;
+        letter-spacing: 0.2em;
+    }
+    
+    .galaxy_title {
+        font-size: 4.5vh;
+        letter-spacing: 0.1em;
+    }
+    
+    .hero_name_title {
+        font-size: 6vh;
+    }
+    
+    /* Social icons responsive for 769px-1024px */
+    .social_icon {
+        width: 6vw;
+        height: 6vw;
+        font-size: 2.5vh;
+    }
+    
+    .contact_me_text {
+        font-size: 2.5vh;
+    }
+    
+    /* Social rockets responsive for 769px-1024px */
+    .social_rocket {
+        width: 16vw;
+        max-height: 28vh;
+    }
+    
+    /* Diagonal formation for 769px-1024px */
+    .rockets_visible .linkedin_link {
+        transform: translateX(2vw);
+    }
+    
+    .rockets_visible .email_link {
+        transform: translateX(-2vw);
+    }
+    
+    .rockets_visible .linkedin_link:hover {
+        transform: translateX(2vw) scale(1.1);
+    }
+    
+    .rockets_visible .email_link:hover {
+        transform: translateX(-2vw) scale(1.1);
+    }
+    
+    .left_rockets_container, .right_rockets_container {
+        gap: 3vh;
+    }
+    
 }
 
 /* Media query for devices with width between 481px and 768px */
 @media (min-width: 481px) and (max-width: 768px) {
-    /* Hero section */
-    .img img {
-        top: 2.5%;
+    /* Hide moon/robot image and rocket ships for simpler design */
+    .moon-container {
+        display: none;
+    }
+    
+    .left_rockets_container,
+    .right_rockets_container {
+        display: none;
+    }
+    
+    /* Adjust hero section for simplified layout */
+    .heroSec {
+        height: 100vh;
     }
     
     .hero_section_content {
         margin-top: 20vh;
         opacity: 1;
-        transform: translateY(10vh);
-        transition: transform 3s ease-out;
+        transform: translateY(0);
+        transition: none;
     }
     
     .hero_section_content.visible {
         margin-top: 20vh;
-        transform: translateY(-10vh);
-    }
-    
-    .heroSec {
-        height: 125vh;
+        transform: translateY(0);
     }
 
     /* Text scaling */
@@ -263,29 +629,88 @@ body::after {
         line-height: 1.4vh;
     }
     
+    /* Galaxy title responsive styles for 481px-768px */
+    .galaxy_message_top, .galaxy_message_bottom {
+        font-size: 1.5vh;
+        letter-spacing: 0.15em;
+    }
+    
+    .galaxy_title {
+        font-size: 3.5vh;
+        letter-spacing: 0.08em;
+    }
+    
+    .hero_name_title {
+        font-size: 5vh;
+    }
+    
+    /* Social icons responsive for 481px-768px */
+    .social_icon {
+        width: 8vw;
+        height: 8vw;
+        font-size: 3vh;
+    }
+    
+    .contact_me_text {
+        font-size: 2.2vh;
+    }
+    
+    /* Social rockets responsive for 481px-768px */
+    .social_rocket {
+        width: 20vw;
+        max-height: 25vh;
+    }
+    
+    /* Diagonal formation for 481px-768px */
+    .rockets_visible .linkedin_link {
+        transform: translateX(1.5vw);
+    }
+    
+    .rockets_visible .email_link {
+        transform: translateX(-1.5vw);
+    }
+    
+    .rockets_visible .linkedin_link:hover {
+        transform: translateX(1.5vw) scale(1.1);
+    }
+    
+    .rockets_visible .email_link:hover {
+        transform: translateX(-1.5vw) scale(1.1);
+    }
+    
+    .left_rockets_container, .right_rockets_container {
+        gap: 2.5vh;
+    }
+    
 }
 
 /* Media query for devices with width less than 480px */
 @media (max-width: 480px) {
-    /* Hero section */
-    .img img {
-        top: 2.75%;
+    /* Hide moon/robot image and rocket ships for simpler design */
+    .moon-container {
+        display: none;
+    }
+    
+    .left_rockets_container,
+    .right_rockets_container {
+        display: none;
+    }
+    
+    /* Adjust hero section for simplified layout */
+    .heroSec {
+        height: 100vh;
     }
     
     .hero_section_content {
-        margin-top: 20vh;
+        margin-top: 15vh;
         opacity: 1;
-        transform: translateY(7vh);
-        transition: transform 3s ease-out;
+        transform: translateY(0);
+        transition: none;
     }
     
     .hero_section_content.visible {
-        margin-top: 20vh;
-        transform: translateY(-7vh);
-    }
-    
-    .heroSec {
-        height: 100vh;
+        margin-top: 15vh;
+        transform: translateY(0);
     }
 
     /* Text scaling */
@@ -307,6 +732,75 @@ body::after {
         line-height: 1.2vh;
     }
     
+    /* Galaxy title responsive styles for mobile (less than 480px) */
+    .galaxy_message_top, .galaxy_message_bottom {
+        font-size: 1.2vh;
+        letter-spacing: 0.1em;
+    }
+    
+    .galaxy_title {
+        font-size: 3vh;
+        letter-spacing: 0.05em;
+        -webkit-text-stroke: 1.5px #ffffff;
+    }
+    
+    .hero_name_title {
+        font-size: 4vh;
+    }
+    
+    /* Social icons responsive for mobile (less than 480px) */
+    .social_icon {
+        width: 10vw;
+        height: 10vw;
+        font-size: 3.5vh;
+        left: 1vw;
+    }
+    
+    .social_icons_sidebar {
+        left: 1vw;
+        gap: 1.5vh;
+    }
+    
+    .contact_me_text {
+        font-size: 2vh;
+        letter-spacing: 0.1em;
+    }
+    
+    /* Social rockets responsive for mobile (less than 480px) */
+    .left_rockets_container {
+        left: 1vw;
+    }
+    
+    .right_rockets_container {
+        right: 1vw;
+    }
+    
+    .social_rocket {
+        width: 22vw;
+        max-height: 20vh;
+    }
+    
+    /* Diagonal formation for mobile (less than 480px) */
+    .rockets_visible .linkedin_link {
+        transform: translateX(1vw);
+    }
+    
+    .rockets_visible .email_link {
+        transform: translateX(-1vw);
+    }
+    
+    .rockets_visible .linkedin_link:hover {
+        transform: translateX(1vw) scale(1.1);
+    }
+    
+    .rockets_visible .email_link:hover {
+        transform: translateX(-1vw) scale(1.1);
+    }
+    
+    .left_rockets_container, .right_rockets_container {
+        gap: 2vh;
+    }
+    
 }
 
 button {
@@ -316,8 +810,9 @@ button {
     background-color: #3D90D7;
     width: 20vw;
     height: 6.5vh;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Inter', 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
     font-size: 2.5vh;
+    font-weight: 500;
     color: wheat;
 }
 
@@ -369,132 +864,203 @@ button:hover {
     left: 0;
     width: 100%;
     z-index: 1000;
-    background: linear-gradient(120deg, rgba(106, 17, 203, 0.8), rgba(37, 117, 252, 0.8));
-    background-color: whitesmoke;
+    background: transparent;
     display: flex;
     justify-content: center;
-    padding: 0 2vw
+    align-items: center;
+    padding: 2vh 4vw;
 }
 
 
 
-.navbar--items {
-    width: 100%;
-    max-width: 1200px;
-    padding-right: 4vw;
-}
-
-.navbar--items ul {
+/* Navbar Logo Styling */
+.navbar_logo {
+    position: absolute;
+    left: 4vw;
     display: flex;
-    justify-content: space-evenly;
-    background-color: #3D90D7;
-    padding: 1vh;
-    border: 1px solid #ffd700;
-
+    align-items: center;
 }
 
-.navbar--items li {
+.navbar_logo_img {
+    width: 8vw;
+    height: auto;
+    max-width: 120px;
+    max-height: 60px;
+    object-fit: contain;
+}
+
+/* Navbar Buttons Container */
+.navbar_buttons {
     display: flex;
-    padding-inline: 2vw;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    gap: 2vw;
+    align-items: center;
+}
+
+/* Individual Navbar Buttons */
+.navbar_button {
+    padding: 1.5vh 2.5vw;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid #ffd700;
+    border-radius: 25px;
+    color: #ffffff;
+    font-family: 'Inter', 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
     font-size: 2vh;
-    color: bisque;
-    
+    font-weight: 500;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
 }
 
-.navbar--items li:hover {
+.navbar_button:hover {
+    background: rgba(255, 215, 0, 0.2);
+    color: #ffd700;
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+}
 
-    color: blue;
-    
+.navbar_button_active {
+    background: rgba(255, 215, 0, 0.3) !important;
+    color: #ffd700 !important;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.6) !important;
 }
 
 /* Media query for devices with width between 1025px and 1200px */
 @media (min-width: 1025px) and (max-width: 1200px) {
-    .navbar--items ul {
-        padding: 0.8vh;
+    .navbar_logo {
+        left: 3vw;
     }
-
-    .navbar--items li {
-        padding-right: 1.5vw;
+    
+    .navbar_logo_img {
+        width: 10vw;
+        max-width: 100px;
+        max-height: 50px;
+    }
+    
+    .navbar_buttons {
+        gap: 1.5vw;
+    }
+    
+    .navbar_button {
+        padding: 1.2vh 2vw;
         font-size: 1.8vh;
-    }
-    .navbar--items {
-        width: 100%;
-        padding-right: 3vw;
     }
 }
 
 /* Media query for devices with width between 769px and 1024px */
 @media (min-width: 769px) and (max-width: 1024px) {
-    .navbar--items ul {
-        padding: 0.6vh;
+    .navbar {
+        padding: 1.5vh 3vw;
     }
-
-    .navbar--items li {
-        padding-inline: 1vw;
+    
+    .navbar_logo {
+        left: 3vw;
+    }
+    
+    .navbar_logo_img {
+        width: 12vw;
+        max-width: 80px;
+        max-height: 40px;
+    }
+    
+    .navbar_buttons {
+        gap: 1.2vw;
+    }
+    
+    .navbar_button {
+        padding: 1vh 1.5vw;
         font-size: 1.6vh;
-    }
-    .navbar--items {
-        width: 100%;
-        padding-right: 3vw;
     }
 }
 
 /* Media query for devices with width between 481px and 768px */
 @media (min-width: 481px) and (max-width: 768px) {
-    .navbar--items ul {
+    .navbar {
+        padding: 1vh 2vw;
+        flex-direction: column;
+        gap: 1vh;
+        justify-content: center;
+    }
+    
+    .navbar_logo {
+        position: static;
+        left: auto;
+    }
+    
+    .navbar_logo_img {
+        width: 15vw;
+        max-width: 60px;
+        max-height: 35px;
+    }
+    
+    .navbar_buttons {
         display: grid;
-        grid-template-columns: 1fr 1fr; /* 2 columns */
-        grid-template-rows: auto auto; /* 2 rows */
-        justify-items: center; /* Center items horizontally */
-        align-items: center; /* Center items vertically */
-        padding: 0.5vh;
-    }
-
-    .navbar--items li {
-        padding-inline: 0;
-        padding-block: 1vh;
-        font-size: 1.5vh;
-    }
-    .navbar{
-        height: 12%;
-    }
-    .navbar--items {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        gap: 1vh;
         width: 100%;
-        padding-right: 3vw;
-        height: 5%;
+        justify-items: center;
+    }
+    
+    .navbar_button {
+        padding: 0.8vh 3vw;
+        font-size: 1.4vh;
+        width: 100%;
+        max-width: 120px;
+    }
+}
+
+/* Hide navbar for screens smaller than 750px */
+@media (max-width: 750px) {
+    .navbar {
+        display: none;
     }
 }
 
 /* Media query for devices with width less than 480px */
 @media (max-width: 480px) {
-    .navbar--items ul {
+    .navbar {
+        padding: 1vh 2vw;
+        flex-direction: column;
+        gap: 1vh;
+        justify-content: center;
+    }
+    
+    .navbar_logo {
+        position: static;
+        left: auto;
+    }
+    
+    .navbar_logo_img {
+        width: 20vw;
+        max-width: 50px;
+        max-height: 30px;
+    }
+    
+    .navbar_buttons {
         display: grid;
-        grid-template-columns: 1fr 1fr; /* 2 columns */
-        grid-template-rows: auto auto; /* 2 rows */
-        justify-items: center; /* Center items horizontally */
-        align-items: center; /* Center items vertically */
-        padding: 0.5vh;
-    }
-
-    .navbar--items li {
-        padding-block: 0.5vh;
-        font-size: 1.5vh;
-    }
-    .navbar{
-        height: 13%;
-    }
-    .navbar--items {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        gap: 0.8vh;
         width: 100%;
-        padding-right: 3vw;
-        height: 5%;
+        justify-items: center;
+    }
+    
+    .navbar_button {
+        padding: 0.6vh 2vw;
+        font-size: 1.2vh;
+        width: 100%;
+        max-width: 100px;
+        border-radius: 20px;
     }
 }
 
 .hardware_design_icon,
 .robot_icon,
 .camera_icon,
-.mechanical_design_icon {
+.vehicle_systems_icon {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -523,7 +1089,7 @@ button:hover {
     z-index: 1;
 }
 
-.camera_icon img, .mechanical_design_icon img{
+.camera_icon img, .vehicle_systems_icon img{
    margin-top: 4vh
 
 }
@@ -537,8 +1103,8 @@ button:hover {
 .camera_icon img{width: 8vw;
     height: 16vh;}
 
-.mechanical_design_icon img{width: 8vw;
-    height: 16vh;}
+.vehicle_systems_icon img{width: 9vw;
+    height: 18vh;}
 
 .grandSize {
     display: flex;
@@ -559,7 +1125,8 @@ button:hover {
     justify-content: center;
     color: beige;
     text-align: center;
-    
+    font-family: 'Inter', 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 500;
 }
 
 .skillsTitleContainer {
@@ -585,11 +1152,15 @@ button:hover {
     justify-content: center;
     color: #ffd700;
     font-size: 5vh;
+    font-family: 'Inter', 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 600;
 }
 
 .skills_desc {
     color: beige;
     text-align: center;
+    font-family: 'Inter', 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 400;
 }
 
 @media (min-width: 1025px) and (max-width: 1200px) {
@@ -610,9 +1181,9 @@ button:hover {
     }
 
     .camera_icon img,
-    .mechanical_design_icon img {
+    .vehicle_systems_icon img {
         width: 12vw;
-        height: 16vh;
+        height: 18vh;
     }
 }
 
@@ -635,9 +1206,9 @@ button:hover {
     }
 
     .camera_icon img,
-    .mechanical_design_icon img {
-        width: 12vw;
-        height: 12vh;
+    .vehicle_systems_icon img {
+        width: 13vw;
+        height: 14vh;
     }
 }
 
@@ -659,9 +1230,9 @@ button:hover {
     }
 
     .camera_icon img,
-    .mechanical_design_icon img {
-        width: 20vw;
-        height: 20vh;
+    .vehicle_systems_icon img {
+        width: 22vw;
+        height: 22vh;
     }
 }
 
@@ -684,9 +1255,9 @@ button:hover {
     }
 
     .camera_icon img,
-    .mechanical_design_icon img {
-        width: 30vw;
-        height: 20vh;
+    .vehicle_systems_icon img {
+        width: 32vw;
+        height: 22vh;
     }
 }
 
@@ -709,19 +1280,20 @@ button:hover {
     }
 
     .camera_icon img,
-    .mechanical_design_icon img {
-        width: 35vw;
-        height: 20vh;
+    .vehicle_systems_icon img {
+        width: 38vw;
+        height: 22vh;
     }
 }
 
 .aboutMeContainer{
-    height: 100vh;
+    min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr 2fr;
     margin-left: 15vw;;
     column-gap: 0vw;
     align-items: center;
+    padding: 5vh 0;
 }
 
 .aboutme_Pic img{
@@ -756,24 +1328,29 @@ button:hover {
     margin-right: 15vw;
     margin-bottom: 10vh;
     font-size: 2.5vh;
+    font-family: 'Inter', 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 400;
 }
 
 .aboutme_title{
     color: #ffd700;
     font-size: 5vh;
+    font-family: 'Inter', 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 600;
 }
 
 .aboutme_desc{
     color: beige;
+    font-family: 'Inter', 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 400;
 }
 
 @media (min-width: 1025px) and (max-width: 1200px) {
 
     .aboutMeContainer{
-
+        min-height: 110vh;
         margin-left: 10vw;
-    
-
+        padding: 8vh 0;
     }
     .aboutme_Pic img {
         width: 30vw;
@@ -797,6 +1374,8 @@ button:hover {
         margin-left: 0;
         margin-top: 20vh;
         text-align: center;
+        min-height: 120vh;
+        padding: 10vh 0;
     }
 
     .aboutme_Pic img {
@@ -821,6 +1400,8 @@ button:hover {
         grid-template-columns: 1fr; /* Switch to 1 column */
         margin-left: 0;
         text-align: center;
+        min-height: 130vh;
+        padding: 12vh 0;
     }
 
     .aboutme_Pic img {
@@ -845,6 +1426,8 @@ button:hover {
         grid-template-columns: 1fr; /* Switch to 1 column */
         margin-left: 0;
         text-align: center;
+        min-height: 140vh;
+        padding: 15vh 0;
     }
 
     .aboutme_Pic img {
@@ -870,6 +1453,8 @@ button:hover {
         margin-left: 0;
         margin-top: 10vh;
         text-align: center;
+        min-height: 150vh;
+        padding: 18vh 0;
     }
 
     .aboutme_Pic img {
@@ -968,10 +1553,10 @@ button:hover {
 /* Text container modifications */
 .text_container {
     width: 100%; /* Takes full width of parent */
-    padding: 2vh;
+    padding: 3vh 2.5vw;
     display: flex;
     flex-direction: column;
-    gap: 1vh; /* Adds space between text elements */
+    gap: 1.5vh; /* Adds space between text elements */
     
 }
 
@@ -979,17 +1564,23 @@ button:hover {
     color: #ffd700;
     font-size: 4vh;
     text-align: center;
+    font-family: 'Inter', 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 600;
 }
 
 .project_desc {
     color: beige;
     font-size: 1.8vh;
     padding: 0.8vh;
+    font-family: 'Inter', 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 400;
 }
 
 .project_title {
     color: #ffd700;
     font-size: 2.5vh;
+    font-family: 'Inter', 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 500;
 }
 
 .projects_icons {
@@ -1019,7 +1610,8 @@ button:hover {
     color: #3D90D7;
     padding: 1vh;
     padding-top: 4vh;
-    
+    font-family: 'Inter', 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 400;
 }
 
 .github a {
@@ -1037,7 +1629,7 @@ button:hover {
 
 @media (min-width: 1025px) and (max-width: 1300px) {
     .projects_preview {
-        min-height: 250vh;
+        min-height: 280vh;
     }
     .projects_container {
         width: 90%;
@@ -1071,17 +1663,23 @@ button:hover {
         height: 30vh;
     }
 
-    .mechanical_design_icon img {
-        width: 12vw;
-        height: 16vh;
+    .vehicle_systems_icon img {
+        width: 13vw;
+        height: 18vh;
+    }
+    
+    /* Maintain consistent text container padding */
+    .text_container {
+        padding: 3vh 3vw;
+        gap: 1.5vh;
     }
 }
 
 /* Media query for devices with width between 769px and 1024px */
 @media (min-width: 769px) and (max-width: 1024px) {
     .projects_preview {
-        min-height: 280vh;
-        padding-bottom: 30vh;
+        min-height: 320vh;
+        padding-bottom: 35vh;
         position: relative;
     }
     .projects_container {
@@ -1116,13 +1714,19 @@ button:hover {
     .utra img, .automated_lights img, .delta_hacks img, .verif_ai img, .sage_robot img {
         height: 30vh;
     }
+    
+    /* Maintain consistent text container padding */
+    .text_container {
+        padding: 3.5vh 3.5vw;
+        gap: 2vh;
+    }
 }
 
 /* Media query for devices with width between 481px and 768px */
 @media (min-width: 481px) and (max-width: 768px) {
     .projects_preview {
-        min-height: 350vh;
-        padding-bottom: 0vh;
+        min-height: 400vh;
+        padding-bottom: 10vh;
         position: relative; /* For positioning context */
     }
     .projects_container {
@@ -1145,15 +1749,21 @@ button:hover {
     .utra img, .automated_lights img, .delta_hacks img, .verif_ai img, .sage_robot img {
         height: 35vh;
     }
+    
+    /* Maintain consistent text container padding for tablets */
+    .text_container {
+        padding: 4vh 4.5vw;
+        gap: 2.5vh;
+    }
 }
 
 /* Media query for devices with width less than 480px */
 @media (max-width: 480px) {
      .projects_preview {
         /* Remove fixed height to allow content to determine height */
-        min-height: 380vh;
+        min-height: 450vh;
         /* Use padding instead of margin for more reliable spacing */
-        padding-bottom: 50vh;
+        padding-bottom: 60vh;
         position: relative; /* For positioning context */
 
     }
@@ -1170,7 +1780,8 @@ button:hover {
 
     }
     .text_container {
-        padding-top: 4vh;
+        padding: 4vh 4vw;
+        gap: 2.5vh;
     }
 
     .utra, .automated_lights, .delta_hacks, .verif_ai, .sage_robot {
@@ -1188,12 +1799,14 @@ button:hover {
 
 /* Overall section styling */
 .contact-page {
-    padding: 4vh 2vw;
+    padding: 2vh 4vw;
+    padding-bottom: 8vh;
     max-width: 100vw;
     margin: 0 auto;
     background-color: #1a1a2e;
     margin-top: 20vh; /* Base margin for spacing from previous section */
     position: relative; /* For z-index to work */
+    border-radius: 30px;
     
     /* Add a visual separator */
     border-top: 3px solid #ffd700;
@@ -1204,6 +1817,8 @@ button:hover {
     margin-bottom: 3vh;
     font-size: 5vh;
     color: #ffd700; /* Highlighted gold color */
+    font-family: 'Inter', 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 600;
 }
 
 /* Two-column layout container */
@@ -1221,7 +1836,7 @@ button:hover {
     display: flex;
     flex-direction: column;
     gap: 2vh;
-    border-radius: 2vh;
+    border-radius: 20px;
     padding: 4vh 3vw;
     border: 2px solid #ffd700;
     box-shadow: 16px 16px 16px rgba(231, 229, 93, 0.3);
@@ -1229,50 +1844,54 @@ button:hover {
 }
 
 /* Individual contact box styling */
-.LinkedIn, .Phone, .Email {
+.LinkedIn, .Twitter, .Email {
     
     padding: 2vh 1.5vw;
-    border-radius: 0.5vw;
+    border-radius: 20px;
     background: linear-gradient(120deg, rgba(106, 17, 203, 0.8), rgba(37, 117, 252, 0.8));
     box-shadow: 0 0.2vh 0.4vh rgba(0,0,0,0.1);
 
 }
-.LinkedIn:hover, .Phone:hover, .Email:hover {
+.LinkedIn:hover, .Twitter:hover, .Email:hover {
     transform: scale(1.1);
     transition: transform 0.4s ease;
 }
-.LinkedinContent, .PhoneContent, .EmailinContent {
+.LinkedinContent, .TwitterContent, .EmailinContent {
     display: flex;
     align-items: center;
     gap: 1vw;
     margin-top: 0.5vh;
 }
 
-.PhoneHeader, .LinkedinHeader, .EmailHeader{
+.TwitterHeader, .LinkedinHeader, .EmailHeader{
     color: #ffd700;
     font-size: 2.5vh;
+    font-family: 'Inter', 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 500;
 }
 
-.LinkedinContent, .PhoneContent, .EmailinContent  {
+.LinkedinContent, .TwitterContent, .EmailinContent  {
     font-size: 2vh;
     color: white;
+    font-family: 'Inter', 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 400;
 }
 
-.LinkedinContent svg, .PhoneContent svg, .EmailinContent svg {
+.LinkedinContent svg, .TwitterContent svg, .EmailinContent svg {
     font-size: 3vh;
     color: white;
 }
 
-.LinkedinContent a{
+.LinkedinContent a, .TwitterContent a{
     text-decoration: none;
     color: white;
 }
 
-.LinkedinContent a:visited {
+.LinkedinContent a:visited, .TwitterContent a:visited {
     font-size: 2vh;
     color: lightblue;
 }
-.LinkedinContent a:hover {
+.LinkedinContent a:hover, .TwitterContent a:hover {
     font-size: 2vh;
     color: darkblue;
 }
@@ -1283,7 +1902,7 @@ button:hover {
     flex: 1.5;
     padding: 2vh 2vw;
     background: linear-gradient(120deg, rgba(106, 17, 203, 0.8), rgba(37, 117, 252, 0.8));
-    border-radius: 0.5vw;
+    border-radius: 20px;
     border: 2px solid #ffd700;
     box-shadow: 16px 16px 16px rgba(231, 229, 93, 0.3);
 }
@@ -1292,6 +1911,8 @@ button:hover {
     margin-bottom: 1.5vh;
     color: #ffd700;
     font-size: 2.5vh;
+    font-family: 'Inter', 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 500;
 }
 
 .textboxes {
@@ -1304,9 +1925,11 @@ button:hover {
     width: 100%;
     padding: 1vh 0.8vw;
     border: 0.1vh solid #ddd;
-    border-radius: 0.4vw;
+    border-radius: 10px;
     resize: vertical;
     font-size: 1.6vh;
+    font-family: 'Inter', 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 400;
 }
 
 /* Message textarea specific styling */
@@ -1323,10 +1946,12 @@ button:hover {
     background-color: #0077b5;
     color: white;
     border: none;
-    border-radius: 0.4vw;
+    border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s;
     font-size: 1.6vh;
+    font-family: 'Inter', 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 500;
 }
 
 .sendForm button:hover {
@@ -1349,7 +1974,7 @@ button:hover {
         z-index: 2;
     }
 
-    .LinkedIn, .Phone, .Email {
+    .LinkedIn, .Twitter, .Email {
         padding: 3vh 4vw;
     }
 
@@ -1376,7 +2001,7 @@ button:hover {
         z-index: 2; /* Place above projects section */
     }
 
-    .LinkedIn, .Phone, .Email {
+    .LinkedIn, .Twitter, .Email {
         padding: 3vh 4vw;
     }
 
@@ -1403,12 +2028,354 @@ button:hover {
         z-index: 2; /* Place above projects section */
     }
 
-    .LinkedIn, .Phone, .Email {
+    .LinkedIn, .Twitter, .Email {
         padding: 3vh 4vw;
     }
 
     .emailForm {
         padding: 3vh 4vw;
+    }
+}
+
+/* Experience Section Styling */
+.experience_section {
+    padding: 10vh 5vw;
+    background: transparent;
+    color: #fff;
+    min-height: 120vh;
+}
+
+.experience_header {
+    text-align: center;
+    margin-bottom: 8vh;
+}
+
+.experience_title {
+    font-size: 5vh;
+    font-weight: 600;
+    color: #ffd700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 2vh;
+    font-family: 'Inter', 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.experience_subtitle {
+    font-size: 2.5vh;
+    color: #ffffff;
+    opacity: 0.9;
+    font-family: 'Inter', 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 400;
+}
+
+.experience_container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8vh;
+}
+
+/* Experience Item Base Styles */
+.experience_item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6vw;
+    align-items: center;
+    padding: 4vh 0;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.experience_item:last-child {
+    border-bottom: none;
+}
+
+/* Left Layout - Image Left, Text Right */
+.experience_item_left {
+    grid-template-areas: "image content";
+}
+
+.experience_item_left .experience_image_container {
+    grid-area: image;
+}
+
+.experience_item_left .experience_content {
+    grid-area: content;
+}
+
+/* Right Layout - Text Left, Image Right */
+.experience_item_right {
+    grid-template-areas: "content image";
+}
+
+.experience_item_right .experience_content {
+    grid-area: content;
+}
+
+.experience_item_right .experience_image_container {
+    grid-area: image;
+}
+
+/* Image Container */
+.experience_image_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2vh;
+}
+
+.experience_image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 15px;
+    border: 2px solid #ffd700;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.experience_image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+}
+
+/* Content Styling */
+.experience_content {
+    padding: 2vh 0;
+}
+
+.experience_header_info {
+    margin-bottom: 3vh;
+}
+
+.experience_position {
+    font-size: 3vh;
+    font-weight: 600;
+    color: #ffd700;
+    margin-bottom: 1vh;
+    font-family: 'Inter', 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.experience_company {
+    font-size: 2.2vh;
+    font-weight: 500;
+    color: #ffffff;
+    margin-bottom: 0.5vh;
+    font-family: 'Inter', 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.experience_duration {
+    font-size: 1.8vh;
+    color: rgba(255, 255, 255, 0.8);
+    font-style: italic;
+    font-family: 'Inter', 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 400;
+}
+
+.experience_description {
+    margin-bottom: 3vh;
+}
+
+.experience_description p {
+    font-size: 2vh;
+    line-height: 1.6;
+    color: #ffffff;
+    margin-bottom: 2vh;
+    font-family: 'Inter', 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 400;
+}
+
+.experience_achievements {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.experience_achievements li {
+    font-size: 1.8vh;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1vh;
+    padding-left: 2vh;
+    position: relative;
+    font-family: 'Inter', 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 400;
+}
+
+.experience_achievements li::before {
+    content: "▶";
+    color: #ffd700;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Skills Tags */
+.experience_skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1vh;
+}
+
+.skill_tag {
+    background: rgba(255, 215, 0, 0.1);
+    border: 1px solid #ffd700;
+    color: #ffd700;
+    padding: 0.8vh 1.5vh;
+    border-radius: 20px;
+    font-size: 1.6vh;
+    font-weight: 500;
+    font-family: 'Inter', 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    transition: all 0.3s ease;
+}
+
+.skill_tag:hover {
+    background: rgba(255, 215, 0, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3);
+}
+
+/* Responsive Design for Experience Section */
+@media (min-width: 1025px) and (max-width: 1200px) {
+    .experience_section {
+        padding: 8vh 4vw;
+        min-height: 130vh;
+    }
+    
+    .experience_title {
+        font-size: 4.5vh;
+    }
+    
+    .experience_subtitle {
+        font-size: 2.2vh;
+    }
+    
+    .experience_position {
+        font-size: 2.8vh;
+    }
+    
+    .experience_company {
+        font-size: 2vh;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .experience_section {
+        padding: 6vh 3vw;
+        min-height: 140vh;
+    }
+    
+    .experience_item {
+        gap: 4vw;
+    }
+    
+    .experience_title {
+        font-size: 4vh;
+    }
+    
+    .experience_subtitle {
+        font-size: 2vh;
+    }
+    
+    .experience_position {
+        font-size: 2.5vh;
+    }
+    
+    .experience_company {
+        font-size: 1.8vh;
+    }
+    
+    .experience_image {
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .experience_section {
+        padding: 6vh 3vw;
+        min-height: 160vh;
+    }
+    
+    .experience_item {
+        grid-template-columns: 1fr;
+        gap: 4vh;
+        text-align: center;
+        margin-bottom: 6vh;
+    }
+    
+    .experience_item_left,
+    .experience_item_right {
+        grid-template-areas: 
+            "image"
+            "content";
+    }
+    
+    .experience_title {
+        font-size: 3.5vh;
+    }
+    
+    .experience_subtitle {
+        font-size: 1.8vh;
+    }
+    
+    .experience_position {
+        font-size: 2.2vh;
+    }
+    
+    .experience_company {
+        font-size: 1.6vh;
+    }
+    
+    .experience_image {
+        max-width: 200px;
+    }
+    
+    .experience_skills {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .experience_section {
+        padding: 5vh 3vw;
+        min-height: 180vh;
+    }
+    
+    .experience_container {
+        gap: 8vh;
+    }
+    
+    .experience_item {
+        margin-bottom: 8vh;
+    }
+    
+    .experience_title {
+        font-size: 3vh;
+        letter-spacing: 0.1em;
+    }
+    
+    .experience_subtitle {
+        font-size: 1.5vh;
+    }
+    
+    .experience_position {
+        font-size: 2vh;
+    }
+    
+    .experience_company {
+        font-size: 1.4vh;
+    }
+    
+    .experience_description p {
+        font-size: 1.6vh;
+    }
+    
+    .experience_achievements li {
+        font-size: 1.4vh;
+    }
+    
+    .skill_tag {
+        font-size: 1.2vh;
+        padding: 0.6vh 1.2vh;
     }
 }
 

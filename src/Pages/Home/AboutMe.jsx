@@ -1,18 +1,28 @@
-export default function AboutMe(){
+export default function AboutMe() {
     return (
-        <section className = "aboutMeContainer" id = "aboutMe">
-            <div className = "aboutme_Pic">
-                <img src = "/img/emad.png" ></img>
+        <section className="aboutMeContainer" id="aboutMe">
+            <div className="aboutme_Pic">
+                <img src="/img/emad.png" alt="Emad" />
             </div>
-            <div className = "aboutme_text">
-                <div className = "aboutme_title">
+            <div className="aboutme_text">
+                <div className="aboutme_title">
                     <h1>About Me</h1>
                 </div>
-                <div className = "aboutme_desc">
-                    <p>Hello! I'm Emad and I am currently a first year Mechatronics Engineering student at the University of Waterloo, living in the GTA. I have a knack for building things with electronics and coding in my free time, as well as playing sports such as soccer and baseball and gaming. <br /><br /> I have a very diverse skillset in both software and hardware from mechanical and electrical design, to designing robust applications using various tools. <br /><br /> Despite just starting out university, I have experience in embedded systems and CAD design through being a member of UWFE at my university, and I have done plenty of cool projects. Feel free to look around!</p>
+                <div className="aboutme_desc">
+                    <ul>
+                        <li>Hey, I'm Emad!</li>
+                        <li>Current: Second-year Mechatronics Engineering student, University of Waterloo</li>
+                        <li>Location: Waterloo, ON, Canada</li>
+                        <li>Experience:</li>
+                        <ul>
+                            <li>Vehicle Systems Engineer Intern – Geotab (Sept 2025 – Jan 2026)</li>
+                            <li>Firmware & Electrical Engineer – UW Formula Electric (Sep 2024 – Present)</li>
+                        </ul>
+                        <li>University Start Year: 2024</li>
+                        <li>Focus: Embedded development and Vehicle Systems</li>
+                    </ul>
                 </div>
             </div>
-            
         </section>
     );
 }

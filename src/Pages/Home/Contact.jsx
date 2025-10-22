@@ -1,5 +1,5 @@
 import { FaLinkedin } from "react-icons/fa";
-import { FaPhoneSquareAlt } from "react-icons/fa";
+import { FaTwitterSquare } from "react-icons/fa";
 import { MdMarkEmailUnread } from "react-icons/md";
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
@@ -62,13 +62,13 @@ export default function Contact(){
                         </div>
 
                     </div>
-                    <div className = "Phone">
-                        <div className = "PhoneHeader">
-                            <h3>Phone</h3>
+                    <div className = "Twitter">
+                        <div className = "TwitterHeader">
+                            <h3>X/Twitter</h3>
                         </div>
-                        <div className = "PhoneContent">
-                            <FaPhoneSquareAlt />
-                            <p>437-260-3976</p>
+                        <div className = "TwitterContent">
+                            <FaTwitterSquare />
+                            <a href="https://x.com/emadddd_r" target="_blank">Click Here</a>
                         </div>
                     </div>
                     <div className = "Email">

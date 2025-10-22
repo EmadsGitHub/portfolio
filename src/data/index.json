@@ -27,26 +27,16 @@
         },
         {
             "id": "4",
-            "src": "/img/hammerandwrench.png",
-            "title": "Mechanical Design",
-            "desc": "Experience in designing with CAD tools such as AutoCAD and SolidWorks. Expertise in engineering sketches and design processes using industry standards.",
-            "class": "mechanical_design_icon",
-            "icons": ["SiAutocad", "SiTinkercad"]
+            "src": "/img/bluecar.png",
+            "title": "Vehicle Systems",
+            "desc": "Specialized in embedded vehicle subsystems and communication protocols including CAN and UART. Proven experience with automotive diagnostic tools like CANalyzer, vehicle simulation platforms, and IoT device validation, with a track record of improving system reliability and enabling remote testing capabilities.",
+            "class": "vehicle_systems_icon",
+            "icons": ["SiCplusplus", "FaPython"]
         }
     ],
     "portfolio" : [
         {
             "id": "1",
-            "src": "/img/UTRAhacks.png",
-            "title": "Posture Pal",
-            "desc": "Bad form in the gym is the worst. Posture Pal is here to help.<br><br> Technologies used: C++, ESP32, JSON, JS, React Native, CSS, HTML, MongoDB",
-            "class": "utra",
-            "href": "https://devpost.com/software/posturepal",
-            "icons": ["SiCplusplus", "SiArduino", "IoLogoJavascript", "FaReact", "FaHtml5", "FaCss3Alt", "IoLogoGithub", "SiGit"]
-
-        },
-        {
-            "id": "2",
             "src": "/img/trackmythreads.png",
             "title": "TrackMyThreads",
             "desc": "Ever had a hard time keeping track of what clothes need to be washed each week? TrackMyThread solves that.<br><br> Technologies used: Python, Flask, SQLite, React Native, Expo, Figma, NodeJS, TypeScript, ESP32, C++, OpenCV, Roboflow",
@@ -55,16 +45,7 @@
             "icons": ["SiArduino", "SiCplusplus", "FaPython", "SiOpencv", "SiFlask", "SiExpress", "SiSqlite", "SiGit", "SiPostman", "SiFigma", "IoLogoNpm", "IoLogoGithub", "SiTypescript", "FaReact", "FaHtml5", "FaCss3Alt", "FaNodeJs"]
         },
         {
-            "id": "3",
-            "src": "/img/MindSync.png",
-            "title": "MindSync",
-            "desc": "Mental health is arguably the single most important aspect of a person's life. However, some people struggle with therapy due to various issues. MindSync is a product that uses EEG technology to help therapists understand a patient's emotions. <br><br> Technologies used: Python, Cohere API, EEG, JavaScript, React, NodeJS, HTML, CSS.",
-            "class": "delta_hacks",
-            "href": "https://devpost.com/software/mindsync-qny03a?ref_content=user-portfolio&ref_feature=in_progress",
-            "icons": ["FaPython", "FaReact", "IoLogoJavascript", "FaHtml5", "FaCss3Alt", "FaNodeJs", "IoLogoGithub", "SiGit"]
-        }, 
-        {
-            "id": "4",
+            "id": "2",
             "src": "/img/verifailogo.png",
             "title": "VerifAI",
             "desc": "With the rise of powerful ideo creation model like Google Veo, we are dangerously close to an online misinformation epidemic. Stay informed with VerifAI and protect your sanity. <br><br> Technologies used: Google Gemini API, NewsAPI, Python, React, Figma, NodeJS, Express, TypeScript, HTML, CSS",
@@ -73,7 +54,7 @@
             "icons": ["FaPython", "RiGeminiFill", "FaReact", "IoLogoJavascript", "FaHtml5", "FaCss3Alt", "FaNodeJs", "IoLogoGithub", "SiGit"]
         },
         {
-            "id": "5",
+            "id": "3",
             "src": "/img/hackthe6ixrobot.png",
             "title": "SAGE-Rover",
             "desc": "SAGE-Rover is a rover that uses AI to identify injured civilians and provide them aid after a natural disaster. <br><br> Technologies used: Python, React, Figma, NodeJS, Express, TypeScript, HTML, CSS",
