@@ -209,12 +209,20 @@ body::after {
 }
 
 /* Hover effects for diagonal positioned rockets */
-.rockets_visible .linkedin_link:hover, .rockets_visible .twitter_link:hover {
+.rockets_visible .linkedin_link:hover {
     transform: translateX(3vw) scale(1.1);
 }
 
-.rockets_visible .email_link:hover, .rockets_visible .twitter_link:hover {
+.rockets_visible .twitter_link:hover {
+    transform: scale(1.1);
+}
+
+.rockets_visible .email_link:hover {
     transform: translateX(-3vw) scale(1.1);
+}
+
+.rockets_visible .github_link:hover {
+    transform: scale(1.1);
 }
 
 /* Social Rocket Images */
