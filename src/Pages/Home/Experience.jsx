@@ -84,7 +84,7 @@ export default function Experience() {
                     </div>
                     <div className="experience_image_container">
                         <img 
-                            src="./img/uwfe.png" 
+                            src="./img/me_racing.jpeg" 
                             alt="UW Formula Electric Logo" 
                             className="experience_image"
                         />

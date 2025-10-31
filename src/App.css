@@ -1499,45 +1499,49 @@ button:hover {
 
 .projects_container {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-template-rows: auto auto;
+    grid-template-columns: repeat(4, minmax(0, 1fr)); /* 4 columns for large screens */
     gap: 2vw;
     padding-top: 8vh;
-    width: 90%;
-    max-width: 1200px;
+    width: 95%; /* Increased width for larger screens */
+    max-width: 1600px; /* Increased for wider project containers */
     margin: 0 auto;
     height: auto;
+    justify-items: center;
 }
 
-/* Position the fourth and fifth projects in the second row */
-.projects_container > div:nth-child(4),
-.projects_container > div:nth-child(5) {
-    grid-row: 2;
+/* Projects will now flow naturally in the grid without special positioning */
+
+/* Large desktop screens - optimize container width */
+@media (min-width: 1301px) and (max-width: 1599px) {
+    .utra, .automated_lights, .delta_hacks, .verif_ai, .sage_robot, .posture_pal {
+        max-width: 23vw; /* Slightly wider for large desktops */
+    }
+    
+    .projects_container {
+        max-width: 1700px;
+        width: 92%;
+    }
 }
 
-/* Center the two projects in the second row */
-.projects_container > div:nth-child(4) {
-    grid-column: 1 / span 1;
-}
-
-.projects_container > div:nth-child(5) {
-    grid-column: 3 / span 1;
-}
-
-/* Add special container for the second row */
-.projects_container::after {
-    content: "";
-    grid-column: 2 / span 1;
-    grid-row: 2;
+/* Extra large screens - make containers even wider */
+@media (min-width: 1600px) {
+    .utra, .automated_lights, .delta_hacks, .verif_ai, .sage_robot, .posture_pal {
+        max-width: 25vw; /* Even wider for very large screens */
+    }
+    
+    .projects_container {
+        max-width: 1800px; /* Larger container for ultrawide screens */
+        width: 90%;
+    }
 }
 
 /* Modified project containers */
-.utra, .automated_lights, .delta_hacks, .verif_ai, .sage_robot {
+.utra, .automated_lights, .delta_hacks, .verif_ai, .sage_robot, .posture_pal {
     border: 2px solid #ffd700;
     box-shadow: 16px 16px 16px rgba(231, 229, 93, 0.3);
     text-align: center;
     width: 100%; /* Take full width of grid cell */
-    max-width: 24vw;
+    max-width: 22vw; /* Increased for better use of large screens */
     margin: 0 auto; /* Center in grid cell */
     display: flex;
     flex-direction: column;
@@ -1554,7 +1558,7 @@ button:hover {
 
 }
 
-.utra img, .automated_lights img, .delta_hacks img, .verif_ai img, .sage_robot img {
+.utra img, .automated_lights img, .delta_hacks img, .verif_ai img, .sage_robot img, .posture_pal img {
     width: 100%;
     height: 30vh;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
@@ -1565,7 +1569,8 @@ button:hover {
 .automated_lights img:hover, 
 .delta_hacks img:hover,
 .verif_ai img:hover,
-.sage_robot img:hover {
+.sage_robot img:hover,
+.posture_pal img:hover {
     transform: scale(1.1);
 }
 
@@ -1646,41 +1651,29 @@ button:hover {
 
 }
 
-@media (min-width: 1025px) and (max-width: 1300px) {
+@media (min-width: 769px) and (max-width: 1300px) {
     .projects_preview {
-        min-height: 260vh;
+        min-height: 200vh;
         padding-top: 8vh;
         margin-top: 5vh;
     }
     .projects_container {
         width: 90%;
         margin: 0 auto;
-        grid-template-columns: 1fr 1fr; /* 2 columns */
-        grid-template-rows: auto auto auto; /* 3 rows explicitly */
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+        grid-template-rows: repeat(2, auto); /* 2 rows for 4 projects */
         gap: 4vw;
+        justify-items: center;
+        max-width: 800px; /* Appropriate for 2 columns */
     }
 
-    /* Reset the positioning for smaller screens */
-    .projects_container > div:nth-child(4),
-    .projects_container > div:nth-child(5) {
-        grid-row: auto;
-    }
-
-    .projects_container > div:nth-child(4) {
-        grid-column: 1;
-    }
-
-    .projects_container > div:nth-child(5) {
-        grid-column: 2;
-    }
-
-    .utra, .automated_lights, .delta_hacks, .verif_ai, .sage_robot {
+    .utra, .automated_lights, .delta_hacks, .verif_ai, .sage_robot, .posture_pal {
         width: 100%;
         max-width: 40vw;
         margin: 0 auto;
     }
 
-    .utra img, .automated_lights img, .delta_hacks img, .verif_ai img, .sage_robot img {
+    .utra img, .automated_lights img, .delta_hacks img, .verif_ai img, .sage_robot img, .posture_pal img {
         height: 30vh;
     }
 
@@ -1696,57 +1689,9 @@ button:hover {
     }
 }
 
-/* Media query for devices with width between 769px and 1024px */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .projects_preview {
-        min-height: 300vh;
-        padding-top: 6vh;
-        padding-bottom: 15vh;
-        margin-top: 4vh;
-        position: relative;
-    }
-    .projects_container {
-        width: 90%;
-        margin: 0 auto;
-        padding-bottom: 30vh; /* Use padding instead of margin */
-        grid-template-columns: 1fr 1fr; /* 2 columns */
-        grid-template-rows: auto auto auto; /* 3 rows explicitly */
-        gap: 4vw;
-    }
 
-    /* Reset the positioning for smaller screens */
-    .projects_container > div:nth-child(4),
-    .projects_container > div:nth-child(5) {
-        grid-row: auto;
-    }
-
-    .projects_container > div:nth-child(4) {
-        grid-column: 1;
-    }
-
-    .projects_container > div:nth-child(5) {
-        grid-column: 2;
-    }
-
-    .utra, .automated_lights, .delta_hacks, .verif_ai, .sage_robot {
-        width: 100%;
-        max-width: 40vw;
-        margin: 0 auto;
-    }
-
-    .utra img, .automated_lights img, .delta_hacks img, .verif_ai img, .sage_robot img {
-        height: 30vh;
-    }
-    
-    /* Maintain consistent text container padding */
-    .text_container {
-        padding: 3.5vh 3.5vw;
-        gap: 2vh;
-    }
-}
-
-/* Media query for devices with width between 481px and 768px */
-@media (min-width: 481px) and (max-width: 768px) {
+/* Media query for devices with width 768px and below - Single column layout */
+@media (max-width: 768px) {
     .projects_preview {
         min-height: 380vh;
         padding-top: 4vh;
@@ -1765,13 +1710,13 @@ button:hover {
         padding-bottom: 40vh; /* Use padding instead of margin */
     }
 
-    .utra, .automated_lights, .delta_hacks, .verif_ai, .sage_robot {
+    .utra, .automated_lights, .delta_hacks, .verif_ai, .sage_robot, .posture_pal {
         width: 100%;
         max-width: 80vw;
         margin: 0 auto;
     }
 
-    .utra img, .automated_lights img, .delta_hacks img, .verif_ai img, .sage_robot img {
+    .utra img, .automated_lights img, .delta_hacks img, .verif_ai img, .sage_robot img, .posture_pal img {
         height: 35vh;
     }
     
@@ -1782,7 +1727,7 @@ button:hover {
     }
 }
 
-/* Media query for devices with width less than 480px */
+/* Media query for devices with width less than 480px - Mobile optimizations */
 @media (max-width: 480px) {
      .projects_preview {
         /* Remove fixed height to allow content to determine height */
@@ -1811,13 +1756,13 @@ button:hover {
         gap: 2.5vh;
     }
 
-    .utra, .automated_lights, .delta_hacks, .verif_ai, .sage_robot {
+    .utra, .automated_lights, .delta_hacks, .verif_ai, .sage_robot, .posture_pal {
         width: 100%;
         max-width: 80vw;
         margin: 0 auto;
     }
 
-    .utra img, .automated_lights img, .delta_hacks img, .verif_ai img, .sage_robot img {
+    .utra img, .automated_lights img, .delta_hacks img, .verif_ai img, .sage_robot img, .posture_pal img {
         height: 35vh;
     }
 }

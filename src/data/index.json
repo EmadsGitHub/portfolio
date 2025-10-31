@@ -61,6 +61,15 @@
             "class": "sage_robot",
             "href": "https://devpost.com/software/sage-search-and-general-emergency-bot?ref_content=my-projects-tab&ref_feature=my_projects",
             "icons": ["FaPython", "SiCplusplus", "SiC", "SiRaspberrypi", "RiGeminiFill", "FaReact", "IoLogoJavascript", "FaHtml5", "FaCss3Alt", "FaFlask", "IoLogoGithub", "SiGit"]
+        },
+        {
+            "id": "4",
+            "src": "/img/UTRAhacks.png",
+            "title": "PosturePal",
+            "desc": "PosturePal is a robust mobile application that monitors and analyzes a user’s posture during workouts. These insights are then delivered directly to the user via an app.",
+            "class": "posture_pal",
+            "href": "https://devpost.com/software/posturepal",
+            "icons": ["FaPython", "SiCplusplus", "SiC", "SiArduino", "FaReact", "IoLogoJavascript", "FaHtml5", "FaCss3Alt", "IoLogoGithub", "SiGit"]
         }
     ]
 }
