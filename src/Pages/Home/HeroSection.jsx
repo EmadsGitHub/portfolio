@@ -75,7 +75,7 @@ export default function  HeroSection(){
           
                             {/* Name title */}
                             <h2 className = "hero_name_title">
-                                I AM EMAD
+                                HEY, I'M EMAD
                             </h2>
                             
                             <p className = "hero_section_desc">
