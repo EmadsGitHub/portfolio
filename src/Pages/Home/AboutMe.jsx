@@ -2,7 +2,7 @@ export default function AboutMe() {
     return (
         <section className="aboutMeContainer" id="aboutMe">
             <div className="aboutme_Pic">
-                <img src="/img/emad.png" alt="Emad" />
+                <img src="/img/uwfeheadshot.png" alt="Emad" />
             </div>
             <div className="aboutme_text">
                 <div className="aboutme_title">
