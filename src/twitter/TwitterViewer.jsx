@@ -31,7 +31,14 @@ export default function TwitterViewer({ isOpen, onClose, isEmbedded = false }) {
             retweets: 12,
             replies: 8,
             created_at: '2024-12-20T10:30:00.000Z',
-            url: 'https://twitter.com/emadddd_r/status/1'
+            url: 'https://twitter.com/emadddd_r/status/1',
+            media: [
+              {
+                type: 'photo',
+                url: './img/geotab.png',
+                preview_image_url: './img/geotab.png'
+              }
+            ]
           },
           {
             id: '2',
@@ -40,7 +47,14 @@ export default function TwitterViewer({ isOpen, onClose, isEmbedded = false }) {
             retweets: 15,
             replies: 6,
             created_at: '2024-12-18T14:22:00.000Z',
-            url: 'https://twitter.com/emadddd_r/status/2'
+            url: 'https://twitter.com/emadddd_r/status/2',
+            media: [
+              {
+                type: 'photo',
+                url: './img/me_racing.jpeg',
+                preview_image_url: './img/me_racing.jpeg'
+              }
+            ]
           },
           {
             id: '3',
@@ -49,7 +63,14 @@ export default function TwitterViewer({ isOpen, onClose, isEmbedded = false }) {
             retweets: 23,
             replies: 14,
             created_at: '2024-12-15T09:45:00.000Z',
-            url: 'https://twitter.com/emadddd_r/status/3'
+            url: 'https://twitter.com/emadddd_r/status/3',
+            media: [
+              {
+                type: 'photo',
+                url: './img/hackthe6ixrobot.png',
+                preview_image_url: './img/hackthe6ixrobot.png'
+              }
+            ]
           },
           {
             id: '4',
@@ -70,8 +91,9 @@ export default function TwitterViewer({ isOpen, onClose, isEmbedded = false }) {
             url: 'https://twitter.com/emadddd_r/status/5'
           }
         ];
-        const sortedTweets = mockTweets.sort((a, b) => b.likes - a.likes);
-        setTweets(sortedTweets);
+        // Mock tweets are already in chronological order (most recent first)
+        const recentTweets = mockTweets.slice(0, 5);
+        setTweets(recentTweets);
         setCurrentTweetIndex(0);
         return;
       }
@@ -79,11 +101,11 @@ export default function TwitterViewer({ isOpen, onClose, isEmbedded = false }) {
       // Use real Twitter API
       try {
         const api = new TwitterAPI(process.env.REACT_APP_TWITTER_BEARER_TOKEN);
-        const topTweets = await api.getMostLikedTweets(
+        const recentTweets = await api.getMostLikedTweets(
           process.env.REACT_APP_TWITTER_USERNAME || 'emadddd_r', 
-          10
+          5
         );
-        setTweets(topTweets);
+        setTweets(recentTweets);
         setCurrentTweetIndex(0);
       } catch (apiError) {
         console.error('Twitter API Error:', apiError);
@@ -169,6 +191,39 @@ export default function TwitterViewer({ isOpen, onClose, isEmbedded = false }) {
                 
                 <div className="tweet-content">
                   <p className="tweet-text">{currentTweet.text}</p>
+                  
+                  {/* Display tweet media if available */}
+                  {currentTweet.media && currentTweet.media.length > 0 && (
+                    <div className="tweet-media">
+                      {currentTweet.media.map((mediaItem, index) => (
+                        <div key={index} className="media-item">
+                          {mediaItem.type === 'photo' && (
+                            <img 
+                              src={mediaItem.url} 
+                              alt="Tweet media"
+                              className="tweet-image"
+                              onError={(e) => {
+                                // Fallback to preview image if main image fails
+                                if (mediaItem.preview_image_url && e.target.src !== mediaItem.preview_image_url) {
+                                  e.target.src = mediaItem.preview_image_url;
+                                }
+                              }}
+                            />
+                          )}
+                          {mediaItem.type === 'video' && (
+                            <div className="video-placeholder">
+                              <img 
+                                src={mediaItem.preview_image_url} 
+                                alt="Video thumbnail"
+                                className="tweet-video-thumbnail"
+                              />
+                              <div className="video-overlay">▶ Video</div>
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  )}
                   
                   <div className="tweet-stats">
                     <span className="stat">

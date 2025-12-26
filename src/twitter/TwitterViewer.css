@@ -326,3 +326,75 @@
     width: 100%;
   }
 }
+
+/* Tweet Media Styles */
+.tweet-media {
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.media-item {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.tweet-image {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.tweet-image:hover {
+  transform: scale(1.02);
+}
+
+.video-placeholder {
+  position: relative;
+  width: 100%;
+}
+
+.tweet-video-thumbnail {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  pointer-events: none;
+}
+
+/* Embedded viewer media adjustments */
+.twitter-viewer.embedded .tweet-image,
+.twitter-viewer.embedded .tweet-video-thumbnail {
+  max-height: 200px;
+}
+
+/* Mobile media adjustments */
+@media (max-width: 768px) {
+  .tweet-image,
+  .tweet-video-thumbnail {
+    max-height: 200px;
+  }
+  
+  .twitter-viewer.embedded .tweet-image,
+  .twitter-viewer.embedded .tweet-video-thumbnail {
+    max-height: 150px;
+  }
+}

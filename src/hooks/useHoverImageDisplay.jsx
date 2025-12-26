@@ -48,12 +48,6 @@ export default function useHoverImageDisplay() {
     geotab: () => handleHover('geotab', './img/geotabcar.png'),
     uwfe: () => handleHover('uwfe', './img/me_racing.jpeg'),
     
-    // Navbar hovers
-    navHome: () => handleHover('navHome', './img/uwfeheadshot.png'),
-    navAbout: () => handleHover('navAbout', './img/uwfeheadshot.png'),
-    navExperience: () => handleHover('navExperience', './img/geotab.png'),
-    navProjects: () => handleHover('navProjects', './img/trackmythreads.png'),
-    navContact: () => handleHover('navContact', './img/uwfeheadshot.png'),
   };
 
   return {

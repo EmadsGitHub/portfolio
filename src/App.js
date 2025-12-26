@@ -7,6 +7,7 @@ import Starfield from "./Pages/Home/Starfield";
 import { Helmet } from 'react-helmet';
 import useHoverImageDisplay from "./hooks/useHoverImageDisplay";
 import { TwitterViewer } from "./twitter";
+import ScreenDimensions from "./components/ScreenDimensions";
 
 function App() {
   const { currentImage, currentSection, showTwitterViewer, refs, hoverHandlers, handleLeave, showTwitter, hideTwitter } = useHoverImageDisplay();
@@ -48,6 +49,9 @@ function App() {
           )}
         </div>
       </div>
+      
+      {/* Screen dimensions display */}
+      <ScreenDimensions />
     </div>
   );
 }

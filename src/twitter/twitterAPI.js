@@ -46,11 +46,12 @@ class TwitterAPI {
     return data.data || [];
   }
 
-  async getMostLikedTweets(username, maxResults = 10) {
+  async getMostLikedTweets(username, maxResults = 5) {
+    // Note: This now fetches recent tweets (not most liked) excluding replies
     try {
       // Check if we're in development and have a local proxy server
       const isDevelopment = process.env.NODE_ENV === 'development';
-      const proxyUrl = isDevelopment ? 'http://localhost:3001' : '';
+      const proxyUrl = isDevelopment ? 'http://localhost:3002' : '';
       
       if (proxyUrl) {
         // Use local proxy server to avoid CORS
@@ -65,11 +66,10 @@ class TwitterAPI {
       } else {
         // Direct API call (will likely fail due to CORS in browser)
         const userId = await this.getUserId(username);
-        const tweets = await this.getUserTweets(userId, 100);
+        const tweets = await this.getUserTweets(userId, maxResults);
         
-        const sortedTweets = tweets
-          .sort((a, b) => b.public_metrics.like_count - a.public_metrics.like_count)
-          .slice(0, maxResults)
+        // Return recent tweets in chronological order (already sorted by API)
+        const recentTweets = tweets
           .map(tweet => ({
             id: tweet.id,
             text: tweet.text,
@@ -80,7 +80,7 @@ class TwitterAPI {
             url: `https://twitter.com/${username}/status/${tweet.id}`
           }));
 
-        return sortedTweets;
+        return recentTweets;
       }
     } catch (error) {
       console.error('Error fetching tweets:', error);

@@ -102,18 +102,18 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: rgba(0, 0, 0, 0.2);
+  /* Removed border and background for cleaner look */
 }
 
 .image-display img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
+  width: 600px;
+  height: 600px;
+  object-fit: cover;
   border-radius: var(--radius);
   transition: all 0.3s ease;
   filter: drop-shadow(0 0 0 transparent);
+  border: 1px solid var(--border);
+  /* Fixed dimensions that work well for both landscape and portrait */
 }
 
 .image-display img:hover {
@@ -900,16 +900,369 @@ html {
     padding: 1rem 2rem;
   }
 
+  /* Hide ALL images for simplified text-only layout */
   .aboutme_Pic,
   .grandSize,
   .photo_container,
-  .experience_image_container {
-    display: block;
+  .experience_image_container,
+  .skills_icons,
+  .projects_icons,
+  .experience_image_container img,
+  .aboutme_Pic img,
+  .photo_container img,
+  img.project-image,
+  .skill-icon,
+  .icon {
+    display: none !important;
   }
 
-  .aboutme_Pic img {
-    max-width: 300px;
-    margin-bottom: 2rem;
+  /* Ensure hover handlers don't interfere when images are hidden */
+  .experience_item,
+  .automated_lights,
+  .verif_ai,
+  .sage_robot,
+  .posture_pal,
+  .navbar_button {
+    cursor: default;
+  }
+
+  /* Hide Twitter viewer images in simplified layout */
+  .tweet-media,
+  .tweet-image,
+  .tweet-video-thumbnail {
+    display: none !important;
+  }
+
+  /* SUPER MINIMAL TERMINAL LAYOUT FOR ≤1024px */
+  
+  /* Hide all detailed descriptions and complex layouts */
+  .aboutme_desc,
+  .skills_desc,
+  .experience_achievements,
+  .experience_skills,
+  .project_desc,
+  .projects_icons,
+  .tweet-stats,
+  .tweet-actions {
+    display: none !important;
+  }
+
+  /* Show contact content but hide headers */
+  .contact-content {
+    display: block !important;
+  }
+  
+  .quick-contacts {
+    display: block !important;
+  }
+
+  /* Simplify section headers */
+  .hero_name_title {
+    font-size: 1.5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .aboutme_title h1,
+  .experience_title,
+  .skillsHeading,
+  .header_title h1,
+  .contact-header h2 {
+    font-size: 1.2rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  /* Make sure contact section is visible */
+  #contactPage {
+    display: block !important;
+  }
+
+  .aboutme_title h1::before,
+  .experience_title::before,
+  .skillsHeading::before,
+  .header_title h1::before,
+  .contact-header h2::before {
+    display: none !important;
+  }
+
+  /* Minimal spacing */
+  .heroSec,
+  .aboutMeContainer,
+  .skills,
+  .experience_section,
+  .projects_preview,
+  #contactPage {
+    padding: 1rem 0 !important;
+    border-bottom: 1px solid var(--border) !important;
+  }
+
+  /* Simple list style for everything */
+  .experience_container,
+  .projects_container,
+  .skillsContentContainer {
+    display: block !important;
+    gap: 0.5rem !important;
+  }
+
+  .experience_item,
+  .automated_lights,
+  .verif_ai,
+  .sage_robot,
+  .posture_pal,
+  .full_skills {
+    background: none !important;
+    border: none !important;
+    padding: 0.25rem 0 !important;
+    margin: 0 !important;
+  }
+
+  .experience_position,
+  .project_title h2,
+  .skills_title h2 {
+    font-size: 0.9rem !important;
+    margin: 0 !important;
+    color: var(--foreground) !important;
+    font-weight: normal !important;
+  }
+
+  .experience_position::before,
+  .project_title h2::before,
+  .skills_title h2::before {
+    content: "▸ " !important;
+    color: var(--secondary-foreground) !important;
+  }
+
+  /* Show company info and duration in simplified format */
+  .experience_company,
+  .experience_duration {
+    display: block !important;
+    font-size: 0.8rem !important;
+    color: var(--secondary-foreground) !important;
+    margin: 0.1rem 0 !important;
+    font-weight: normal !important;
+  }
+
+  /* Add small icons next to experience items */
+  .experience_item {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 0.75rem !important;
+    padding: 0.5rem 0 !important;
+  }
+
+  .experience_content {
+    flex: 1 !important;
+  }
+
+  /* Small icon styling for experiences */
+  .experience_item::before {
+    content: "";
+    width: 24px;
+    height: 24px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  /* Specific icons for each experience */
+  .experience_item:first-child::before {
+    background-image: url('../public/img/geotab.png');
+  }
+
+  .experience_item:last-child::before {
+    background-image: url('../public/img/UWFElogo.png');
+  }
+
+  /* Minimal contact section */
+  .quick-contacts {
+    gap: 0.25rem !important;
+  }
+
+  .LinkedIn,
+  .Twitter,
+  .Email {
+    background: none !important;
+    border: none !important;
+    padding: 0.25rem 0 !important;
+  }
+
+  .LinkedinHeader h3,
+  .TwitterHeader h3,
+  .EmailHeader h3 {
+    display: none !important;
+  }
+
+  .LinkedinContent,
+  .TwitterContent,
+  .EmailinContent {
+    font-size: 0.9rem !important;
+    gap: 0.5rem !important;
+  }
+
+  /* Simple contact list styling */
+  .LinkedinContent,
+  .TwitterContent,
+  .EmailinContent {
+    display: block !important;
+    font-size: 0.9rem !important;
+    margin: 0.25rem 0 !important;
+    color: var(--foreground) !important;
+  }
+
+  .LinkedinContent::before {
+    content: "▸ linkedin: " !important;
+    color: var(--secondary-foreground) !important;
+  }
+
+  .TwitterContent::before {
+    content: "▸ twitter: " !important;
+    color: var(--secondary-foreground) !important;
+  }
+
+  .EmailinContent::before {
+    content: "▸ email: " !important;
+    color: var(--secondary-foreground) !important;
+  }
+
+  /* Remove any remaining contact styling */
+  .LinkedinContent a,
+  .TwitterContent a,
+  .TwitterContent button,
+  .EmailinContent a {
+    color: var(--accent) !important;
+    text-decoration: none !important;
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    font-family: inherit !important;
+    font-size: inherit !important;
+    cursor: pointer !important;
+  }
+
+  .LinkedinContent a:hover,
+  .TwitterContent a:hover,
+  .TwitterContent button:hover,
+  .EmailinContent a:hover {
+    text-decoration: underline !important;
+  }
+
+  /* Hide GitHub button */
+  .github_button {
+    display: none !important;
+  }
+
+  /* Minimal navbar */
+  .navbar {
+    padding: 0.5rem 2rem !important;
+  }
+
+  .navbar_buttons {
+    gap: 1rem !important;
+  }
+
+  .navbar_button {
+    font-size: 0.8rem !important;
+  }
+
+  /* Simple education/about section in hero */
+  .hero_section_desc {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 0.75rem !important;
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    font-size: 0.9rem !important;
+    margin: 0.5rem 0 !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Add UW logo icon next to education info */
+  .hero_section_desc::before {
+    content: "";
+    width: 24px;
+    height: 24px;
+    background-image: url('../public/img/UW.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  /* Simple expertise and status lists */
+  .contact_text_section {
+    margin: 1rem 0 !important;
+  }
+
+  .contact_text_section .terminal_prompt {
+    margin-bottom: 0.25rem !important;
+  }
+
+  .contact_me_text {
+    font-size: 0.85rem !important;
+    margin: 0.1rem 0 !important;
+  }
+
+  .contact_me_text::before {
+    content: "▸ " !important;
+    color: var(--secondary-foreground) !important;
+  }
+
+  /* Hide terminal prompts for cleaner look */
+  .terminal_prompt {
+    display: none !important;
+  }
+
+  /* Remove navbar completely */
+  .navbar {
+    display: none !important;
+  }
+
+  /* Remove all borders and dividing lines */
+  .heroSec,
+  .aboutMeContainer,
+  .skills,
+  .experience_section,
+  .projects_preview,
+  #contactPage {
+    border-bottom: none !important;
+  }
+
+  /* Remove all card backgrounds and borders */
+  .experience_item,
+  .automated_lights,
+  .verif_ai,
+  .sage_robot,
+  .posture_pal,
+  .full_skills,
+  .LinkedIn,
+  .Twitter,
+  .Email {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Adjust content padding and center the content area */
+  .content-column {
+    padding-top: 2rem !important;
+    max-width: 600px !important;
+    margin: 0 auto !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+
+  /* Ensure sections don't have extra margins */
+  .heroSec,
+  .aboutMeContainer,
+  .skills,
+  .experience_section,
+  .projects_preview,
+  #contactPage {
+    max-width: none !important;
+    margin: 0 !important;
   }
 }
 
@@ -960,4 +1313,50 @@ a {
 /* Icon styling */
 .icon {
   vertical-align: middle;
+}
+
+/* Screen Dimensions Display */
+.screen-dimensions {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 999;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.75rem;
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.75rem;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  backdrop-filter: blur(8px);
+}
+
+.screen-dimensions:hover {
+  opacity: 1;
+}
+
+.dimensions-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.terminal-prompt {
+  color: var(--secondary-foreground);
+  font-size: 0.7rem;
+}
+
+.dimensions-text {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+/* Hide on mobile phones to avoid clutter */
+@media (max-width: 768px) {
+  .screen-dimensions {
+    display: none;
+  }
 }
