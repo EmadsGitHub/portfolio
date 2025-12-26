@@ -14,6 +14,9 @@
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@react-spring/parallax": "^9.7.5",
     "@react-spring/web": "^9.7.5",
+    "cors": "^2.8.5",
+    "express": "^5.2.1",
+    "node-fetch": "^3.3.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
@@ -27,7 +30,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build"
+    "build": "react-scripts build",
+    "server": "node twitter-server.js",
+    "dev": "concurrently \"npm run server\" \"npm start\""
   },
   "browserslist": {
     "production": [
@@ -40,5 +45,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
   }
 }

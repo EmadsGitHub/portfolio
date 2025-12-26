@@ -39,7 +39,7 @@
             "id": "1",
             "src": "/img/trackmythreads.png",
             "title": "TrackMyThreads",
-            "desc": "Ever had a hard time keeping track of what clothes need to be washed each week? TrackMyThread solves that.<br><br> Technologies used: Python, Flask, SQLite, React Native, Expo, Figma, NodeJS, TypeScript, ESP32, C++, OpenCV, Roboflow",
+            "desc": "Tracks clothing using computer vision, supports a mobile app.",
             "class": "automated_lights",
             "href": "https://github.com/EmadsGitHub/opencvlightswitch",
             "icons": ["SiArduino", "SiCplusplus", "FaPython", "SiOpencv", "SiFlask", "SiExpress", "SiSqlite", "SiGit", "SiPostman", "SiFigma", "IoLogoNpm", "IoLogoGithub", "SiTypescript", "FaReact", "FaHtml5", "FaCss3Alt", "FaNodeJs"]
@@ -48,7 +48,7 @@
             "id": "2",
             "src": "/img/verifailogo.png",
             "title": "VerifAI",
-            "desc": "With the rise of powerful ideo creation model like Google Veo, we are dangerously close to an online misinformation epidemic. Stay informed with VerifAI and protect your sanity. <br><br> Technologies used: Google Gemini API, NewsAPI, Python, React, Figma, NodeJS, Express, TypeScript, HTML, CSS",
+            "desc": "Built at SpurHacks 2025; detect BS online using AI.",
             "class": "verif_ai",
             "href": "https://devpost.com/software/verifai-prsv3e",
             "icons": ["FaPython", "RiGeminiFill", "FaReact", "IoLogoJavascript", "FaHtml5", "FaCss3Alt", "FaNodeJs", "IoLogoGithub", "SiGit"]
@@ -57,7 +57,7 @@
             "id": "3",
             "src": "/img/hackthe6ixrobot.png",
             "title": "SAGE-Rover",
-            "desc": "SAGE-Rover is a rover that uses AI to identify injured civilians and provide them aid after a natural disaster. <br><br> Technologies used: Python, React, Figma, NodeJS, Express, TypeScript, HTML, CSS",
+            "desc": "Built at HackThe6ix 2025; a rover that uses AI to help injured survivors.",
             "class": "sage_robot",
             "href": "https://devpost.com/software/sage-search-and-general-emergency-bot?ref_content=my-projects-tab&ref_feature=my_projects",
             "icons": ["FaPython", "SiCplusplus", "SiC", "SiRaspberrypi", "RiGeminiFill", "FaReact", "IoLogoJavascript", "FaHtml5", "FaCss3Alt", "FaFlask", "IoLogoGithub", "SiGit"]
@@ -66,7 +66,7 @@
             "id": "4",
             "src": "/img/UTRAhacks.png",
             "title": "PosturePal",
-            "desc": "PosturePal is a robust mobile application that monitors and analyzes a user’s posture during workouts. These insights are then delivered directly to the user via an app.",
+            "desc": "Built at UTRA Hacks 2025; a mobile app to track a user’s posture during workouts.",
             "class": "posture_pal",
             "href": "https://devpost.com/software/posturepal",
             "icons": ["FaPython", "SiCplusplus", "SiC", "SiArduino", "FaReact", "IoLogoJavascript", "FaHtml5", "FaCss3Alt", "IoLogoGithub", "SiGit"]

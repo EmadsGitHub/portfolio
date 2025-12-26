@@ -1,74 +1,89 @@
 import {Link} from "react-scroll"
-import {useState, useEffect} from "react"
 
-function Navbar(){
+function Navbar({ hoverHandlers, handleLeave }){
     
     return (
-    <nav className = "navbar">
+    <nav className="navbar">
         {/* Website Logo/Icon */}
         <div className="navbar_logo">
-            <img src = "./img/logo.png" alt="ER" className="navbar_logo_img"/>
+            <span className="text-accent" style={{fontSize: '1rem', fontWeight: 'bold'}}>{"> emad@portfolio"}</span>
         </div>
         
         {/* Navigation Buttons */}
-        <div className = "navbar_buttons">
+        <div className="navbar_buttons">
             <Link 
-                activeClass = "navbar_button_active" 
-                spy = {true} 
-                smooth = {true} 
-                offset = {-70} 
-                duration = {3000} 
-                to = "heroSection" 
-                className = "navbar_button"
+                activeClass="navbar_button_active" 
+                spy={true} 
+                smooth={true} 
+                offset={-100} 
+                duration={1000} 
+                to="heroSection" 
+                containerId="scroll-container"
+                className="navbar_button"
+                onMouseEnter={hoverHandlers?.navHome}
+                onMouseLeave={handleLeave}
             >
-                Home
+                home
             </Link>
             
             <Link 
-                activeClass = "navbar_button_active" 
-                spy = {true} 
-                smooth = {true} 
-                offset = {-70} 
-                duration = {1000} 
-                to = "myProjects" 
-                className = "navbar_button"
+                activeClass="navbar_button_active" 
+                spy={true} 
+                smooth={true} 
+                offset={-100} 
+                duration={1000} 
+                to="aboutMe" 
+                containerId="scroll-container"
+                className="navbar_button"
+                onMouseEnter={hoverHandlers?.navAbout}
+                onMouseLeave={handleLeave}
             >
-                Projects
+                about
             </Link>
             
             <Link 
-                activeClass = "navbar_button_active" 
-                spy = {true} 
-                smooth = {true} 
-                offset = {-70} 
-                duration = {1000} 
-                to = "aboutMe" 
-                className = "navbar_button"
+                activeClass="navbar_button_active" 
+                spy={true} 
+                smooth={true} 
+                offset={-100} 
+                duration={1000} 
+                to="experience" 
+                containerId="scroll-container"
+                className="navbar_button"
+                onMouseEnter={hoverHandlers?.navExperience}
+                onMouseLeave={handleLeave}
             >
-                About Me
+                experience
             </Link>
-
+            
             <Link 
-                activeClass = "navbar_button_active" 
-                spy = {true} 
-                smooth = {true} 
-                offset = {-70} 
-                duration = {1000} 
-                to = "experience" 
-                className = "navbar_button"
+                activeClass="navbar_button_active" 
+                spy={true} 
+                smooth={true} 
+                offset={-100} 
+                duration={1000} 
+                to="myProjects" 
+                containerId="scroll-container"
+                className="navbar_button"
+                onMouseEnter={hoverHandlers?.navProjects}
+                onMouseLeave={handleLeave}
             >
-                Experience
+                projects
             </Link>
+            
             <Link 
-                activeClass = "navbar_button_active" 
-                spy = {true} 
-                smooth = {true} 
-                offset = {-70} 
-                duration = {1000} 
-                to = "contactPage" 
-                className = "navbar_button"
+                activeClass="navbar_button_active" 
+                spy={true} 
+                smooth={true} 
+                offset={-100} 
+                duration={1000} 
+                to="contactPage" 
+                containerId="scroll-container"
+                className="navbar_button"
+                onMouseEnter={hoverHandlers?.navContact}
+                onMouseLeave={handleLeave}
             >
-                Contact
+                contact
             </Link>
         </div>
     </nav>

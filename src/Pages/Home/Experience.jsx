@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Experience() {
+export default function Experience({ hoverHandlers, handleLeave }) {
     return (
         <section id="experience" className="experience_section">
             {/* Experience Section Header */}
@@ -13,7 +13,11 @@ export default function Experience() {
             <div className="experience_container">
                 
                 {/* Experience Item 1 - Image Left, Text Right */}
-                <div className="experience_item experience_item_left">
+                <div 
+                    className="experience_item experience_item_left"
+                    onMouseEnter={hoverHandlers?.geotab}
+                    onMouseLeave={handleLeave}
+                >
                     <div className="experience_image_container">
                         <img 
                             src="./img/geotab.png" 
@@ -28,8 +32,6 @@ export default function Experience() {
                             <p className="experience_duration">September 2025 - January 2026</p>
                         </div>
                         <div className="experience_description">
-
-
                             <ul className="experience_achievements">
                                 <li>Reverse-engineered embedded vehicle subsystems and communication protocols (CAN, UART) in a Polestar using CANalyzer and C++ scripts, validating 90% of the current records of the vehicle</li>
                                 <li>Executed detailed bench simulations on a Vehicle Diagnostic Simulator, remotely modulating 100+ CAN messages per session to validate ECU logic and enable firmware testing without physical vehicles</li>
@@ -51,7 +53,11 @@ export default function Experience() {
                 </div>
 
                 {/* Experience Item 2 - Image Right, Text Left */}
-                <div className="experience_item experience_item_right">
+                <div 
+                    className="experience_item experience_item_right"
+                    onMouseEnter={hoverHandlers?.uwfe}
+                    onMouseLeave={handleLeave}
+                >
                     <div className="experience_content">
                         <div className="experience_header_info">
                             <h3 className="experience_position">Firmware Engineer</h3>
@@ -59,7 +65,6 @@ export default function Experience() {
                             <p className="experience_duration">September 2024 - Present</p>
                         </div>
                         <div className="experience_description">
-
                             <ul className="experience_achievements">
                                 <li>Researched and led development for SOC, State of Health, Cooling Loop, and Endurance Mode algorithms on STM32 powered boards using FreeRTOS, improving vehicle functions by 50%</li>
                                 <li>Developed C++ traction control algorithms using PID controllers in MATLAB/Simulink, stabilizing wheel slip and optimizing vehicle torque response during acceleration by an additional 10%</li>
@@ -81,7 +86,7 @@ export default function Experience() {
                     <div className="experience_image_container">
                         <img 
                             src="./img/me_racing.jpeg" 
-                            alt="UW Formula Electric Logo" 
+                            alt="UW Formula Electric" 
                             className="experience_image"
                         />
                     </div>
