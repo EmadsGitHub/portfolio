@@ -6,11 +6,11 @@ import Home from "./Pages/Home/Homescreen";
 import Starfield from "./Pages/Home/Starfield";
 import { Helmet } from 'react-helmet';
 import useHoverImageDisplay from "./hooks/useHoverImageDisplay";
-import { TwitterViewer } from "./twitter";
 import ScreenDimensions from "./components/ScreenDimensions";
+import OscilloscopeEffect from "./components/DigitalRain";
 
 function App() {
-  const { currentImage, currentSection, showTwitterViewer, refs, hoverHandlers, handleLeave, showTwitter, hideTwitter } = useHoverImageDisplay();
+  const { currentImage, currentSection, refs, hoverHandlers, handleLeave } = useHoverImageDisplay();
 
   return (
     <div className="App">
@@ -20,6 +20,9 @@ function App() {
         <link rel="icon" href="/favicon.ico" />
       </Helmet>
       
+      {/* Oscilloscope background effect */}
+      <OscilloscopeEffect />
+      
       {/* Starfield background */}
       <Starfield />
       
@@ -28,18 +31,16 @@ function App() {
         <Router>
           <Navbar hoverHandlers={hoverHandlers} handleLeave={handleLeave} />
           <Routes>
-            <Route path="/" element={<Home refs={refs} hoverHandlers={hoverHandlers} handleLeave={handleLeave} showTwitter={showTwitter} hideTwitter={hideTwitter} />}></Route>
+            <Route path="/" element={<Home refs={refs} hoverHandlers={hoverHandlers} handleLeave={handleLeave} />}></Route>
             <Route path="*" element={<div>404 Not Found</div>}></Route>
           </Routes>
         </Router>
       </div>
 
-      {/* Right Column - Dynamic Image Display or Twitter Viewer */}
+      {/* Right Column - Dynamic Image Display */}
       <div className="image-column">
         <div className="image-display">
-          {showTwitterViewer ? (
-            <TwitterViewer isEmbedded={true} onClose={hideTwitter} />
-          ) : currentImage ? (
+          {currentImage ? (
             <img src={currentImage} alt={currentSection} />
           ) : (
             <div className="terminal-text">
@@ -49,6 +50,7 @@ function App() {
           )}
         </div>
       </div>
+
       
       {/* Screen dimensions display */}
       <ScreenDimensions />

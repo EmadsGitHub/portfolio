@@ -3,29 +3,15 @@ import { useState } from 'react';
 export default function useHoverImageDisplay() {
   const [currentImage, setCurrentImage] = useState('./img/uwfeheadshot.png'); // Default image
   const [currentSection, setCurrentSection] = useState('home');
-  const [showTwitterViewer, setShowTwitterViewer] = useState(false);
 
   // Hover handlers for different sections/elements
   const handleHover = (section, imagePath) => {
     setCurrentSection(section);
     setCurrentImage(imagePath);
-    setShowTwitterViewer(false); // Hide Twitter viewer when hovering other elements
   };
 
   const handleLeave = () => {
     // Reset to default image when not hovering
-    setCurrentSection('home');
-    setCurrentImage('./img/uwfeheadshot.png');
-    // Don't hide Twitter viewer on mouse leave - let it stay open
-  };
-
-  const showTwitter = () => {
-    setShowTwitterViewer(true);
-    setCurrentSection('twitter');
-  };
-
-  const hideTwitter = () => {
-    setShowTwitterViewer(false);
     setCurrentSection('home');
     setCurrentImage('./img/uwfeheadshot.png');
   };
@@ -53,11 +39,8 @@ export default function useHoverImageDisplay() {
   return {
     currentImage,
     currentSection,
-    showTwitterViewer,
     handleHover,
     handleLeave,
-    showTwitter,
-    hideTwitter,
     hoverHandlers,
     // Refs are no longer needed since we're not tracking scroll position
     refs: {

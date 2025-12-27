@@ -1,14 +1,10 @@
 import { FaLinkedin } from "react-icons/fa";
 import { FaTwitterSquare } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 import { MdMarkEmailUnread } from "react-icons/md";
 import React from 'react';
 
-export default function Contact({ hoverHandlers, handleLeave, showTwitter, hideTwitter }){
-    const handleTwitterClick = (e) => {
-        e.preventDefault();
-        showTwitter();
-    };
-
+export default function Contact({ hoverHandlers, handleLeave }){
     return (
         <section id="contactPage">
             <div className="contact-page">
@@ -26,27 +22,20 @@ export default function Contact({ hoverHandlers, handleLeave, showTwitter, hideT
                                 <a href="https://www.linkedin.com/in/emadrahman1/" target="_blank" rel="noopener noreferrer">Click Here</a>
                             </div>
                         </div>
-                        <div className="Twitter">
-                            <div className="TwitterHeader">
+                        <div className="SocialMedia">
+                            <div className="SocialMediaHeader">
                                 <h3>[X/TWITTER]</h3>
                             </div>
-                            <div className="TwitterContent">
+                            <div className="SocialMediaContent">
                                 <FaTwitterSquare />
-                                <button 
-                                    onClick={handleTwitterClick}
-                                    className="twitter-viewer-button"
-                                    onMouseEnter={hoverHandlers?.navContact}
-                                    onMouseLeave={handleLeave}
-                                >
-                                    View Top Tweets
-                                </button>
                                 <a 
                                     href="https://x.com/emadddd_r" 
                                     target="_blank" 
                                     rel="noopener noreferrer"
-                                    className="twitter-profile-link"
+                                    onMouseEnter={hoverHandlers?.contact}
+                                    onMouseLeave={handleLeave}
                                 >
-                                    Visit Profile
+                                    Click Here
                                 </a>
                             </div>
                         </div>
@@ -57,6 +46,15 @@ export default function Contact({ hoverHandlers, handleLeave, showTwitter, hideT
                             <div className="EmailinContent">
                                 <MdMarkEmailUnread />
                                 <a href="mailto:e2rahman@uwaterloo.ca">e2rahman@uwaterloo.ca</a>
+                            </div>
+                        </div>
+                        <div className="GitHub">
+                            <div className="GitHubHeader">
+                                <h3>[GITHUB]</h3>
+                            </div>
+                            <div className="GitHubContent">
+                                <FaGithub />
+                                <a href="https://github.com/EmadsGitHub" target="_blank" rel="noopener noreferrer">Click Here</a>
                             </div>
                         </div>
                     </div>

@@ -4,7 +4,7 @@ import ProjectsPreview from "../ProjectsPreview";
 import Contact from "../Contact";
 import Experience from "../Experience";
 
-export default function Home({ refs, hoverHandlers, handleLeave, showTwitter, hideTwitter }) {
+export default function Home({ refs, hoverHandlers, handleLeave }) {
     return (
         <>  
             <div ref={refs.heroRef}>
@@ -20,7 +20,7 @@ export default function Home({ refs, hoverHandlers, handleLeave, showTwitter, hi
                 <ProjectsPreview hoverHandlers={hoverHandlers} handleLeave={handleLeave} />
             </div>
             <div ref={refs.contactRef}>
-                <Contact hoverHandlers={hoverHandlers} handleLeave={handleLeave} showTwitter={showTwitter} hideTwitter={hideTwitter} />
+                <Contact hoverHandlers={hoverHandlers} handleLeave={handleLeave} />
             </div>
         </>
     );

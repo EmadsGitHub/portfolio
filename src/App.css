@@ -675,44 +675,6 @@ html {
   text-decoration: underline;
 }
 
-/* Twitter Viewer Button Styles */
-.twitter-viewer-button {
-  background: none;
-  border: 1px solid var(--accent);
-  color: var(--accent);
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  cursor: pointer;
-  font-family: 'Courier New', monospace;
-  font-size: 0.9rem;
-  transition: all 0.2s ease;
-  margin-right: 1rem;
-}
-
-.twitter-viewer-button:hover {
-  background: var(--accent);
-  color: var(--background);
-}
-
-.twitter-profile-link {
-  color: var(--text-secondary);
-  text-decoration: none;
-  font-size: 0.9rem;
-  transition: all 0.2s ease;
-}
-
-.twitter-profile-link:hover {
-  color: var(--accent);
-  text-decoration: underline;
-}
-
-.TwitterContent {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  align-items: flex-start;
-}
-
 /* ===== CONTACT SECTION ===== */
 #contactPage {
   padding: 4rem 0;
@@ -755,8 +717,9 @@ html {
 }
 
 .LinkedIn,
-.Twitter,
-.Email {
+.SocialMedia,
+.Email,
+.GitHub {
   border: 1px solid var(--border);
   background: var(--card);
   padding: 1rem;
@@ -765,15 +728,17 @@ html {
 }
 
 .LinkedIn:hover,
-.Twitter:hover,
-.Email:hover {
+.SocialMedia:hover,
+.Email:hover,
+.GitHub:hover {
   border-color: var(--accent);
   background: rgba(255, 255, 255, 0.02);
 }
 
 .LinkedinHeader h3,
-.TwitterHeader h3,
-.EmailHeader h3 {
+.SocialMediaHeader h3,
+.EmailHeader h3,
+.GitHubHeader h3 {
   color: var(--secondary-foreground);
   font-size: 0.75rem;
   margin-bottom: 0.5rem;
@@ -782,8 +747,9 @@ html {
 }
 
 .LinkedinContent,
-.TwitterContent,
-.EmailinContent {
+.SocialMediaContent,
+.EmailinContent,
+.GitHubContent {
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -792,7 +758,9 @@ html {
 }
 
 .LinkedinContent a,
-.TwitterContent a {
+.SocialMediaContent a,
+.EmailinContent a,
+.GitHubContent a {
   color: var(--accent);
   text-decoration: none;
   font-size: 0.875rem;
@@ -800,7 +768,9 @@ html {
 }
 
 .LinkedinContent a:hover,
-.TwitterContent a:hover {
+.SocialMediaContent a:hover,
+.EmailinContent a:hover,
+.GitHubContent a:hover {
   text-decoration: underline;
 }
 
@@ -926,13 +896,6 @@ html {
     cursor: default;
   }
 
-  /* Hide Twitter viewer images in simplified layout */
-  .tweet-media,
-  .tweet-image,
-  .tweet-video-thumbnail {
-    display: none !important;
-  }
-
   /* SUPER MINIMAL TERMINAL LAYOUT FOR ≤1024px */
   
   /* Hide all detailed descriptions and complex layouts */
@@ -941,9 +904,7 @@ html {
   .experience_achievements,
   .experience_skills,
   .project_desc,
-  .projects_icons,
-  .tweet-stats,
-  .tweet-actions {
+  .projects_icons {
     display: none !important;
   }
 
@@ -1080,34 +1041,50 @@ html {
   }
 
   .LinkedIn,
-  .Twitter,
-  .Email {
+  .SocialMedia,
+  .Email,
+  .GitHub {
     background: none !important;
     border: none !important;
     padding: 0.25rem 0 !important;
   }
 
   .LinkedinHeader h3,
-  .TwitterHeader h3,
-  .EmailHeader h3 {
+  .SocialMediaHeader h3,
+  .EmailHeader h3,
+  .GitHubHeader h3 {
     display: none !important;
   }
 
   .LinkedinContent,
-  .TwitterContent,
-  .EmailinContent {
+  .SocialMediaContent,
+  .EmailinContent,
+  .GitHubContent {
     font-size: 0.9rem !important;
     gap: 0.5rem !important;
   }
 
   /* Simple contact list styling */
   .LinkedinContent,
-  .TwitterContent,
-  .EmailinContent {
+  .SocialMediaContent,
+  .EmailinContent,
+  .GitHubContent {
     display: block !important;
     font-size: 0.9rem !important;
     margin: 0.25rem 0 !important;
     color: var(--foreground) !important;
+  }
+
+  /* Hide contact icons */
+  .LinkedinContent svg,
+  .SocialMediaContent svg,
+  .EmailinContent svg,
+  .GitHubContent svg,
+  .LinkedinContent .icon,
+  .SocialMediaContent .icon,
+  .EmailinContent .icon,
+  .GitHubContent .icon {
+    display: none !important;
   }
 
   .LinkedinContent::before {
@@ -1115,8 +1092,8 @@ html {
     color: var(--secondary-foreground) !important;
   }
 
-  .TwitterContent::before {
-    content: "▸ twitter: " !important;
+  .SocialMediaContent::before {
+    content: "▸ x/twitter: " !important;
     color: var(--secondary-foreground) !important;
   }
 
@@ -1125,11 +1102,16 @@ html {
     color: var(--secondary-foreground) !important;
   }
 
+  .GitHubContent::before {
+    content: "▸ github: " !important;
+    color: var(--secondary-foreground) !important;
+  }
+
   /* Remove any remaining contact styling */
   .LinkedinContent a,
-  .TwitterContent a,
-  .TwitterContent button,
-  .EmailinContent a {
+  .SocialMediaContent a,
+  .EmailinContent a,
+  .GitHubContent a {
     color: var(--accent) !important;
     text-decoration: none !important;
     background: none !important;
@@ -1141,9 +1123,9 @@ html {
   }
 
   .LinkedinContent a:hover,
-  .TwitterContent a:hover,
-  .TwitterContent button:hover,
-  .EmailinContent a:hover {
+  .SocialMediaContent a:hover,
+  .EmailinContent a:hover,
+  .GitHubContent a:hover {
     text-decoration: underline !important;
   }
 
@@ -1183,7 +1165,7 @@ html {
     content: "";
     width: 24px;
     height: 24px;
-    background-image: url('../public/img/UW.png');
+    background-image: url('../public/img/Waterloo.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -1238,7 +1220,6 @@ html {
   .posture_pal,
   .full_skills,
   .LinkedIn,
-  .Twitter,
   .Email {
     background: none !important;
     border: none !important;
