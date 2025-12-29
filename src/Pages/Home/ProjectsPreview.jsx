@@ -52,65 +52,57 @@ const iconMapping = {
     SiGit:SiGit,
     SiPostman:SiPostman,
     RiGeminiFill: RiGeminiFill,
-
-
 };
+
 export default function ProjectsPreview(){
     const openGitHub = () => {
         window.open("https://github.com/EmadsGitHub", "_blank");
     };
-    const openCADWork = () => {
-        window.open("https://docs.google.com/document/d/1uuxL8J5RSgUU1B5gS67Th3O46MTvXO0cjE8d2IyDh-c/edit?usp=sharing", "_blank");
-    };
+
     return (
-        
-        <section id = "myProjects" className = "projects_preview">
-            <script src="https://kit.fontawesome.com/ba05d75742.js" crossorigin="anonymous"></script>
-            <div className = "projects_header">
-                <div className = "header_title">
+        <section id="myProjects" className="projects_preview">
+            <div className="projects_header">
+                <div className="header_title">
                     <h1>Highlighted Projects</h1>
                 </div>
-                <div className = "github_button">
-
-                    <button id="gitHub" onClick={openGitHub}>Check out my GitHub!<IconPage /></button>
-                    
-                    
+                <div className="github_button">
+                    <button onClick={openGitHub}>
+                        Check out my GitHub!
+                        <IconPage />
+                    </button>
                 </div>    
             </div>
-            <div className = "projects_container">
+            
+            <div className="projects_container">
                 {data?.portfolio?.map((item, index) => (
-                    <div className = {item.class}>
-                        <div className = "photo_container">
-                            <div key = {index} className = "project_photo">
-                                <img src = {item.src} alt = "image"></img>
+                    <div key={index} className={item.class}>
+                        <div className="photo_container">
+                            <div className="project_photo">
+                                <img src={item.src} alt={item.title}></img>
                             </div>
                         </div>
-                        <div className = "text_container">
-                            <div key = {index} className = "project_title">
+                        <div className="text_container">
+                            <div className="project_title">
                                 <h2>{item.title}</h2>
                             </div>
-                            <div key = {index} className = "project_desc">
+                            <div className="project_desc">
                                 <p dangerouslySetInnerHTML={{ __html: item.desc }}></p>
                             </div>
-                            <div key = {index} className = "projects_icons">
-                                {item.icons.map((iconName, index)=> {
+                            <div className="projects_icons">
+                                {item.icons.map((iconName, iconIndex) => {
                                     const IconComponent = iconMapping[iconName];
-                                    return IconComponent ? <IconComponent key = {index} className = "icon" /> : null;
+                                    return IconComponent ? <IconComponent key={iconIndex} className="icon" /> : null;
                                 })}
                             </div>
-                            <div className = "github">
-                                <a href = {item.href} target="_blank">More Info</a>
-                                <IconPage2 />
+                            <div className="github">
+                                <a href={item.href} target="_blank" rel="noopener noreferrer">
+                                    More Info
+                                    <IconPage2 />
+                                </a>
                             </div>
-                                
-                            
                         </div>
-
-                        
                     </div>  
-                )
-
-                )}
+                ))}
             </div>
         </section>
     );

@@ -1,0 +1,15 @@
+{
+  "blogs": [
+    {
+      "id": "uwfe-dashboard",
+      "title": "Creating a dashboard for UWFE",
+      "date": "2024-12-26",
+      "author": "Emad Rahman",
+      "excerpt": "A detailed look at building a comprehensive dashboard for the University of Waterloo Formula Electric team.",
+      "isNotionImport": true,
+      "tags": ["engineering", "dashboard", "uwfe"],
+      "readTime": "8 min read"
+    }
+  ]
+}
+

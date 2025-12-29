@@ -71,9 +71,6 @@ export default function MySkills(){
                         <div key = {index} className = "skills_title">
                             <h2>{item.title}</h2>
                         </div> 
-                        <div key = {index} className = "skills_desc">
-                            <p dangerouslySetInnerHTML={{ __html: item.desc }}></p>
-                        </div>
                         <div key = {index} className = "skills_icons">
                             {item.icons.map((iconName, index)=> {
                                 const IconComponent = iconMapping[iconName];
