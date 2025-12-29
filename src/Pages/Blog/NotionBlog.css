@@ -1,0 +1,432 @@
+/* Import Inter font for tech aesthetic */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap');
+
+/* Complete Rewrite - No Gap Layout */
+.notion-blog-full-width {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--background);
+  padding: 2rem 3rem 4rem 3rem;
+}
+
+.notion-blog-full-width * {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+}
+
+.notion-blog-full-width code,
+.notion-blog-full-width pre {
+  font-family: 'Roboto Mono', 'Fira Code', 'Courier New', monospace !important;
+}
+
+.notion-header-section {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+}
+
+.terminal_prompt {
+  font-size: 0.875rem;
+  color: var(--secondary-foreground);
+  font-family: 'Courier New', monospace;
+  opacity: 0.6;
+}
+
+/* Two Column Layout - No Gap */
+.notion-two-column {
+  display: flex;
+  gap: 0;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.notion-text-column {
+  flex: 0 0 75%;
+  width: 75%;
+  padding-right: 2rem;
+  color: var(--foreground);
+  line-height: 1.75 !important;
+  font-size: 1.0625rem !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.011em !important;
+}
+
+.notion-text-column * {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+}
+
+.notion-text-column code,
+.notion-text-column pre,
+.notion-text-column code * {
+  font-family: 'Roboto Mono', 'Fira Code', 'Courier New', monospace !important;
+}
+
+.notion-image-column {
+  flex: 0 0 25%;
+  width: 25%;
+  position: sticky;
+  top: 2rem;
+  padding-top: 3rem;
+}
+
+.image-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.image-box {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.02);
+  transition: all 0.3s ease;
+}
+
+/* First image - slight offset */
+.image-box:nth-child(1) {
+  margin-top: 0;
+}
+
+/* Second image - moderate offset */
+.image-box:nth-child(2) {
+  margin-top: 2rem;
+}
+
+/* Third image - bring it up to align with Tech Stack */
+.image-box:nth-child(3) {
+  margin-top: -8rem;
+}
+
+/* Fourth image and beyond */
+.image-box:nth-child(n+4) {
+  margin-top: 2rem;
+}
+
+.image-box img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.image-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 255, 255, 0.15);
+}
+
+.image-box:hover img {
+  transform: scale(1.02);
+}
+
+/* Text Content Styles - Override Everything */
+.notion-text-column * {
+  max-width: none !important;
+  width: 100% !important;
+}
+
+.notion-text-column h1,
+.notion-text-column .page-title {
+  font-size: clamp(2.25rem, 5vw, 3rem);
+  font-weight: 700;
+  color: var(--foreground);
+  margin: 0 0 1.5rem 0;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.notion-text-column h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--foreground);
+  margin: 2.5rem 0 1rem;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.notion-text-column h3 {
+  font-size: 1.375rem;
+  font-weight: 600;
+  color: var(--foreground);
+  margin: 2rem 0 0.75rem;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.notion-text-column p {
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+  color: var(--foreground);
+}
+
+.notion-text-column ul,
+.notion-text-column ol {
+  margin: 1.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.notion-text-column li {
+  margin-bottom: 0.75rem;
+  line-height: 1.7;
+  opacity: 0.9;
+  color: var(--foreground);
+}
+
+.notion-text-column ul li {
+  list-style-type: disc;
+}
+
+.notion-text-column ol li {
+  list-style-type: decimal;
+}
+
+.notion-text-column li::marker {
+  color: var(--accent);
+}
+
+.notion-text-column a {
+  color: var(--accent);
+  text-decoration: underline;
+  transition: opacity 0.2s ease;
+}
+
+.notion-text-column a:hover {
+  opacity: 0.8;
+}
+
+.notion-text-column code {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.9em;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--accent);
+  font-family: 'Roboto Mono', 'Fira Code', 'Courier New', monospace;
+  font-weight: 500;
+}
+
+.notion-text-column pre {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 1.5rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  border: 1px solid var(--border);
+}
+
+.notion-text-column pre code {
+  background: none;
+  padding: 0;
+  border: none;
+  color: var(--foreground);
+}
+
+.notion-text-column blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 1.5rem;
+  margin: 1.5rem 0;
+  opacity: 0.8;
+  font-style: italic;
+  color: var(--foreground);
+}
+
+.notion-text-column table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+}
+
+.notion-text-column table th,
+.notion-text-column table td {
+  border: 1px solid var(--border);
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.notion-text-column table th {
+  background: rgba(255, 255, 255, 0.03);
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.notion-text-column table td {
+  color: var(--foreground);
+  opacity: 0.9;
+}
+
+/* Hide any remaining images */
+.notion-text-column img,
+.notion-text-column figure {
+  display: none !important;
+}
+
+/* YouTube Video Section */
+.youtube-video-section {
+  margin: 3rem 0;
+  padding: 2rem 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.youtube-video-section h3 {
+  font-size: 1.375rem !important;
+  font-weight: 600 !important;
+  color: var(--foreground) !important;
+  margin: 0 0 1.5rem 0 !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+}
+
+.youtube-embed {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.youtube-embed iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Footer Navigation - FORCED STYLES */
+.notion-footer-nav {
+  margin-top: 4rem !important;
+  padding-top: 2rem !important;
+  border-top: 1px solid var(--border) !important;
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  gap: 2rem !important;
+  width: 100% !important;
+}
+
+.back-to-posts {
+  order: 1 !important;
+  width: auto !important;
+  max-width: 150px !important;
+  flex-shrink: 1 !important;
+}
+
+.home-link {
+  order: 2 !important;
+  margin-left: 0 !important;
+  background: rgba(0, 0, 255, 0.2) !important; /* DEBUG: Blue background */
+  width: auto !important;
+  max-width: 100px !important;
+  flex-shrink: 1 !important;
+}
+
+.back-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0.8;
+}
+
+.back-link:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .notion-blog-full-width {
+    padding: 2rem 2rem 3rem 2rem;
+  }
+
+  .notion-two-column {
+    flex-direction: column;
+  }
+
+  .notion-text-column {
+    flex: 1;
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .notion-image-column {
+    flex: 1;
+    width: 100%;
+    position: static;
+    padding-top: 2rem;
+  }
+
+  .image-stack {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  /* Remove container borders on small screens */
+  .image-box {
+    border: none !important;
+    background: none !important;
+    border-radius: 0;
+  }
+
+  /* Remove glow effect on small screens */
+  .image-box:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Add borders directly to images */
+  .image-box img {
+    border: 1px solid var(--border) !important;
+    border-radius: 8px;
+  }
+
+  /* Remove image hover effects on small screens */
+  .image-box:hover img {
+    transform: none !important;
+  }
+
+  .image-box:nth-child(even),
+  .image-box:nth-child(3n) {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .notion-blog-full-width {
+    padding: 1.5rem 1.5rem 2rem 1.5rem;
+  }
+
+  .notion-text-column h1,
+  .notion-text-column .page-title {
+    font-size: 1.75rem;
+  }
+
+  .notion-text-column h2 {
+    font-size: 1.5rem;
+  }
+
+  .notion-text-column h3 {
+    font-size: 1.25rem;
+  }
+
+  .notion-footer-nav {
+    flex-direction: column !important;
+    gap: 1rem;
+  }
+
+  .home-link {
+    margin-left: 0 !important;
+  }
+}
+

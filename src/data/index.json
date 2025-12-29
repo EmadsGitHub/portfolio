@@ -37,6 +37,15 @@
     "portfolio" : [
         {
             "id": "1",
+            "src": "/img/uwfe.png",
+            "title": "UWFE Dashboard",
+            "desc": "A comprehensive dashboard for the University of Waterloo Formula Electric team built with PyQt5 and Grafana.",
+            "class": "uwfe_dashboard",
+            "href": "/blogs/uwfe-dashboard",
+            "icons": ["FaPython", "IoLogoJavascript", "FaHtml5", "FaCss3Alt", "SiGit", "IoLogoGithub"]
+        },
+        {
+            "id": "2",
             "src": "/img/trackmythreads.png",
             "title": "TrackMyThreads",
             "desc": "Tracks clothing using computer vision, supports a mobile app.",
@@ -45,7 +54,7 @@
             "icons": ["SiArduino", "SiCplusplus", "FaPython", "SiOpencv", "SiFlask", "SiExpress", "SiSqlite", "SiGit", "SiPostman", "SiFigma", "IoLogoNpm", "IoLogoGithub", "SiTypescript", "FaReact", "FaHtml5", "FaCss3Alt", "FaNodeJs"]
         },
         {
-            "id": "2",
+            "id": "3",
             "src": "/img/verifailogo.png",
             "title": "VerifAI",
             "desc": "Built at SpurHacks 2025; detect BS online using AI.",
@@ -61,15 +70,6 @@
             "class": "sage_robot",
             "href": "https://devpost.com/software/sage-search-and-general-emergency-bot?ref_content=my-projects-tab&ref_feature=my_projects",
             "icons": ["FaPython", "SiCplusplus", "SiC", "SiRaspberrypi", "RiGeminiFill", "FaReact", "IoLogoJavascript", "FaHtml5", "FaCss3Alt", "FaFlask", "IoLogoGithub", "SiGit"]
-        },
-        {
-            "id": "4",
-            "src": "/img/UTRAhacks.png",
-            "title": "PosturePal",
-            "desc": "Built at UTRA Hacks 2025; a mobile app to track a user’s posture during workouts.",
-            "class": "posture_pal",
-            "href": "https://devpost.com/software/posturepal",
-            "icons": ["FaPython", "SiCplusplus", "SiC", "SiArduino", "FaReact", "IoLogoJavascript", "FaHtml5", "FaCss3Alt", "IoLogoGithub", "SiGit"]
         }
     ]
 }

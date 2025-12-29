@@ -1,4 +1,5 @@
 import {Link} from "react-scroll"
+import {Link as RouterLink} from "react-router-dom"
 
 function Navbar({ hoverHandlers, handleLeave }){
     
@@ -85,6 +86,15 @@ function Navbar({ hoverHandlers, handleLeave }){
             >
                 contact
             </Link>
+            
+            <RouterLink 
+                to="/blogs"
+                className="navbar_button"
+                onMouseEnter={hoverHandlers?.navContact}
+                onMouseLeave={handleLeave}
+            >
+                blog
+            </RouterLink>
         </div>
     </nav>
     );

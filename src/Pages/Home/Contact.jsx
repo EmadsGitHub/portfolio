@@ -2,6 +2,7 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaTwitterSquare } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { MdMarkEmailUnread } from "react-icons/md";
+import { Link } from "react-router-dom";
 import React from 'react';
 
 export default function Contact({ hoverHandlers, handleLeave }){
@@ -55,6 +56,16 @@ export default function Contact({ hoverHandlers, handleLeave }){
                             <div className="GitHubContent">
                                 <FaGithub />
                                 <a href="https://github.com/EmadsGitHub" target="_blank" rel="noopener noreferrer">Click Here</a>
+                            </div>
+                        </div>
+                        
+                        {/* Blog Link for Small Screens */}
+                        <div className="Blog mobile-only">
+                            <div className="BlogHeader">
+                                <h3>[BLOG]</h3>
+                            </div>
+                            <div className="BlogContent">
+                                <Link to="/blogs">Click Here</Link>
                             </div>
                         </div>
                     </div>

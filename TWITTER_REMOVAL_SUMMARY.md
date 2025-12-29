@@ -125,3 +125,4 @@ Your portfolio is now completely free of Twitter API integration. The site only 
 - Image displays on hover
 - Simple contact links (LinkedIn, X/Twitter profile, Email)
 - No API calls or external data fetching related to Twitter
+

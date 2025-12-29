@@ -55,6 +55,21 @@ html {
   overflow: hidden;
 }
 
+/* Blog Layout - Full Width */
+.App.blog-layout {
+  grid-template-columns: 1fr;
+  overflow-y: auto;
+  height: auto;
+  min-height: 100vh;
+}
+
+.App.blog-layout .content-column {
+  max-width: 100%;
+  padding: 0;
+  height: auto;
+  min-height: 100vh;
+}
+
 /* Starfield Background - Very subtle */
 #starfield-canvas {
   position: fixed;
@@ -227,7 +242,9 @@ html {
   color: var(--foreground);
   margin-bottom: 1.5rem;
   letter-spacing: -0.02em;
+  position: relative;
 }
+
 
 .hero_section_desc {
   font-size: 1rem;
@@ -595,13 +612,13 @@ html {
 .projects_container {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0rem;
 }
 
 .automated_lights,
 .verif_ai,
 .sage_robot,
-.posture_pal {
+.uwfe_dashboard {
   border: 1px solid var(--border);
   background: var(--card);
   padding: 1rem;
@@ -612,7 +629,7 @@ html {
 .automated_lights:hover,
 .verif_ai:hover,
 .sage_robot:hover,
-.posture_pal:hover {
+.uwfe_dashboard:hover {
   border-color: var(--accent);
   background: rgba(255, 255, 255, 0.02);
 }
@@ -719,7 +736,8 @@ html {
 .LinkedIn,
 .SocialMedia,
 .Email,
-.GitHub {
+.GitHub,
+.Blog {
   border: 1px solid var(--border);
   background: var(--card);
   padding: 1rem;
@@ -730,7 +748,8 @@ html {
 .LinkedIn:hover,
 .SocialMedia:hover,
 .Email:hover,
-.GitHub:hover {
+.GitHub:hover,
+.Blog:hover {
   border-color: var(--accent);
   background: rgba(255, 255, 255, 0.02);
 }
@@ -738,7 +757,8 @@ html {
 .LinkedinHeader h3,
 .SocialMediaHeader h3,
 .EmailHeader h3,
-.GitHubHeader h3 {
+.GitHubHeader h3,
+.BlogHeader h3 {
   color: var(--secondary-foreground);
   font-size: 0.75rem;
   margin-bottom: 0.5rem;
@@ -749,7 +769,8 @@ html {
 .LinkedinContent,
 .SocialMediaContent,
 .EmailinContent,
-.GitHubContent {
+.GitHubContent,
+.BlogContent {
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -760,7 +781,8 @@ html {
 .LinkedinContent a,
 .SocialMediaContent a,
 .EmailinContent a,
-.GitHubContent a {
+.GitHubContent a,
+.BlogContent a {
   color: var(--accent);
   text-decoration: none;
   font-size: 0.875rem;
@@ -770,8 +792,14 @@ html {
 .LinkedinContent a:hover,
 .SocialMediaContent a:hover,
 .EmailinContent a:hover,
-.GitHubContent a:hover {
+.GitHubContent a:hover,
+.BlogContent a:hover {
   text-decoration: underline;
+}
+
+/* Hide blog link on large screens */
+.mobile-only {
+  display: none;
 }
 
 .EmailinContent p {
@@ -891,7 +919,7 @@ html {
   .automated_lights,
   .verif_ai,
   .sage_robot,
-  .posture_pal,
+  .uwfe_dashboard,
   .navbar_button {
     cursor: default;
   }
@@ -968,7 +996,7 @@ html {
   .automated_lights,
   .verif_ai,
   .sage_robot,
-  .posture_pal,
+  .uwfe_dashboard,
   .full_skills {
     background: none !important;
     border: none !important;
@@ -1043,7 +1071,8 @@ html {
   .LinkedIn,
   .SocialMedia,
   .Email,
-  .GitHub {
+  .GitHub,
+  .Blog {
     background: none !important;
     border: none !important;
     padding: 0.25rem 0 !important;
@@ -1052,14 +1081,16 @@ html {
   .LinkedinHeader h3,
   .SocialMediaHeader h3,
   .EmailHeader h3,
-  .GitHubHeader h3 {
+  .GitHubHeader h3,
+  .BlogHeader h3 {
     display: none !important;
   }
 
   .LinkedinContent,
   .SocialMediaContent,
   .EmailinContent,
-  .GitHubContent {
+  .GitHubContent,
+  .BlogContent {
     font-size: 0.9rem !important;
     gap: 0.5rem !important;
   }
@@ -1068,7 +1099,8 @@ html {
   .LinkedinContent,
   .SocialMediaContent,
   .EmailinContent,
-  .GitHubContent {
+  .GitHubContent,
+  .BlogContent {
     display: block !important;
     font-size: 0.9rem !important;
     margin: 0.25rem 0 !important;
@@ -1107,11 +1139,17 @@ html {
     color: var(--secondary-foreground) !important;
   }
 
+  .BlogContent::before {
+    content: "▸ blog: " !important;
+    color: var(--secondary-foreground) !important;
+  }
+
   /* Remove any remaining contact styling */
   .LinkedinContent a,
   .SocialMediaContent a,
   .EmailinContent a,
-  .GitHubContent a {
+  .GitHubContent a,
+  .BlogContent a {
     color: var(--accent) !important;
     text-decoration: none !important;
     background: none !important;
@@ -1125,9 +1163,24 @@ html {
   .LinkedinContent a:hover,
   .SocialMediaContent a:hover,
   .EmailinContent a:hover,
-  .GitHubContent a:hover {
+  .GitHubContent a:hover,
+  .BlogContent a:hover {
     text-decoration: underline !important;
   }
+
+/* Show blog link only on small screens */
+@media (max-width: 1024px) {
+  .mobile-only {
+    display: block !important;
+  }
+}
+
+/* Hide blog link on large screens */
+@media (min-width: 1025px) {
+  .mobile-only {
+    display: none !important;
+  }
+}
 
   /* Hide GitHub button */
   .github_button {
@@ -1171,6 +1224,26 @@ html {
     background-position: center;
     flex-shrink: 0;
     margin-top: 0.1rem;
+  }
+
+  /* Add linkedin pfp icon next to name on small screens */
+  .hero_name_title {
+    position: relative;
+    padding-right: 2rem;
+  }
+
+  .hero_name_title::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 32px;
+    height: 32px;
+    background-image: url('../public/img/linkedinpfp.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.8;
   }
 
   /* Simple expertise and status lists */
@@ -1217,7 +1290,7 @@ html {
   .automated_lights,
   .verif_ai,
   .sage_robot,
-  .posture_pal,
+  .uwfe_dashboard,
   .full_skills,
   .LinkedIn,
   .Email {
