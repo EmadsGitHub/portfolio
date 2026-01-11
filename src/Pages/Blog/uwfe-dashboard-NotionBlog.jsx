@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import './NotionBlog.css';
+import './uwfe-dashboard-NotionBlog.css';
 
-export default function NotionBlog() {
+export default function UwfeDashboardNotionBlog() {
     const [htmlContent, setHtmlContent] = useState('');
     const [images, setImages] = useState([]);
 
@@ -114,4 +114,6 @@ export default function NotionBlog() {
         </div>
     );
 }
+
+
 
