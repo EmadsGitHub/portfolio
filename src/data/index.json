@@ -50,7 +50,7 @@
             "title": "TrackMyThreads",
             "desc": "Tracks clothing using computer vision, supports a mobile app.",
             "class": "automated_lights",
-            "href": "https://github.com/EmadsGitHub/opencvlightswitch",
+            "href": "https://github.com/EmadsGitHub/Track-My-Threads",
             "icons": ["SiArduino", "SiCplusplus", "FaPython", "SiOpencv", "SiFlask", "SiExpress", "SiSqlite", "SiGit", "SiPostman", "SiFigma", "IoLogoNpm", "IoLogoGithub", "SiTypescript", "FaReact", "FaHtml5", "FaCss3Alt", "FaNodeJs"]
         },
         {

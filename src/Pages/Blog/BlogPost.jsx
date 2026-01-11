@@ -25,3 +25,5 @@ export default function BlogPost() {
     // Default fallback (shouldn't reach here with current blogs)
     return <Navigate to="/blogs" replace />;
 }
+
+
