@@ -55,12 +55,12 @@
         },
         {
             "id": "3",
-            "src": "/img/verifailogo.png",
-            "title": "VerifAI",
-            "desc": "Built at SpurHacks 2025; detect BS online using AI.",
-            "class": "verif_ai",
-            "href": "https://devpost.com/software/verifai-prsv3e",
-            "icons": ["FaPython", "RiGeminiFill", "FaReact", "IoLogoJavascript", "FaHtml5", "FaCss3Alt", "FaNodeJs", "IoLogoGithub", "SiGit"]
+            "src": "/img/uwfe_tc.png",
+            "title": "Traction Control  PID Controller",
+            "desc": "Built a PID controller for traction control using Simulink for UWFE.",
+            "class": "uwfe_tc",
+            "href": "/blogs/traction-control-pid",
+            "icons": ["FaPython", "IoLogoGithub", "SiGit","SiCplusplus"]
         },
         {
             "id": "3",

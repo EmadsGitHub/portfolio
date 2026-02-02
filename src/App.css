@@ -616,7 +616,7 @@ html {
 }
 
 .automated_lights,
-.verif_ai,
+.uwfe_tc,
 .sage_robot,
 .uwfe_dashboard {
   border: 1px solid var(--border);
@@ -627,7 +627,7 @@ html {
 }
 
 .automated_lights:hover,
-.verif_ai:hover,
+.uwfe_tc:hover,
 .sage_robot:hover,
 .uwfe_dashboard:hover {
   border-color: var(--accent);
@@ -917,7 +917,7 @@ html {
   /* Ensure hover handlers don't interfere when images are hidden */
   .experience_item,
   .automated_lights,
-  .verif_ai,
+  .uwfe_tc,
   .sage_robot,
   .uwfe_dashboard,
   .navbar_button {
@@ -994,7 +994,7 @@ html {
 
   .experience_item,
   .automated_lights,
-  .verif_ai,
+  .uwfe_tc,
   .sage_robot,
   .uwfe_dashboard,
   .full_skills {
@@ -1288,7 +1288,7 @@ html {
   /* Remove all card backgrounds and borders */
   .experience_item,
   .automated_lights,
-  .verif_ai,
+  .uwfe_tc,
   .sage_robot,
   .uwfe_dashboard,
   .full_skills,

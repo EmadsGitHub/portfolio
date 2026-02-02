@@ -60,7 +60,7 @@ export default function Experience({ hoverHandlers, handleLeave }) {
                 >
                     <div className="experience_content">
                         <div className="experience_header_info">
-                            <h3 className="experience_position">Firmware Engineer</h3>
+                            <h3 className="experience_position">Firmware Team Lead</h3>
                             <h4 className="experience_company">UW Formula Electric</h4>
                             <p className="experience_duration">September 2024 - Present</p>
                         </div>
