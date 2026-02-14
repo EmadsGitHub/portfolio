@@ -128,7 +128,6 @@ html {
   transition: all 0.3s ease;
   filter: drop-shadow(0 0 0 transparent);
   border: 1px solid var(--border);
-  /* Fixed dimensions that work well for both landscape and portrait */
 }
 
 .image-display img:hover {
@@ -146,6 +145,56 @@ html {
   color: var(--secondary-foreground);
   font-size: 0.875rem;
   margin-bottom: 1rem;
+}
+
+/* Project detail (image + full description) on hover - large layout only */
+.image-display .project-detail {
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  background: var(--card);
+  border-radius: var(--radius);
+  max-width: 500px;
+  max-height: 40vh;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  text-align: left;
+}
+
+.image-display .project-detail::-webkit-scrollbar {
+  display: none;
+}
+
+.image-display .project-detail-title {
+  color: var(--accent);
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.image-display .project-detail-desc {
+  color: var(--foreground);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.image-display .project-detail-desc p {
+  margin: 0 0 0.5rem 0;
+}
+
+.image-display:has(.project-detail) {
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+.image-display:has(.project-detail) img {
+  width: 500px;
+  height: 500px;
+  object-fit: contain;
+  border: none;
 }
 
 /* ===== NAVBAR STYLING ===== */
@@ -618,7 +667,8 @@ html {
 .automated_lights,
 .uwfe_tc,
 .sage_robot,
-.uwfe_dashboard {
+.uwfe_dashboard,
+.\36 ixth_sense {
   border: 1px solid var(--border);
   background: var(--card);
   padding: 1rem;
@@ -629,7 +679,8 @@ html {
 .automated_lights:hover,
 .uwfe_tc:hover,
 .sage_robot:hover,
-.uwfe_dashboard:hover {
+.uwfe_dashboard:hover,
+.\36 ixth_sense:hover {
   border-color: var(--accent);
   background: rgba(255, 255, 255, 0.02);
 }
@@ -920,6 +971,7 @@ html {
   .uwfe_tc,
   .sage_robot,
   .uwfe_dashboard,
+  .\36 ixth_sense,
   .navbar_button {
     cursor: default;
   }
@@ -997,6 +1049,7 @@ html {
   .uwfe_tc,
   .sage_robot,
   .uwfe_dashboard,
+  .\36 ixth_sense,
   .full_skills {
     background: none !important;
     border: none !important;
@@ -1291,6 +1344,7 @@ html {
   .uwfe_tc,
   .sage_robot,
   .uwfe_dashboard,
+  .\36 ixth_sense,
   .full_skills,
   .LinkedIn,
   .Email {

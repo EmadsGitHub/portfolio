@@ -54,7 +54,7 @@ const iconMapping = {
     RiGeminiFill: RiGeminiFill,
 };
 
-export default function ProjectsPreview(){
+export default function ProjectsPreview({ hoverHandlers, handleLeave }){
     const openGitHub = () => {
         window.open("https://github.com/EmadsGitHub", "_blank");
     };
@@ -75,7 +75,12 @@ export default function ProjectsPreview(){
             
             <div className="projects_container">
                 {data?.portfolio?.map((item, index) => (
-                    <div key={index} className={item.class}>
+                    <div
+                        key={index}
+                        className={item.class}
+                        onMouseEnter={() => hoverHandlers?.projectHover?.(item)}
+                        onMouseLeave={handleLeave}
+                    >
                         <div className="photo_container">
                             <div className="project_photo">
                                 <img src={item.src} alt={item.title}></img>

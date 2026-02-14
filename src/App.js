@@ -11,7 +11,7 @@ import useHoverImageDisplay from "./hooks/useHoverImageDisplay";
 import OscilloscopeEffect from "./components/DigitalRain";
 
 function AppContent() {
-  const { currentImage, currentSection, refs, hoverHandlers, handleLeave } = useHoverImageDisplay();
+  const { currentImage, currentSection, currentProject, refs, hoverHandlers, handleLeave } = useHoverImageDisplay();
   const location = useLocation();
   
   // Check if we're on a blog page
@@ -47,7 +47,18 @@ function AppContent() {
         <div className="image-column">
           <div className="image-display">
             {currentImage ? (
-              <img src={currentImage} alt={currentSection} />
+              <>
+                <img src={currentImage} alt={currentSection} />
+                {currentProject && (
+                  <div className="project-detail">
+                    <h3 className="project-detail-title">{currentProject.title}</h3>
+                    <div
+                      className="project-detail-desc"
+                      dangerouslySetInnerHTML={{ __html: currentProject.desc }}
+                    />
+                  </div>
+                )}
+              </>
             ) : (
               <div className="terminal-text">
                 <div className="prompt">$ display image.png</div>

@@ -37,7 +37,16 @@
     "portfolio" : [
         {
             "id": "1",
-            "src": "/img/uwfe.png",
+            "src": "/img/6ixthsense.png",
+            "title": "6ixth Sense- 2026 Mac-a-thon Winner",
+            "desc": "City planning is a slow and frustrating process. 6ixth Sense simulates a real city using ML algorithms and allows urban planner to visualize projects on a computer first.",
+            "class": "6ixth_sense",
+            "href": "https://devpost.com/software/urbaninsights-vwfeth?ref_content=my-projects-tab&ref_feature=my_projects",
+            "icons": ["FaPython", "IoLogoJavascript", "FaHtml5", "FaCss3Alt", "SiGit", "IoLogoGithub"]
+        },
+        {
+            "id": "2",
+            "src": "/img/uwfedash.png",
             "title": "UWFE Dashboard",
             "desc": "A comprehensive dashboard for the University of Waterloo Formula Electric team built with PyQt5 and Grafana.",
             "class": "uwfe_dashboard",
@@ -45,8 +54,8 @@
             "icons": ["FaPython", "IoLogoJavascript", "FaHtml5", "FaCss3Alt", "SiGit", "IoLogoGithub"]
         },
         {
-            "id": "2",
-            "src": "/img/trackmythreads.png",
+            "id": "3",
+            "src": "/img/trackthreads.png",
             "title": "TrackMyThreads",
             "desc": "Tracks clothing using computer vision, supports a mobile app.",
             "class": "automated_lights",
@@ -54,7 +63,7 @@
             "icons": ["SiArduino", "SiCplusplus", "FaPython", "SiOpencv", "SiFlask", "SiExpress", "SiSqlite", "SiGit", "SiPostman", "SiFigma", "IoLogoNpm", "IoLogoGithub", "SiTypescript", "FaReact", "FaHtml5", "FaCss3Alt", "FaNodeJs"]
         },
         {
-            "id": "3",
+            "id": "4",
             "src": "/img/uwfe_tc.png",
             "title": "Traction Control  PID Controller",
             "desc": "Built a PID controller for traction control using Simulink for UWFE.",
@@ -63,7 +72,7 @@
             "icons": ["FaPython", "IoLogoGithub", "SiGit","SiCplusplus"]
         },
         {
-            "id": "3",
+            "id": "5",
             "src": "/img/hackthe6ixrobot.png",
             "title": "SAGE-Rover",
             "desc": "Built at HackThe6ix 2025; a rover that uses AI to help injured survivors.",
