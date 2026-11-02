@@ -2292,3 +2292,30 @@ body {
     --frame-inset: calc(0.6rem + 5px);
   }
 }
+
+
+/* ---------- All sizes: the scrolling column lives inside the drawing frame ---------- */
+/* Frame inset is 1.5rem (+7px inner line); 0.6rem (+4px) at phone widths. */
+.App:not(.blog-layout) {
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+.App:not(.blog-layout) .content-column {
+  --frame-inset: calc(1.5rem + 8px);
+  box-sizing: border-box;
+  height: calc(100vh - 2 * var(--frame-inset)) !important;
+  height: calc(100dvh - 2 * var(--frame-inset)) !important;
+  margin-top: var(--frame-inset) !important;
+  margin-bottom: 0 !important;
+  padding-top: 1.6vh !important;
+  padding-bottom: 1rem !important;
+  overflow-y: auto !important;      /* scrolls inside the frame only if content doesn't fit */
+}
+
+@media (max-width: 768px) {
+  .App:not(.blog-layout) .content-column {
+    --frame-inset: calc(0.6rem + 5px);
+  }
+}
