@@ -2238,3 +2238,30 @@ body {
     padding-bottom: 3rem;
   }
 }
+
+
+/* ---------- Mobile / tablet: no empty band between the hero and About Me ---------- */
+@media (max-width: 1024px) {
+  .heroSec {
+    min-height: auto !important;
+    justify-content: flex-start !important;
+    padding: 0.5rem 0 0.75rem 0 !important;
+  }
+
+  .bp-title-block {
+    margin-bottom: 1rem;
+  }
+
+  .hero_name_title {
+    margin-bottom: 0.5rem !important;
+  }
+
+  .aboutMeContainer,
+  .experience_section {
+    padding: 0.75rem 0 !important;
+  }
+
+  .content-column {
+    padding-top: 2.5rem !important;
+  }
+}
