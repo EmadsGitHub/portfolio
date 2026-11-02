@@ -20,7 +20,7 @@ export default function Contact({ hoverHandlers, handleLeave }){
                             </div>
                             <div className="LinkedinContent">
                                 <FaLinkedin />
-                                <a href="https://www.linkedin.com/in/emadrahman1/" target="_blank" rel="noopener noreferrer">Click Here</a>
+                                <a href="https://www.linkedin.com/in/emadrahman1/" target="_blank" rel="noopener noreferrer">linkedin</a>
                             </div>
                         </div>
                         <div className="SocialMedia">
@@ -36,7 +36,7 @@ export default function Contact({ hoverHandlers, handleLeave }){
                                     onMouseEnter={hoverHandlers?.contact}
                                     onMouseLeave={handleLeave}
                                 >
-                                    Click Here
+                                    x/twitter
                                 </a>
                             </div>
                         </div>
@@ -55,7 +55,7 @@ export default function Contact({ hoverHandlers, handleLeave }){
                             </div>
                             <div className="GitHubContent">
                                 <FaGithub />
-                                <a href="https://github.com/EmadsGitHub" target="_blank" rel="noopener noreferrer">Click Here</a>
+                                <a href="https://github.com/EmadsGitHub" target="_blank" rel="noopener noreferrer">github</a>
                             </div>
                         </div>
                         
@@ -65,7 +65,7 @@ export default function Contact({ hoverHandlers, handleLeave }){
                                 <h3>[BLOG]</h3>
                             </div>
                             <div className="BlogContent">
-                                <Link to="/blogs">Click Here</Link>
+                                <Link to="/blogs">blog</Link>
                             </div>
                         </div>
                     </div>

@@ -1200,27 +1200,27 @@ html {
   }
 
   .LinkedinContent::before {
-    content: "▸ linkedin: " !important;
+    content: "▸ " !important;
     color: var(--secondary-foreground) !important;
   }
 
   .SocialMediaContent::before {
-    content: "▸ x/twitter: " !important;
+    content: "▸ " !important;
     color: var(--secondary-foreground) !important;
   }
 
   .EmailinContent::before {
-    content: "▸ email: " !important;
+    content: "▸ " !important;
     color: var(--secondary-foreground) !important;
   }
 
   .GitHubContent::before {
-    content: "▸ github: " !important;
+    content: "▸ " !important;
     color: var(--secondary-foreground) !important;
   }
 
   .BlogContent::before {
-    content: "▸ blog: " !important;
+    content: "▸ " !important;
     color: var(--secondary-foreground) !important;
   }
 
