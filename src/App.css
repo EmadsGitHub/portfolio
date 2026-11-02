@@ -1839,10 +1839,10 @@ body {
 .bp-f1 {
   position: absolute;
   right: max(4vw, calc(50vw - 880px));
-  top: calc(50% - 80px);   /* leave room for the title block below */
-  transform: translateY(-50%);
+  /* Box bounded top and bottom so the drawing can never run into the title block */
+  top: 5vh;
+  height: calc(100vh - 5vh - 250px);
   width: min(50vw, 900px);
-  height: auto;
   color: var(--chalk);
   opacity: 0.8;
 }
