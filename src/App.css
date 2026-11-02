@@ -2265,3 +2265,30 @@ body {
     padding-top: 2.5rem !important;
   }
 }
+
+
+/* ---------- Mobile / tablet: scroll inside the frame, not under it ---------- */
+/* Frame is inset 1.5rem (+7px inner line) up to 768px, and 0.6rem (+4px) below that. */
+@media (max-width: 1024px) {
+  .App:not(.blog-layout) {
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+  }
+
+  .App:not(.blog-layout) .content-column {
+    --frame-inset: calc(1.5rem + 8px);
+    height: calc(100vh - 2 * var(--frame-inset)) !important;
+    height: calc(100dvh - 2 * var(--frame-inset)) !important;
+    margin: var(--frame-inset) auto 0 auto !important;
+    padding-top: 1.25rem !important;
+    padding-bottom: 1.25rem !important;
+    overflow-y: auto !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .App:not(.blog-layout) .content-column {
+    --frame-inset: calc(0.6rem + 5px);
+  }
+}
