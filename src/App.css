@@ -1,5 +1,7 @@
 /* Import monospace font for terminal theme */
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap');
+/* Hand-lettered drafting font for the chalk blueprint theme */
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
 
 /* CSS Variables - Terminal Theme Colors */
 :root {
@@ -395,6 +397,18 @@ html {
 .aboutme_desc ul ul {
   margin-left: 1.5rem;
   margin-top: 0.5rem;
+}
+
+.aboutme_body p {
+  color: var(--foreground);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin: 0 0 0.9rem 0;
+  max-width: 70ch;
+}
+
+.aboutme_body p:last-child {
+  margin-bottom: 0;
 }
 
 /* ===== SKILLS SECTION ===== */
@@ -931,8 +945,8 @@ html {
   color: var(--background);
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
-@media (max-width: 1024px) {
+/* ===== SIMPLE LAYOUT (applied at all screen sizes) ===== */
+@media all {
   .App {
     grid-template-columns: 1fr;
   }
@@ -1093,6 +1107,7 @@ html {
 
   .experience_content {
     flex: 1 !important;
+    gap: 0 !important;
   }
 
   /* Small icon styling for experiences */
@@ -1107,13 +1122,25 @@ html {
     margin-top: 0.1rem;
   }
 
-  /* Specific icons for each experience */
-  .experience_item:first-child::before {
+  /* Specific icons for each experience (class set in Experience.jsx) */
+  .exp-logo-geotab::before {
     background-image: url('../public/img/geotab.png');
   }
 
-  .experience_item:last-child::before {
-    background-image: url('../public/img/UWFElogo.png');
+  .exp-logo-uwfe::before {
+    background-image: url('../public/img/uwfe_logo_tight.png');
+  }
+
+  .exp-logo-stealth::before {
+    background-image: url('../public/img/antefactory.png');
+  }
+
+  /* One-line role summary */
+  .experience_summary {
+    font-size: 0.8rem;
+    color: var(--muted-foreground);
+    margin: 0.2rem 0 0 0 !important;
+    line-height: 1.4;
   }
 
   /* Minimal contact section */
@@ -1221,19 +1248,10 @@ html {
     text-decoration: underline !important;
   }
 
-/* Show blog link only on small screens */
-@media (max-width: 1024px) {
+  /* Blog link in contact section (always shown now) */
   .mobile-only {
     display: block !important;
   }
-}
-
-/* Hide blog link on large screens */
-@media (min-width: 1025px) {
-  .mobile-only {
-    display: none !important;
-  }
-}
 
   /* Hide GitHub button */
   .github_button {
@@ -1292,7 +1310,7 @@ html {
     right: 0;
     width: 32px;
     height: 32px;
-    background-image: url('../public/img/linkedinpfp.png');
+    background-image: url('../public/img/emad_linkedin.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -1371,6 +1389,98 @@ html {
   #contactPage {
     max-width: none !important;
     margin: 0 !important;
+  }
+}
+
+/* ===== WIDER SIMPLE LAYOUT FOR LARGE SCREENS ===== */
+@media (min-width: 1025px) {
+  .App:not(.blog-layout) .content-column {
+    max-width: 1100px !important;
+    padding: 4rem 3rem 4rem 3rem !important;
+  }
+
+  /* Hero: no forced tall height, slightly larger type */
+  .heroSec {
+    min-height: auto !important;
+    padding: 2rem 0 !important;
+  }
+
+  .hero_name_title {
+    font-size: 2.25rem !important;
+    display: inline-block;
+    padding-right: 3.75rem;
+  }
+
+  .hero_name_title::after {
+    width: 44px;
+    height: 44px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .hero_section_desc {
+    font-size: 1.05rem !important;
+  }
+
+  .contact_me_text {
+    font-size: 0.95rem !important;
+  }
+
+  /* Section headings */
+  .aboutme_title h1,
+  .experience_title,
+  .skillsHeading,
+  .header_title h1,
+  .contact-header h2 {
+    font-size: 1.5rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .heroSec,
+  .aboutMeContainer,
+  .skills,
+  .experience_section,
+  .projects_preview,
+  #contactPage {
+    padding: 1.5rem 0 !important;
+  }
+
+  .experience_position,
+  .project_title h2,
+  .skills_title h2 {
+    font-size: 1rem !important;
+  }
+
+  .experience_company,
+  .experience_duration {
+    font-size: 0.85rem !important;
+  }
+
+  .experience_summary {
+    font-size: 0.9rem;
+  }
+
+  /* Project title and "More Info" on one line */
+  .text_container {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.4rem 0;
+  }
+
+  .github {
+    margin-top: 0 !important;
+    flex-shrink: 0;
+  }
+
+  /* Contact links in a row */
+  .quick-contacts {
+    display: flex !important;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 2.5rem !important;
   }
 }
 
@@ -1466,5 +1576,665 @@ a {
 @media (max-width: 768px) {
   .screen-dimensions {
     display: none;
+  }
+}
+
+
+/* =====================================================================
+   CHALK BLUEPRINT THEME
+   Monochrome chalk-on-blackboard technical drawing look.
+   Kept at the end of the file so it overrides the older terminal theme.
+   ===================================================================== */
+:root {
+  --chalk: #ebe8e1;
+  --chalk-dim: #a9a69f;
+  --chalk-faint: rgba(235, 232, 225, 0.35);
+  --chalk-ghost: rgba(235, 232, 225, 0.12);
+  --board: #161616;
+
+  --background: var(--board);
+  --foreground: var(--chalk);
+  --card: transparent;
+  --card-foreground: var(--chalk);
+  --primary: var(--chalk);
+  --primary-foreground: var(--board);
+  --secondary: #222;
+  --secondary-foreground: var(--chalk-dim);
+  --muted: #2a2a2a;
+  --muted-foreground: var(--chalk-dim);
+  --accent: var(--chalk);
+  --accent-foreground: var(--board);
+  --border: var(--chalk-faint);
+  --ring: var(--chalk);
+  --skill-tag: var(--chalk-dim);
+}
+
+body,
+.App,
+.App * {
+  font-family: 'Architects Daughter', 'Comic Sans MS', cursive;
+}
+
+body {
+  background: var(--board);
+  /* Slight chalk bloom on all lettering */
+  text-shadow: 0 0 1px rgba(235, 232, 225, 0.35);
+  letter-spacing: 0.02em;
+}
+
+/* ---------- Backdrop ---------- */
+.bp-root {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Chalkboard: base tone, eraser smudges, and fine grain */
+.bp-board {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 40% at 20% 15%, rgba(255, 255, 255, 0.05), transparent 70%),
+    radial-gradient(ellipse 50% 35% at 80% 70%, rgba(255, 255, 255, 0.045), transparent 70%),
+    radial-gradient(ellipse 40% 30% at 55% 40%, rgba(255, 255, 255, 0.03), transparent 70%),
+    radial-gradient(ellipse at center, #1c1c1c 0%, #121212 100%);
+}
+
+.bp-board::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.22;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Faint drafting grid */
+.bp-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(235, 232, 225, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(235, 232, 225, 0.035) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Double-line drawing frame */
+.bp-frame {
+  position: absolute;
+  inset: 1.5rem;
+  border: 1px solid rgba(235, 232, 225, 0.5);
+}
+
+.bp-frame::before {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  border: 1px solid rgba(235, 232, 225, 0.22);
+}
+
+/* Keep scrolling content above the backdrop */
+.content-column {
+  z-index: 10;
+}
+
+/* ---------- Title strip ---------- */
+.bp-title-block {
+  display: block;
+  border-top: 1px solid var(--chalk-faint);
+  border-bottom: 1px solid var(--chalk-faint);
+  box-shadow: 0 -4px 0 -3px var(--chalk-ghost), 0 4px 0 -3px var(--chalk-ghost);
+  padding: 0.35rem 0.75rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  color: var(--chalk);
+  text-align: center;
+}
+
+/* ---------- Typography ---------- */
+.hero_name_title {
+  font-weight: 400 !important;
+  letter-spacing: 0.06em !important;
+  color: var(--chalk) !important;
+}
+
+.hero_section_desc {
+  color: var(--chalk-dim) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Section headings: caps with a dashed leader line running to the right */
+.aboutme_title h1,
+.experience_title,
+.contact-header h2 {
+  display: flex !important;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 400 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--chalk) !important;
+}
+
+.aboutme_title h1::after,
+.experience_title::after,
+.contact-header h2::after {
+  content: "";
+  flex: 1;
+  border-top: 1px dashed var(--chalk-faint);
+}
+
+.experience_subtitle {
+  color: var(--chalk-dim) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem !important;
+}
+
+.aboutme_body p {
+  color: var(--chalk) !important;
+  line-height: 1.8;
+}
+
+/* ---------- Experience as annotated callouts ---------- */
+.experience_item + .experience_item {
+  border-top: 1px dashed var(--chalk-ghost) !important;
+}
+
+.experience_item {
+  padding: 0.9rem 0 !important;
+}
+
+.experience_position {
+  font-weight: 400 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--chalk) !important;
+}
+
+.experience_position::before,
+.contact_me_text::before,
+.LinkedinContent::before,
+.SocialMediaContent::before,
+.EmailinContent::before,
+.GitHubContent::before,
+.BlogContent::before {
+  color: var(--chalk-dim) !important;
+}
+
+.experience_company,
+.experience_duration {
+  font-weight: 400 !important;
+  color: var(--chalk-dim) !important;
+}
+
+.experience_summary {
+  color: var(--chalk) !important;
+  opacity: 0.85;
+}
+
+.hero_name_title::after {
+  opacity: 1 !important;
+  border: 1px solid var(--chalk-faint);
+  padding: 2px;
+  background-origin: content-box;
+  background-clip: content-box;
+  box-sizing: border-box;
+}
+
+/* Shared logo column wide enough for the UWFE wordmark; square logos sit centered */
+.experience_item::before {
+  width: 54px !important;
+  height: 24px !important;
+  background-position: center !important;
+}
+
+/* ---------- Links ---------- */
+.LinkedinContent a,
+.SocialMediaContent a,
+.EmailinContent a,
+.GitHubContent a,
+.BlogContent a {
+  color: var(--chalk) !important;
+  border-bottom: 1px dashed var(--chalk-faint) !important;
+}
+
+.LinkedinContent a:hover,
+.SocialMediaContent a:hover,
+.EmailinContent a:hover,
+.GitHubContent a:hover,
+.BlogContent a:hover {
+  text-decoration: none !important;
+  border-bottom-style: solid !important;
+  border-bottom-color: var(--chalk) !important;
+}
+
+/* ---------- Small screens: tighter frame ---------- */
+@media (max-width: 768px) {
+  .bp-frame {
+    inset: 0.6rem;
+  }
+
+  .bp-frame::before {
+    inset: 4px;
+  }
+
+  .bp-title-block {
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+  }
+}
+
+
+/* ---------- F1 blueprint drawing (right side, wide screens) ---------- */
+.bp-drawings {
+  position: absolute;
+  inset: 0;
+  display: none;
+}
+
+.bp-f1 {
+  position: absolute;
+  right: max(4vw, calc(50vw - 880px));
+  top: calc(50% - 80px);   /* leave room for the title block below */
+  transform: translateY(-50%);
+  width: min(50vw, 900px);
+  height: auto;
+  color: var(--chalk);
+  opacity: 0.8;
+}
+
+.bp-f1 .ln { fill: none; stroke: currentColor; stroke-width: 1.3; opacity: 0.9; }
+.bp-f1 .ln-bold { fill: none; stroke: currentColor; stroke-width: 2; }
+.bp-f1 .ln-fine { fill: none; stroke: currentColor; stroke-width: 0.8; opacity: 0.7; }
+.bp-f1 .ln-ghost { fill: none; stroke: currentColor; stroke-width: 0.6; opacity: 0.35; }
+.bp-f1 .ln-construct { fill: none; stroke: currentColor; stroke-width: 0.7; stroke-dasharray: 6 5; opacity: 0.35; }
+.bp-f1 .tyre-fill { fill: #171717; opacity: 0.92; }
+.bp-f1 .tube-outer { fill: none; stroke: currentColor; stroke-width: 5.5; stroke-linecap: round; stroke-linejoin: round; }
+.bp-f1 .tube-inner { fill: none; stroke: #1a1a1a; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.bp-f1 .lbl-line { fill: none; stroke: currentColor; stroke-width: 1; }
+.bp-f1 .lbl-dot { fill: currentColor; }
+.bp-f1 .lbl-text { fill: currentColor; font-size: 15px; letter-spacing: 1px; }
+.bp-f1 .lbl-title { fill: currentColor; font-size: 14px; letter-spacing: 2px; opacity: 0.8; }
+
+@media (min-width: 1200px) {
+  .bp-drawings {
+    display: block;
+  }
+
+  /* Content keeps the full scroll area but its text sits on the left half */
+  .App:not(.blog-layout) .content-column {
+    max-width: none !important;
+    margin: 0 !important;
+    padding-left: max(5vw, calc(50vw - 880px)) !important;
+    padding-right: 2rem !important;
+  }
+
+  .App:not(.blog-layout) .content-column > * {
+    max-width: min(620px, 38vw);
+  }
+}
+
+
+/* ---------- CAD title block (bottom-right of the frame) ---------- */
+.tb {
+  position: fixed;
+  right: calc(1.5rem + 8px);
+  bottom: calc(1.5rem + 8px);
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--chalk-faint);
+  background: transparent;           /* same board as everything else; just chalk lines */
+  color: var(--chalk);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.35;
+}
+
+.tb-row {
+  display: flex;
+}
+
+.tb-row + .tb-row {
+  border-top: 1px solid var(--chalk-faint);
+}
+
+.tb-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.55rem 0.85rem;
+}
+
+.tb-cell + .tb-cell {
+  border-left: 1px solid var(--chalk-faint);
+}
+
+.tb-label {
+  font-size: 0.64rem;
+  color: var(--chalk-dim);
+}
+
+.tb-value {
+  color: var(--chalk);
+}
+
+.tb-big {
+  font-size: 1.4rem;
+  letter-spacing: 0.12em;
+}
+
+.tb-notes {
+  width: 215px;
+  justify-content: center;
+}
+
+.tb-grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  column-gap: 1.1rem;
+  row-gap: 0.1rem;
+  align-content: center;
+}
+
+.tb-k {
+  color: var(--chalk-dim);
+  font-size: 0.64rem;
+  align-self: center;
+}
+
+.tb-title {
+  width: 300px;
+  justify-content: center;
+}
+
+.tb-contact {
+  width: 395px;
+  text-transform: none;
+  letter-spacing: 0.03em;
+}
+
+.tb-contact a {
+  color: var(--chalk);
+  border-bottom: 1px dashed var(--chalk-ghost);
+  width: max-content;
+}
+
+.tb-contact a:hover {
+  border-bottom-style: solid;
+  border-bottom-color: var(--chalk);
+}
+
+.tb-small {
+  min-width: 74px;
+  justify-content: center;
+}
+
+.tb-wide {
+  min-width: 145px;
+}
+
+.tb-small a.tb-value:hover {
+  text-decoration: underline;
+}
+
+/* Smaller laptops: shrink the block from its bottom-right corner so it clears the text column */
+@media (max-width: 1599px) {
+  .tb {
+    transform: scale(0.78);
+    transform-origin: bottom right;
+  }
+}
+
+@media (max-width: 1399px) {
+  .tb {
+    transform: scale(0.68);
+  }
+}
+
+/* Hide below desktop widths: it would cover the content */
+@media (max-width: 1199px) {
+  .tb {
+    display: none;
+  }
+}
+
+
+/* ---------- Desktop: left column fits inside the frame, no scrolling ---------- */
+@media (min-width: 1200px) {
+  /* Contact details live in the title block on desktop */
+  .App:not(.blog-layout) #contactPage {
+    display: none !important;
+  }
+
+  .App:not(.blog-layout) .content-column {
+    height: 100vh !important;
+    overflow: hidden !important;
+    padding-top: calc(1.5rem + 8px + 2.2vh) !important;
+    padding-bottom: calc(1.5rem + 8px) !important;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Tighter vertical rhythm so everything fits */
+  .bp-title-block {
+    margin-bottom: 1.2vh;
+    padding: 0.25rem 0.75rem;
+  }
+
+  .heroSec {
+    padding: 1vh 0 !important;
+  }
+
+  .hero_name_title {
+    margin-bottom: 0.6rem !important;
+  }
+
+  .hero_section_desc {
+    margin: 0.2rem 0 !important;
+  }
+
+  .aboutMeContainer,
+  .experience_section {
+    padding: 1.2vh 0 !important;
+  }
+
+  .aboutme_title h1,
+  .experience_title {
+    margin-bottom: 0.4rem !important;
+  }
+
+  .aboutme_body p {
+    line-height: 1.55;
+    margin: 0 0 0.6rem 0;
+    font-size: clamp(0.78rem, 1.45vh, 0.95rem);
+  }
+
+  .experience_subtitle {
+    margin-bottom: 0.3rem !important;
+  }
+
+  .experience_item {
+    padding: 0.55rem 0 !important;
+  }
+
+  .experience_position {
+    font-size: clamp(0.85rem, 1.6vh, 1rem) !important;
+  }
+
+  .experience_company,
+  .experience_duration,
+  .experience_summary {
+    font-size: clamp(0.72rem, 1.35vh, 0.88rem) !important;
+    line-height: 1.35 !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* Headings and gaps scale with window height so short laptop screens still fit */
+  .hero_name_title {
+    font-size: clamp(1.5rem, 3.8vh, 2.25rem) !important;
+  }
+
+  .hero_section_desc {
+    font-size: clamp(0.82rem, 1.5vh, 1.05rem) !important;
+  }
+
+  .aboutme_title h1,
+  .experience_title {
+    font-size: clamp(1.05rem, 2.4vh, 1.5rem) !important;
+  }
+
+  .aboutme_text {
+    gap: 0.5rem !important;
+  }
+
+  .experience_header {
+    margin-bottom: 0.4rem !important;
+  }
+
+  .experience_subtitle {
+    font-size: clamp(0.62rem, 1.1vh, 0.75rem) !important;
+  }
+
+  .bp-title-block {
+    font-size: clamp(0.62rem, 1.2vh, 0.8rem);
+  }
+}
+
+/* Short laptop windows: trim a little more vertical space */
+@media (min-width: 1200px) and (max-height: 820px) {
+  .aboutme_body p {
+    line-height: 1.42;
+    margin-bottom: 0.45rem;
+  }
+
+  .experience_item {
+    padding: 0.35rem 0 !important;
+  }
+
+  .heroSec,
+  .aboutMeContainer,
+  .experience_section {
+    padding: 0.6vh 0 !important;
+  }
+
+  .bp-title-block {
+    margin-bottom: 0.8vh;
+  }
+}
+
+/* Safety net: on very short windows, allow the column to scroll rather than clip */
+@media (min-width: 1200px) and (max-height: 700px) {
+  .App:not(.blog-layout) .content-column {
+    overflow-y: auto !important;
+  }
+}
+
+
+/* ---------- Blog: "sheet 2, in progress" placeholder ---------- */
+.App.blog-layout {
+  overflow: hidden;
+  height: 100vh;
+  min-height: 0;
+}
+
+.App.blog-layout .content-column {
+  height: 100vh !important;
+  min-height: 0;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wip {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Diagonal stamp across the sheet, like a drawing marked up before release */
+.wip-stamp {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-24deg);
+  font-size: clamp(3rem, 7vw, 7rem);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(235, 232, 225, 0.3);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+}
+
+.wip-body {
+  position: relative;
+  max-width: 560px;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.wip-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  color: var(--chalk);
+  margin: 0.5rem 0 1rem 0;
+}
+
+.wip-text {
+  color: var(--chalk);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.wip-notes {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 2rem auto;
+  width: max-content;
+  text-align: left;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--chalk-dim);
+  border-top: 1px dashed var(--chalk-faint);
+  border-bottom: 1px dashed var(--chalk-faint);
+  padding: 0.6rem 1rem;
+}
+
+.wip-notes li + li {
+  margin-top: 0.25rem;
+}
+
+.wip-back {
+  color: var(--chalk);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  border-bottom: 1px dashed var(--chalk-faint);
+}
+
+.wip-back:hover {
+  border-bottom-style: solid;
+}
+
+/* Title block is also useful on the blog sheet at desktop widths */
+@media (max-width: 1199px) {
+  .wip-body {
+    padding-bottom: 3rem;
   }
 }

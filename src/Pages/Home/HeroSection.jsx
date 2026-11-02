@@ -42,6 +42,11 @@ export default function HeroSection(){
             <div className="hero_section_content_box">
                 <div ref={ref} className={`hero_section_content ${isLoaded || hasAnimated ? 'visible': ''}`}>
                     
+                    {/* Drawing title strip */}
+                    <div className="bp-title-block">
+                        Emad Rahman &ndash; Technical Schematic (Rev. 2026)
+                    </div>
+
                     {/* Terminal prompt */}
                     <div className="terminal_prompt">$ whoami</div>
                     
@@ -55,29 +60,8 @@ export default function HeroSection(){
                     
                     <p className="hero_section_desc">
                         Mechatronics Engineering @ UWaterloo
-                        <br/><br/>
-                        Embedded Development and Vehicle Systems 
                     </p>
-                    
-                    {/* Expertise section */}
-                    <div className="contact_text_section">
-                        <div className="terminal_prompt">$ cat expertise.txt</div>
-                        <ul style={{listStyle: 'none', padding: 0}}>
-                            <li className="contact_me_text">Hardware Design & PCB Development</li>
-                            <li className="contact_me_text">Embedded Software </li>
-                            <li className="contact_me_text">Full Stack Development & AI </li>
-                            <li className="contact_me_text">Vehicle Systems & Communication Protocols </li>
-                        </ul>
-                    </div>
-                    
-                    {/* Status section */}
-                    <div className="contact_text_section">
-                        <div className="terminal_prompt">$ ls -la status.txt</div>
-                        <ul style={{listStyle: 'none', padding: 0}}>
-                            <li className="contact_me_text">Available for work</li>
-                            <li className="contact_me_text">Looking for jobs; Summer 2026</li>
-                        </ul>
-                    </div>
+
                 </div>
             </div>
         </section>

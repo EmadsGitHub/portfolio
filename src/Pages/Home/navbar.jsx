@@ -57,20 +57,6 @@ function Navbar({ hoverHandlers, handleLeave }){
                 experience
             </Link>
             
-            <Link 
-                activeClass="navbar_button_active" 
-                spy={true} 
-                smooth={true} 
-                offset={-100} 
-                duration={1000} 
-                to="myProjects" 
-                containerId="scroll-container"
-                className="navbar_button"
-                onMouseEnter={hoverHandlers?.navProjects}
-                onMouseLeave={handleLeave}
-            >
-                projects
-            </Link>
             
             <Link 
                 activeClass="navbar_button_active" 
