@@ -4,7 +4,7 @@ import React from 'react';
 const experiences = [
     {
         position: 'Founding Engineer',
-        company: 'Antefactory',
+        company: 'Stealth Startup',
         duration: 'May 2026 - Present',
         location: 'San Francisco, CA',
         summary: 'Hire #5. Deep-tech manufacturing. Backed by 8VC, Hummingbird Ventures, BoxGroup, and SV Angel.',
