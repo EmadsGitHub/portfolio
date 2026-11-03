@@ -2319,3 +2319,49 @@ body {
     --frame-inset: calc(0.6rem + 5px);
   }
 }
+
+
+/* ---------- Below the two-column desktop layout: photo sits to the right of the name + degree ---------- */
+@media (max-width: 1199px) {
+  .hero_name_title {
+    display: block !important;
+    position: relative;
+    padding-right: 6rem !important;
+  }
+
+  .hero_section_desc {
+    padding-right: 6rem;
+  }
+
+  /* Anchored to the name line; tall enough to span the degree line below it */
+  .hero_name_title::after {
+    display: block;
+    top: -0.2rem;
+    right: 0;
+    transform: none;
+    width: 76px;
+    height: 76px;
+    background-image: url('../public/img/emad_linkedin.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-origin: content-box;
+    background-clip: content-box;
+    padding: 2px;
+    border: 1px solid var(--chalk-faint);
+    box-sizing: border-box;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero_name_title,
+  .hero_section_desc {
+    padding-right: 5rem !important;
+  }
+
+  .hero_name_title::after {
+    width: 64px;
+    height: 64px;
+  }
+}
