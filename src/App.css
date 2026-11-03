@@ -123,8 +123,8 @@ html {
 }
 
 .image-display img {
-  width: 500px;
-  height: 500px;
+  width: 31.25rem;
+  height: 31.25rem;
   object-fit: cover;
   border-radius: var(--radius);
   transition: all 0.3s ease;
@@ -133,7 +133,7 @@ html {
 }
 
 .image-display img:hover {
-  filter: drop-shadow(0 0 20px var(--accent)) drop-shadow(0 0 40px var(--accent));
+  filter: drop-shadow(0 0 1.25rem var(--accent)) drop-shadow(0 0 2.5rem var(--accent));
   transform: scale(1.02);
 }
 
@@ -156,7 +156,7 @@ html {
   border: 1px solid var(--border);
   background: var(--card);
   border-radius: var(--radius);
-  max-width: 500px;
+  max-width: 31.25rem;
   max-height: 40vh;
   overflow-y: auto;
   scrollbar-width: none;
@@ -193,8 +193,8 @@ html {
 }
 
 .image-display:has(.project-detail) img {
-  width: 500px;
-  height: 500px;
+  width: 31.25rem;
+  height: 31.25rem;
   object-fit: contain;
   border: none;
 }
@@ -209,7 +209,7 @@ html {
   background: var(--card);
   border-bottom: 1px solid var(--border);
   padding: 1rem 3rem;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(0.5rem);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -911,7 +911,7 @@ html {
   font-family: 'Courier Prime', monospace;
   font-size: 0.875rem;
   resize: vertical;
-  min-height: 50px;
+  min-height: 3.125rem;
   transition: border-color 0.3s ease;
 }
 
@@ -990,7 +990,7 @@ html {
     cursor: default;
   }
 
-  /* SUPER MINIMAL TERMINAL LAYOUT FOR ≤1024px */
+  /* SUPER MINIMAL TERMINAL LAYOUT FOR ≤64rem */
   
   /* Hide all detailed descriptions and complex layouts */
   .aboutme_desc,
@@ -1113,8 +1113,8 @@ html {
   /* Small icon styling for experiences */
   .experience_item::before {
     content: "";
-    width: 24px;
-    height: 24px;
+    width: 1.5rem;
+    height: 1.5rem;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -1287,8 +1287,8 @@ html {
   /* Add UW logo icon next to education info */
   .hero_section_desc::before {
     content: "";
-    width: 24px;
-    height: 24px;
+    width: 1.5rem;
+    height: 1.5rem;
     background-image: url('../public/img/Waterloo.png');
     background-size: contain;
     background-repeat: no-repeat;
@@ -1308,8 +1308,8 @@ html {
     position: absolute;
     top: 0;
     right: 0;
-    width: 32px;
-    height: 32px;
+    width: 2rem;
+    height: 2rem;
     background-image: url('../public/img/emad_linkedin.png');
     background-size: contain;
     background-repeat: no-repeat;
@@ -1374,7 +1374,7 @@ html {
   /* Adjust content padding and center the content area */
   .content-column {
     padding-top: 2rem !important;
-    max-width: 600px !important;
+    max-width: 37.5rem !important;
     margin: 0 auto !important;
     padding-left: 2rem !important;
     padding-right: 2rem !important;
@@ -1393,9 +1393,9 @@ html {
 }
 
 /* ===== WIDER SIMPLE LAYOUT FOR LARGE SCREENS ===== */
-@media (min-width: 1025px) {
+@media (min-width: 820px) {
   .App:not(.blog-layout) .content-column {
-    max-width: 1100px !important;
+    max-width: 68.75rem !important;
     padding: 4rem 3rem 4rem 3rem !important;
   }
 
@@ -1412,8 +1412,8 @@ html {
   }
 
   .hero_name_title::after {
-    width: 44px;
-    height: 44px;
+    width: 2.75rem;
+    height: 2.75rem;
     top: 50%;
     transform: translateY(-50%);
   }
@@ -1548,7 +1548,7 @@ a {
   opacity: 0.8;
   transition: opacity 0.3s ease;
   pointer-events: none;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(0.5rem);
 }
 
 .screen-dimensions:hover {
@@ -1656,7 +1656,7 @@ body {
   background-image:
     linear-gradient(rgba(235, 232, 225, 0.035) 1px, transparent 1px),
     linear-gradient(90deg, rgba(235, 232, 225, 0.035) 1px, transparent 1px);
-  background-size: 48px 48px;
+  background-size: 3rem 3rem;
 }
 
 /* Double-line drawing frame */
@@ -1669,7 +1669,7 @@ body {
 .bp-frame::before {
   content: "";
   position: absolute;
-  inset: 7px;
+  inset: 0.4375rem;
   border: 1px solid rgba(235, 232, 225, 0.22);
 }
 
@@ -1683,7 +1683,7 @@ body {
   display: block;
   border-top: 1px solid var(--chalk-faint);
   border-bottom: 1px solid var(--chalk-faint);
-  box-shadow: 0 -4px 0 -3px var(--chalk-ghost), 0 4px 0 -3px var(--chalk-ghost);
+  box-shadow: 0 -0.25rem 0 -0.1875rem var(--chalk-ghost), 0 0.25rem 0 -0.1875rem var(--chalk-ghost);
   padding: 0.35rem 0.75rem;
   margin-bottom: 2rem;
   text-transform: uppercase;
@@ -1779,7 +1779,7 @@ body {
 .hero_name_title::after {
   opacity: 1 !important;
   border: 1px solid var(--chalk-faint);
-  padding: 2px;
+  padding: 0.125rem;
   background-origin: content-box;
   background-clip: content-box;
   box-sizing: border-box;
@@ -1787,8 +1787,8 @@ body {
 
 /* Shared logo column wide enough for the UWFE wordmark; square logos sit centered */
 .experience_item::before {
-  width: 54px !important;
-  height: 24px !important;
+  width: 3.375rem !important;
+  height: 1.5rem !important;
   background-position: center !important;
 }
 
@@ -1819,7 +1819,7 @@ body {
   }
 
   .bp-frame::before {
-    inset: 4px;
+    inset: 0.25rem;
   }
 
   .bp-title-block {
@@ -1838,11 +1838,13 @@ body {
 
 .bp-f1 {
   position: absolute;
-  right: max(4vw, calc(50vw - 880px));
-  /* Box bounded top and bottom so the drawing can never run into the title block */
+  /* Left edge sits just past the text column; right edge stays inside the frame. */
+  left: calc(max(5vw, 50vw - 44rem) + min(40rem, 40vw) + 3rem);
+  right: 3rem;
   top: 5vh;
-  height: calc(100vh - 5vh - 250px);
-  width: min(50vw, 900px);
+  height: calc(100vh - 5vh - 15.625rem);
+  width: auto;
+  max-width: calc(100% - 3rem - max(5vw, 50vw - 44rem) - min(40rem, 40vw) - 3rem);
   color: var(--chalk);
   opacity: 0.8;
 }
@@ -1860,7 +1862,7 @@ body {
 .bp-f1 .lbl-text { fill: currentColor; font-size: 15px; letter-spacing: 1px; }
 .bp-f1 .lbl-title { fill: currentColor; font-size: 14px; letter-spacing: 2px; opacity: 0.8; }
 
-@media (min-width: 1200px) {
+@media (min-width: 960px) {
   .bp-drawings {
     display: block;
   }
@@ -1869,12 +1871,12 @@ body {
   .App:not(.blog-layout) .content-column {
     max-width: none !important;
     margin: 0 !important;
-    padding-left: max(5vw, calc(50vw - 880px)) !important;
+    padding-left: max(5vw, calc(50vw - 44rem)) !important;
     padding-right: 2rem !important;
   }
 
   .App:not(.blog-layout) .content-column > * {
-    max-width: min(620px, 38vw);
+    max-width: min(40rem, 40vw);
   }
 }
 
@@ -1882,8 +1884,8 @@ body {
 /* ---------- CAD title block (bottom-right of the frame) ---------- */
 .tb {
   position: fixed;
-  right: calc(1.5rem + 8px);
-  bottom: calc(1.5rem + 8px);
+  right: calc(1.5rem + 0.5rem);
+  bottom: calc(1.5rem + 0.5rem);
   z-index: 20;
   display: flex;
   flex-direction: column;
@@ -1930,7 +1932,7 @@ body {
 }
 
 .tb-notes {
-  width: 215px;
+  width: 13.4375rem;
   justify-content: center;
 }
 
@@ -1949,12 +1951,12 @@ body {
 }
 
 .tb-title {
-  width: 300px;
+  width: 18.75rem;
   justify-content: center;
 }
 
 .tb-contact {
-  width: 395px;
+  width: 24.6875rem;
   text-transform: none;
   letter-spacing: 0.03em;
 }
@@ -1971,12 +1973,12 @@ body {
 }
 
 .tb-small {
-  min-width: 74px;
+  min-width: 4.625rem;
   justify-content: center;
 }
 
 .tb-wide {
-  min-width: 145px;
+  min-width: 9.0625rem;
 }
 
 .tb-small a.tb-value:hover {
@@ -1984,21 +1986,21 @@ body {
 }
 
 /* Smaller laptops: shrink the block from its bottom-right corner so it clears the text column */
-@media (max-width: 1599px) {
+@media (max-width: 1279px) {
   .tb {
     transform: scale(0.78);
     transform-origin: bottom right;
   }
 }
 
-@media (max-width: 1399px) {
+@media (max-width: 1119px) {
   .tb {
     transform: scale(0.68);
   }
 }
 
 /* Hide below desktop widths: it would cover the content */
-@media (max-width: 1199px) {
+@media (max-width: 959px) {
   .tb {
     display: none;
   }
@@ -2006,7 +2008,7 @@ body {
 
 
 /* ---------- Desktop: left column fits inside the frame, no scrolling ---------- */
-@media (min-width: 1200px) {
+@media (min-width: 960px) {
   /* Contact details live in the title block on desktop */
   .App:not(.blog-layout) #contactPage {
     display: none !important;
@@ -2015,8 +2017,8 @@ body {
   .App:not(.blog-layout) .content-column {
     height: 100vh !important;
     overflow: hidden !important;
-    padding-top: calc(1.5rem + 8px + 2.2vh) !important;
-    padding-bottom: calc(1.5rem + 8px) !important;
+    padding-top: calc(1.5rem + 0.5rem + 2.2vh) !important;
+    padding-bottom: calc(1.5rem + 0.5rem) !important;
     display: flex;
     flex-direction: column;
   }
@@ -2075,7 +2077,7 @@ body {
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 960px) {
   /* Headings and gaps scale with window height so short laptop screens still fit */
   .hero_name_title {
     font-size: clamp(1.5rem, 3.8vh, 2.25rem) !important;
@@ -2108,7 +2110,7 @@ body {
 }
 
 /* Short laptop windows: trim a little more vertical space */
-@media (min-width: 1200px) and (max-height: 820px) {
+@media (min-width: 960px) and (max-height: 656px) {
   .aboutme_body p {
     line-height: 1.42;
     margin-bottom: 0.45rem;
@@ -2130,7 +2132,7 @@ body {
 }
 
 /* Safety net: on very short windows, allow the column to scroll rather than clip */
-@media (min-width: 1200px) and (max-height: 700px) {
+@media (min-width: 960px) and (max-height: 560px) {
   .App:not(.blog-layout) .content-column {
     overflow-y: auto !important;
   }
@@ -2175,7 +2177,7 @@ body {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: transparent;
-  -webkit-text-stroke: 1.5px rgba(235, 232, 225, 0.3);
+  -webkit-text-stroke: 0.0938rem rgba(235, 232, 225, 0.3);
   white-space: nowrap;
   pointer-events: none;
   user-select: none;
@@ -2183,7 +2185,7 @@ body {
 
 .wip-body {
   position: relative;
-  max-width: 560px;
+  max-width: 35rem;
   padding: 0 2rem;
   text-align: center;
 }
@@ -2233,7 +2235,7 @@ body {
 }
 
 /* Title block is also useful on the blog sheet at desktop widths */
-@media (max-width: 1199px) {
+@media (max-width: 959px) {
   .wip-body {
     padding-bottom: 3rem;
   }
@@ -2241,7 +2243,7 @@ body {
 
 
 /* ---------- Mobile / tablet: no empty band between the hero and About Me ---------- */
-@media (max-width: 1024px) {
+@media (max-width: 819px) {
   .heroSec {
     min-height: auto !important;
     justify-content: flex-start !important;
@@ -2268,8 +2270,8 @@ body {
 
 
 /* ---------- Mobile / tablet: scroll inside the frame, not under it ---------- */
-/* Frame is inset 1.5rem (+7px inner line) up to 768px, and 0.6rem (+4px) below that. */
-@media (max-width: 1024px) {
+/* Frame is inset 1.5rem (+0.4375rem inner line) up to 48rem, and 0.6rem (+0.25rem) below that. */
+@media (max-width: 819px) {
   .App:not(.blog-layout) {
     height: 100vh;
     height: 100dvh;
@@ -2277,7 +2279,7 @@ body {
   }
 
   .App:not(.blog-layout) .content-column {
-    --frame-inset: calc(1.5rem + 8px);
+    --frame-inset: calc(1.5rem + 0.5rem);
     height: calc(100vh - 2 * var(--frame-inset)) !important;
     height: calc(100dvh - 2 * var(--frame-inset)) !important;
     margin: var(--frame-inset) auto 0 auto !important;
@@ -2289,13 +2291,13 @@ body {
 
 @media (max-width: 768px) {
   .App:not(.blog-layout) .content-column {
-    --frame-inset: calc(0.6rem + 5px);
+    --frame-inset: calc(0.6rem + 0.3125rem);
   }
 }
 
 
 /* ---------- All sizes: the scrolling column lives inside the drawing frame ---------- */
-/* Frame inset is 1.5rem (+7px inner line); 0.6rem (+4px) at phone widths. */
+/* Frame inset is 1.5rem (+0.4375rem inner line); 0.6rem (+0.25rem) at phone widths. */
 .App:not(.blog-layout) {
   height: 100vh;
   height: 100dvh;
@@ -2303,7 +2305,7 @@ body {
 }
 
 .App:not(.blog-layout) .content-column {
-  --frame-inset: calc(1.5rem + 8px);
+  --frame-inset: calc(1.5rem + 0.5rem);
   box-sizing: border-box;
   height: calc(100vh - 2 * var(--frame-inset)) !important;
   height: calc(100dvh - 2 * var(--frame-inset)) !important;
@@ -2316,13 +2318,13 @@ body {
 
 @media (max-width: 768px) {
   .App:not(.blog-layout) .content-column {
-    --frame-inset: calc(0.6rem + 5px);
+    --frame-inset: calc(0.6rem + 0.3125rem);
   }
 }
 
 
 /* ---------- Below the two-column desktop layout: photo sits to the right of the name + degree ---------- */
-@media (max-width: 1199px) {
+@media (max-width: 959px) {
   .hero_name_title {
     display: block !important;
     position: relative;
@@ -2339,15 +2341,15 @@ body {
     top: -0.2rem;
     right: 0;
     transform: none;
-    width: 76px;
-    height: 76px;
+    width: 4.75rem;
+    height: 4.75rem;
     background-image: url('../public/img/emad_linkedin.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     background-origin: content-box;
     background-clip: content-box;
-    padding: 2px;
+    padding: 0.125rem;
     border: 1px solid var(--chalk-faint);
     box-sizing: border-box;
     opacity: 1;
@@ -2361,7 +2363,15 @@ body {
   }
 
   .hero_name_title::after {
-    width: 64px;
-    height: 64px;
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
+
+/* ---------- Design scale: render at the equivalent of 80% browser zoom on larger screens ---------- */
+@media (min-width: 820px) {
+  html {
+    font-size: 80%;
   }
 }
