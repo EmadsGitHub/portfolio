@@ -652,7 +652,7 @@ by0 = min(p[1] for p in bounds) - PAD
 by1 = max(p[1] for p in bounds) + PAD + 50  # room for the figure caption
 out.append(f'<text class="lbl-title" x="{(bx0 + bx1) / 2:.0f}" y="{by1 - 22:.0f}" text-anchor="middle">'
            'FIG. 1 - OPEN-WHEEL RACE CAR, 3/4 FRONT VIEW</text>')
-out.insert(0, f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{bx0:.0f} {by0:.0f} {bx1 - bx0:.0f} {by1 - by0:.0f}" preserveAspectRatio="xMidYMid meet" class="bp-car">')
+out.insert(0, f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{bx0:.0f} {by0:.0f} {bx1 - bx0:.0f} {by1 - by0:.0f}" preserveAspectRatio="xMaxYMid meet" class="bp-car">')
 out.append('</svg>')
 
 os.makedirs(os.path.dirname(OUT), exist_ok=True)

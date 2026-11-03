@@ -1838,13 +1838,12 @@ body {
 
 .bp-f1 {
   position: absolute;
-  /* Left edge sits just past the text column; right edge stays inside the frame. */
-  left: calc(max(5vw, 50vw - 44rem) + min(40rem, 40vw) + 3rem);
-  right: 3rem;
+  /* Right edge sits on the title block's right edge; left edge must stay clear of the text column. */
+  right: calc(1.5rem + 0.5rem);
   top: 5vh;
   height: calc(100vh - 5vh - 15.625rem);
   width: auto;
-  max-width: calc(100% - 3rem - max(5vw, 50vw - 44rem) - min(40rem, 40vw) - 3rem);
+  max-width: calc(100vw - 1.5rem - 0.5rem - max(5vw, 50vw - 44rem) - min(40rem, 40vw) - 3rem);
   color: var(--chalk);
   opacity: 0.8;
 }
