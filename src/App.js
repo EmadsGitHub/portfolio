@@ -8,6 +8,7 @@ import { Helmet } from 'react-helmet';
 import useHoverImageDisplay from "./hooks/useHoverImageDisplay";
 import BlueprintBackground from "./components/BlueprintBackground";
 import TitleBlock from "./components/TitleBlock";
+import ContactBlock from "./components/ContactBlock";
 
 function AppContent() {
   const { currentImage, currentSection, currentProject, refs, hoverHandlers, handleLeave } = useHoverImageDisplay();
@@ -27,6 +28,7 @@ function AppContent() {
       {/* Chalk blueprint backdrop; the car drawing only on the home sheet */}
       <BlueprintBackground showCar={!isBlogPage} />
       <TitleBlock sheet={isBlogPage ? 2 : 1} />
+      <ContactBlock />
       
       {/* Content Column - full width on blog pages */}
       <div className="content-column" id="scroll-container">

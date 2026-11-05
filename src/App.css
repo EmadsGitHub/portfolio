@@ -1,7 +1,7 @@
 /* Import monospace font for terminal theme */
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap');
 /* Hand-lettered drafting font for the chalk blueprint theme */
-@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 
 /* CSS Variables - Terminal Theme Colors */
 :root {
@@ -1612,7 +1612,7 @@ a {
 body,
 .App,
 .App * {
-  font-family: 'Architects Daughter', 'Comic Sans MS', cursive;
+  font-family: 'Patrick Hand', 'Segoe Print', cursive;
 }
 
 body {
@@ -2371,6 +2371,109 @@ body {
 /* ---------- Design scale: render at the equivalent of 80% browser zoom on larger screens ---------- */
 @media (min-width: 820px) {
   html {
-    font-size: 80%;
+    font-size: 86%;   /* Patrick Hand sets smaller than the previous face; 86% ~ the old 80% look */
+  }
+}
+
+
+/* ---------- Contact block (bottom-left; styled like a drawing's revision table) ---------- */
+.cb {
+  position: fixed;
+  left: calc(1.5rem + 0.5rem);
+  bottom: calc(1.5rem + 0.5rem);
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--chalk-faint);
+  color: var(--chalk);
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+}
+
+.cb-head,
+.cb-row {
+  display: grid;
+  grid-template-columns: 2.4rem 2.6rem auto;
+  align-items: center;
+}
+
+.cb-head {
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  color: var(--chalk-dim);
+  border-bottom: 1px solid var(--chalk-faint);
+}
+
+.cb-head > span,
+.cb-row > span {
+  padding: 0.35rem 0.6rem;
+  display: flex;
+  align-items: center;
+}
+
+.cb-head > span + span,
+.cb-row > span + span {
+  border-left: 1px solid var(--chalk-faint);
+}
+
+.cb-row {
+  color: var(--chalk);
+  text-decoration: none;
+}
+
+.cb-row + .cb-row {
+  border-top: 1px solid var(--chalk-ghost);
+}
+
+.cb-no {
+  color: var(--chalk-dim);
+  font-size: 0.7rem;
+  justify-content: center;
+}
+
+.cb-sym {
+  justify-content: center;
+}
+
+.cb-sym svg {
+  width: 1.05rem;
+  height: 1.05rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.cb-desc {
+  padding-right: 0.9rem !important;
+  border-bottom: 1px dashed transparent;
+}
+
+.cb-row:hover .cb-desc {
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  text-underline-offset: 3px;
+}
+
+/* Hide where the on-page contact section is shown instead */
+@media (max-width: 959px) {
+  .cb {
+    display: none;
+  }
+}
+
+
+/* The contact block (bottom-left) owns the bottom-left corner on desktop, so the
+   text column ends above it instead of running underneath. --cb-h is the block's height. */
+@media (min-width: 960px) {
+  :root {
+    --cb-h: 9.6rem;
+  }
+
+  .App:not(.blog-layout) .content-column {
+    height: calc(100vh - 2 * var(--frame-inset) - var(--cb-h)) !important;
+    height: calc(100dvh - 2 * var(--frame-inset) - var(--cb-h)) !important;
   }
 }
