@@ -2376,8 +2376,8 @@ body {
 }
 
 
-/* ---------- Contact block (bottom-left; styled like a drawing's revision table) ---------- */
-.cb {
+/* ---------- Sheet index (bottom-left): the list of sheets in this drawing set ---------- */
+.si {
   position: fixed;
   left: calc(1.5rem + 0.5rem);
   bottom: calc(1.5rem + 0.5rem);
@@ -2387,71 +2387,72 @@ body {
   border: 1px solid var(--chalk-faint);
   color: var(--chalk);
   font-size: 0.82rem;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   line-height: 1.3;
 }
 
-.cb-head,
-.cb-row {
+.si-head,
+.si-row {
   display: grid;
-  grid-template-columns: 2.4rem 2.6rem auto;
+  grid-template-columns: 2.6rem auto 6.4rem;
   align-items: center;
 }
 
-.cb-head {
+.si-head {
   font-size: 0.62rem;
   letter-spacing: 0.1em;
   color: var(--chalk-dim);
   border-bottom: 1px solid var(--chalk-faint);
 }
 
-.cb-head > span,
-.cb-row > span {
-  padding: 0.35rem 0.6rem;
+.si-head > span,
+.si-row > span {
+  padding: 0.4rem 0.7rem;
   display: flex;
   align-items: center;
 }
 
-.cb-head > span + span,
-.cb-row > span + span {
+.si-head > span + span,
+.si-row > span + span {
   border-left: 1px solid var(--chalk-faint);
 }
 
-.cb-row {
+.si-row {
   color: var(--chalk);
   text-decoration: none;
 }
 
-.cb-row + .cb-row {
+.si-row + .si-row {
   border-top: 1px solid var(--chalk-ghost);
 }
 
-.cb-no {
+.si-no {
   color: var(--chalk-dim);
   font-size: 0.7rem;
   justify-content: center;
 }
 
-.cb-sym {
-  justify-content: center;
+.si-desc {
+  color: var(--chalk-dim);
+  font-size: 0.68rem;
 }
 
-.cb-sym svg {
-  width: 1.05rem;
-  height: 1.05rem;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+/* The sheet you're on: a filled marker and brighter status */
+.si-current .si-no {
+  color: var(--chalk);
 }
 
-.cb-desc {
-  padding-right: 0.9rem !important;
-  border-bottom: 1px dashed transparent;
+.si-current .si-no::before {
+  content: "\25B8";       /* small right-pointing triangle */
+  margin-right: 0.3rem;
 }
 
-.cb-row:hover .cb-desc {
+.si-current .si-desc {
+  color: var(--chalk);
+}
+
+.si-row:not(.si-current):hover .si-title {
   text-decoration: underline;
   text-decoration-style: dashed;
   text-underline-offset: 3px;
@@ -2459,17 +2460,41 @@ body {
 
 /* Hide where the on-page contact section is shown instead */
 @media (max-width: 959px) {
-  .cb {
+  .si {
     display: none;
   }
 }
 
+/* ---------- Title block: contact rows with line-drawn icons ---------- */
+.tb-contact-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  width: max-content;
+}
 
-/* The contact block (bottom-left) owns the bottom-left corner on desktop, so the
+.tb-icon {
+  display: inline-flex;
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+
+.tb-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* The sheet index (bottom-left) owns the bottom-left corner on desktop, so the
    text column ends above it instead of running underneath. --cb-h is the block's height. */
 @media (min-width: 960px) {
   :root {
-    --cb-h: 9.6rem;
+    --cb-h: 7.2rem;
   }
 
   .App:not(.blog-layout) .content-column {

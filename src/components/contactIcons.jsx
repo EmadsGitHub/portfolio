@@ -1,8 +1,8 @@
 import React from 'react';
 
-// CAD-style "revision block" in the bottom-left corner, repurposed as a contact table.
-// Icons are single-stroke line glyphs so they read as drafting symbols, not logos.
-const CONTACTS = [
+// Single-stroke line glyphs so the icons read as drafting symbols rather than logos.
+// Shared by the title block's CONTACT cell.
+export const CONTACTS = [
     {
         id: 'email',
         label: 'e2rahman@uwaterloo.ca',
@@ -39,35 +39,13 @@ const CONTACTS = [
         id: 'x',
         label: 'x.com/emadddd_r',
         href: 'https://x.com/emadddd_r',
+        // The X wordmark: a full diagonal stroke crossed by a second stroke that is
+        // broken around it, drawn as an outline so it matches the other glyphs.
         icon: (
             <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M4.5 4.5 19.5 19.5M19.5 4.5 4.5 19.5" />
+                <path d="M4 4h4.6l11.4 16h-4.6z" />
+                <path d="M19.4 4 13.3 11M4.6 20l6.2-7.1" />
             </svg>
         ),
     },
 ];
-
-export default function ContactBlock() {
-    return (
-        <aside className="cb" aria-label="Contact details">
-            <div className="cb-head">
-                <span className="cb-no">NO.</span>
-                <span className="cb-sym">SYM</span>
-                <span className="cb-desc">CONTACT</span>
-            </div>
-            {CONTACTS.map((c, i) => (
-                <a
-                    key={c.id}
-                    className="cb-row"
-                    href={c.href}
-                    target={c.href.startsWith('mailto:') ? undefined : '_blank'}
-                    rel={c.href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
-                >
-                    <span className="cb-no">{String(i + 1).padStart(2, '0')}</span>
-                    <span className="cb-sym">{c.icon}</span>
-                    <span className="cb-desc">{c.label}</span>
-                </a>
-            ))}
-        </aside>
-    );
-}

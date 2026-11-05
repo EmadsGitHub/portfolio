@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { CONTACTS } from './contactIcons';
 
 // CAD-style title block pinned to the bottom-right corner of the drawing frame.
 // Edit the cells below to change what it says.
@@ -26,10 +27,18 @@ export default function TitleBlock({ sheet = 1 }) {
             <div className="tb-row">
                 <div className="tb-cell tb-contact">
                     <span className="tb-label">CONTACT</span>
-                    <a href="mailto:e2rahman@uwaterloo.ca">e2rahman@uwaterloo.ca</a>
-                    <a href="https://www.linkedin.com/in/emadrahman1/" target="_blank" rel="noopener noreferrer">linkedin.com/in/emadrahman1</a>
-                    <a href="https://github.com/EmadsGitHub" target="_blank" rel="noopener noreferrer">github.com/EmadsGitHub</a>
-                    <a href="https://x.com/emadddd_r" target="_blank" rel="noopener noreferrer">x.com/emadddd_r</a>
+                    {CONTACTS.map((c) => (
+                        <a
+                            key={c.id}
+                            className="tb-contact-row"
+                            href={c.href}
+                            target={c.href.startsWith('mailto:') ? undefined : '_blank'}
+                            rel={c.href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
+                        >
+                            <span className="tb-icon">{c.icon}</span>
+                            <span>{c.label}</span>
+                        </a>
+                    ))}
                 </div>
                 <div className="tb-cell tb-small">
                     <span className="tb-label">SIZE</span><span className="tb-big">A</span>
