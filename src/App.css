@@ -1843,7 +1843,7 @@ body {
   top: 5vh;
   height: calc(100vh - 5vh - 15.625rem);
   width: auto;
-  max-width: calc(100vw - 1.5rem - 0.5rem - max(5vw, 50vw - 44rem) - min(40rem, 40vw) - 3rem);
+  max-width: calc(100vw - 1.5rem - 0.5rem - min(max(5vw, 50vw - 44rem), 6rem) - min(40rem, 40vw) - 3rem);
   color: var(--chalk);
   opacity: 0.8;
 }
@@ -1870,7 +1870,7 @@ body {
   .App:not(.blog-layout) .content-column {
     max-width: none !important;
     margin: 0 !important;
-    padding-left: max(5vw, calc(50vw - 44rem)) !important;
+    padding-left: min(max(5vw, calc(50vw - 44rem)), 6rem) !important;
     padding-right: 2rem !important;
   }
 
