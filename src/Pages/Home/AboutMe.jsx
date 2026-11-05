@@ -11,10 +11,6 @@ export default function AboutMe() {
                         automotive, industrial, hardware, robotics, AI, and much, much more.
                     </p>
                     <p>
-                        My main goals right now are personal exploration and optimizing for learning. So far
-                        it’s going quite well.
-                    </p>
-                    <p>
                         I’m bullish on people who genuinely care about the work they do and the impact it has on
                         people, and it shows in the work they put out. Great engineering talent must be backed by
                         great engineering integrity.
