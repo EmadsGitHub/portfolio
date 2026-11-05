@@ -7,7 +7,7 @@ export default function AboutMe() {
                 </div>
                 <div className="aboutme_body">
                     <p>
-                        I’m currently a Waterloo Engineering Student (allegedly). My experiences ranges around
+                        I’m currently a Waterloo Engineering Student (allegedly). My experience ranges around
                         automotive, industrial, hardware, robotics, AI, and much, much more.
                     </p>
                 </div>
