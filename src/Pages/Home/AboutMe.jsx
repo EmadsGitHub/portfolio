@@ -10,6 +10,12 @@ export default function AboutMe() {
                         I’m currently a Waterloo Engineering Student (allegedly). My experience ranges around
                         automotive, industrial, hardware, robotics, AI, and much, much more.
                     </p>
+                    {/* Shown only where it fits without scrolling; see .about-extra in App.css */}
+                    <p className="about-extra">
+                        I’m bullish on people who genuinely care about the work they do and the impact it has on
+                        people, and it shows in the work they put out. Great engineering talent must be backed by
+                        great engineering integrity.
+                    </p>
                 </div>
             </div>
         </section>

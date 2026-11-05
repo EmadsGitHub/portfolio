@@ -2502,3 +2502,11 @@ body {
     height: calc(100dvh - 2 * var(--frame-inset) - var(--cb-h)) !important;
   }
 }
+
+/* ---------- Optional About Me paragraph: only where it fits without scrolling ---------- */
+/* Visible on phones/tablets (the page scrolls there anyway) and on desktops tall enough to hold it. */
+@media (min-width: 960px) and (max-height: 799px) {
+  .about-extra {
+    display: none;
+  }
+}
