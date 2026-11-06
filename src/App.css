@@ -2371,7 +2371,7 @@ body {
 /* ---------- Design scale: render at the equivalent of 80% browser zoom on larger screens ---------- */
 @media (min-width: 820px) {
   html {
-    font-size: 86%;   /* Patrick Hand sets smaller than the previous face; 86% ~ the old 80% look */
+    font-size: 77%;   /* desktop design scale: 90% of the previous 86% */
   }
 }
 
@@ -2505,7 +2505,7 @@ body {
 
 /* ---------- Optional About Me paragraph: only where it fits without scrolling ---------- */
 /* Visible on phones/tablets (the page scrolls there anyway) and on desktops tall enough to hold it. */
-@media (min-width: 960px) and (max-height: 799px) {
+@media (min-width: 960px) and (max-height: 719px) {
   .about-extra {
     display: none;
   }
